@@ -182,6 +182,19 @@
             Context passed when a Challenge, SignIn, or SignOut causes a redirect in the cookie middleware 
             </summary>
         </member>
+        <member name="M:Microsoft.Owin.Security.Cookies.CookieApplyRedirectContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.Cookies.CookieAuthenticationOptions,System.String)">
+            <summary>
+            Creates a new context object.
+            </summary>
+            <param name="context">The OWIN request context</param>
+            <param name="options">The cookie middleware options</param>
+            <param name="redirectUri">The initial redirect URI</param>
+        </member>
+        <member name="P:Microsoft.Owin.Security.Cookies.CookieApplyRedirectContext.RedirectUri">
+            <summary>
+            Gets or Sets the URI used for the redirect operation.
+            </summary>
+        </member>
         <member name="T:Microsoft.Owin.Security.Cookies.CookieAuthenticationProvider">
             <summary>
             This default implementation of the ICookieAuthenticationProvider may be used if the 
@@ -269,15 +282,15 @@
             <param name="identity">Initializes Identity property</param>
             <param name="properties">Initializes Extra property</param>
         </member>
-        <member name="P:Microsoft.Owin.Security.Cookies.CookieResponseSignInContext.Request">
+        <member name="M:Microsoft.Owin.Security.Cookies.CookieResponseSignInContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.Cookies.CookieAuthenticationOptions,System.String,System.Security.Claims.ClaimsIdentity,Microsoft.Owin.Security.AuthenticationProperties)">
             <summary>
-            Used to access properties of the current request 
+            Creates a new instance of the context object.
             </summary>
-        </member>
-        <member name="P:Microsoft.Owin.Security.Cookies.CookieResponseSignInContext.Response">
-            <summary>
-            Used to affect aspects of the current response
-            </summary>
+            <param name="context">The OWIN request context</param>
+            <param name="options">The middleware options</param>
+            <param name="authenticationType">Initializes AuthenticationType property</param>
+            <param name="identity">Initializes Identity property</param>
+            <param name="properties">Initializes Extra property</param>
         </member>
         <member name="P:Microsoft.Owin.Security.Cookies.CookieResponseSignInContext.AuthenticationType">
             <summary>
@@ -306,6 +319,14 @@
             Creates a new instance of the context object.
             </summary>
             <param name="ticket">Contains the initial values for identity and extra data</param>
+        </member>
+        <member name="M:Microsoft.Owin.Security.Cookies.CookieValidateIdentityContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.AuthenticationTicket,Microsoft.Owin.Security.Cookies.CookieAuthenticationOptions)">
+            <summary>
+            Creates a new instance of the context object.
+            </summary>
+            <param name="context"></param>
+            <param name="ticket">Contains the initial values for identity and extra data</param>
+            <param name="options"></param>
         </member>
         <member name="M:Microsoft.Owin.Security.Cookies.CookieValidateIdentityContext.ReplaceIdentity(System.Security.Principal.IIdentity)">
             <summary>
