@@ -1,0 +1,5 @@
+c:\users\marti_000\documents\visual studio 2013\Projects\BikeRental\BikeRental.Models\bin\BikeRental.Models.dll
+c:\users\marti_000\documents\visual studio 2013\Projects\BikeRental\BikeRental.Models\bin\BikeRental.Models.pdb
+c:\users\marti_000\documents\visual studio 2013\Projects\BikeRental\BikeRental.Models\obj\Debug\BikeRental.Models.csprojResolveAssemblyReference.cache
+c:\users\marti_000\documents\visual studio 2013\Projects\BikeRental\BikeRental.Models\obj\Debug\BikeRental.Models.dll
+c:\users\marti_000\documents\visual studio 2013\Projects\BikeRental\BikeRental.Models\obj\Debug\BikeRental.Models.pdb
