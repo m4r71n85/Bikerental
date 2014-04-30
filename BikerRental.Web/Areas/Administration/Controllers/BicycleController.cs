@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using BikeRental.Models;
 using BikeRental.Data;
+using System.IO;
+using ImageResizer;
 
 namespace BikerRental.Web.Areas.Administration.Controllers
 {
@@ -39,7 +41,9 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         // GET: /Administration/Bicycle/Create
         public ActionResult Create()
         {
-            return View();
+            Bicycle bicycle = new Bicycle();
+            bicycle.CreateBicyclePrices(5);
+            return View(bicycle);
         }
 
         // POST: /Administration/Bicycle/Create
@@ -47,8 +51,10 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Name,Image,Description,FrontPage,Hidden")] Bicycle bicycle)
+        public ActionResult Create([Bind(Include = "Id,Name,Image,Description,FrontPage,Hidden,Prices")] Bicycle bicycle, HttpPostedFileBase image)
         {
+            bicycle.Image = this.SaveFile(image, ModelState);
+
             if (ModelState.IsValid)
             {
                 db.Bicycles.Add(bicycle);
@@ -57,6 +63,37 @@ namespace BikerRental.Web.Areas.Administration.Controllers
             }
 
             return View(bicycle);
+        }
+        private string SaveFile(HttpPostedFileBase image, ModelStateDictionary ModelState)
+        {
+            if (image != null)
+            {
+                string path = Server.MapPath("~/Content/Images/Raw");
+                
+
+                if (image.ContentLength > 10240 && false)
+                {
+                    ModelState.AddModelError("photo", "The size of the file should not exceed 10 KB");
+                    return null;
+                }
+
+                var supportedTypes = new[] { "jpg", "jpeg", "png" };
+
+                var fileExt = System.IO.Path.GetExtension(image.FileName).Substring(1);
+
+                if (!supportedTypes.Contains(fileExt))
+                {
+                    ModelState.AddModelError("Image", "Invalid type. Only the following types (jpg, jpeg, png) are supported.");
+                    return null;
+                }
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                image.SaveAs(Path.Combine(path, image.FileName));
+                return image.FileName;
+            }
+            return null;
         }
 
         // GET: /Administration/Bicycle/Edit/5
@@ -71,7 +108,6 @@ namespace BikerRental.Web.Areas.Administration.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Prices = bicycle.Prices.ToList();
             return View(bicycle);
         }
 
@@ -80,8 +116,12 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Name,Image,Description,FrontPage,Hidden")] Bicycle bicycle)
+        public ActionResult Edit([Bind(Include = "Id,Name,Image,Description,FrontPage,Hidden,Prices")] Bicycle bicycle, HttpPostedFileBase image)
         {
+            string fileName = this.SaveFile(image, ModelState);
+            if (fileName != null) {
+                bicycle.Image = fileName;
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(bicycle).State = EntityState.Modified;

@@ -57,3 +57,7 @@ c:\users\marti_000\documents\visual studio 2013\Projects\BikeRental\BikerRental.
 c:\users\marti_000\documents\visual studio 2013\Projects\BikeRental\BikerRental.Web\bin\BikeRental.Models.dll
 c:\users\marti_000\documents\visual studio 2013\Projects\BikeRental\BikerRental.Web\bin\BikeRental.Data.pdb
 c:\users\marti_000\documents\visual studio 2013\Projects\BikeRental\BikerRental.Web\bin\BikeRental.Models.pdb
+C:\Users\marti_000\Documents\Visual Studio 2013\Projects\BikeRental\BikerRental.Web\bin\ImageResizer.dll
+C:\Users\marti_000\Documents\Visual Studio 2013\Projects\BikeRental\BikerRental.Web\bin\ImageResizer.xml
+C:\Users\marti_000\Documents\Visual Studio 2013\Projects\BikeRental\BikerRental.Web\bin\ImageResizer.Mvc.dll
+C:\Users\marti_000\Documents\Visual Studio 2013\Projects\BikeRental\BikerRental.Web\bin\ImageResizer.Mvc.xml

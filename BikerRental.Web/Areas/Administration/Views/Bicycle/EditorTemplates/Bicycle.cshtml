@@ -1,0 +1,29 @@
+﻿@model BikeRental.Models.Bicycle
+
+@Html.HiddenFor(x => x.Id)
+
+<p>
+    <label>Name</label>
+    @Html.TextBoxFor(x => x.Name)
+</p>
+
+<p>
+    <label>Image</label>
+    @Html.TextBoxFor(x => x.Image, new { type = "file" })
+</p>
+<p>
+    <label>Description</label>
+    @Html.TextBoxFor(x => x.Description, new { @class = "ckeditor" })
+</p>
+<p>
+    <label>FrontPage</label>
+    @Html.EditorFor(x => x.FrontPage)
+</p>
+<p>
+    <label>Hidden</label>
+    @Html.EditorFor(x => x.Hidden)
+</p>
+<div id="phoneNumbers">
+    @Html.EditorFor(x => x.Prices)
+</div>
+

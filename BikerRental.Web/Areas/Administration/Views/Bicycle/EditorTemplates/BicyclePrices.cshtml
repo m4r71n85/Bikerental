@@ -1,0 +1,12 @@
+﻿@model BikeRental.Models.BicyclePrices
+<div class="phoneNumber">
+    <p>
+        <label>Price</label>
+        @Html.EditorFor(x => x.Duration)
+        @Html.EditorFor(x => x.OnlinePrice)
+        @Html.EditorFor(x => x.OnstatePrice)
+
+
+        @*@Html.HiddenFor(x => x.DeletePhone, new { @class = "mark-for-delete" })*@
+    </p>
+</div>

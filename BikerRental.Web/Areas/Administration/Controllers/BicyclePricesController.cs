@@ -18,7 +18,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         // GET: /Administration/BicyclePrices/
         public ActionResult Index()
         {
-            var bicycleprices = db.BicyclePrices.Include(b => b.Bicycles);
+            var bicycleprices = db.BicyclePrices.Include(b => b.Bicycle);
             return View(bicycleprices.ToList());
         }
 
