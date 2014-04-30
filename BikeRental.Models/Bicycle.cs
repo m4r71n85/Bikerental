@@ -6,9 +6,10 @@
 
     public class Bicycle
     {
+        private ICollection<BicyclePrices> prices;
         public Bicycle()
         {
-            this.Prices = new HashSet<BicyclePrices>();
+            this.prices = new HashSet<BicyclePrices>();
         }
         public int Id { get; set; }
         public string Name { get; set; }
@@ -16,7 +17,10 @@
         public string Description { get; set; }
         public bool FrontPage { get; set; }
         public bool Hidden { get; set; }
-        public virtual IEnumerable<BicyclePrices> Prices { get; set; }
-
+        public virtual ICollection<BicyclePrices> Prices
+        {
+            get { return this.prices; }
+            set { this.prices = value; }
+        }
     }
 }

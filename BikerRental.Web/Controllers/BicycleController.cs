@@ -71,6 +71,7 @@ namespace BikerRental.Web
             {
                 return HttpNotFound();
             }
+            ViewBag.Prices = bicycle.Prices;
             return View(bicycle);
         }
 

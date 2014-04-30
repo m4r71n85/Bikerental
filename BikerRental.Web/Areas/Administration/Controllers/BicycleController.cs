@@ -71,6 +71,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Prices = bicycle.Prices.ToList();
             return View(bicycle);
         }
 
