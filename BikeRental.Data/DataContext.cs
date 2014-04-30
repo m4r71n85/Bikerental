@@ -21,6 +21,5 @@ namespace BikeRental.Data
         public IDbSet<Feedback> Feedbacks { get; set; }
         public IDbSet<Page> Pages { get; set; }
         public IDbSet<Tour> Tours { get; set; }
-        
     }
 }
