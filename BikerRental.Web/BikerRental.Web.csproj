@@ -175,6 +175,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\BicycleController.cs" />
+    <Compile Include="Areas\Administration\Controllers\BicyclePricesController.cs" />
+    <Compile Include="Areas\Administration\Models\BicyclePricesViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\BicycleViewModels.cs" />
     <Compile Include="Controllers\BicyclePricesController.cs" />
     <Compile Include="Controllers\BicycleController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -214,6 +217,11 @@
     <Content Include="Areas\Administration\Views\Bicycle\Details.cshtml" />
     <Content Include="Areas\Administration\Views\Bicycle\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Bicycle\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\BicyclePrices\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\BicyclePrices\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\BicyclePrices\Details.cshtml" />
+    <Content Include="Areas\Administration\Views\BicyclePrices\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\BicyclePrices\Index.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -289,7 +297,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
