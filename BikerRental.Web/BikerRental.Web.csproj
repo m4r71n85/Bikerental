@@ -182,7 +182,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\BicycleController.cs" />
-    <Compile Include="Areas\Administration\Controllers\BicyclePricesController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ToursController.cs" />
     <Compile Include="Areas\Administration\Models\BicyclePricesViewModel.cs" />
     <Compile Include="Areas\Administration\Models\BicycleViewModels.cs" />
     <Content Include="Areas\Administration\Views\Bicycle\EditorTemplates\BicyclePrices.cshtml" />
@@ -219,11 +219,6 @@
     <Content Include="Areas\Administration\Views\Bicycle\Delete.cshtml" />
     <Content Include="Areas\Administration\Views\Bicycle\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Bicycle\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\BicyclePrices\Create.cshtml" />
-    <Content Include="Areas\Administration\Views\BicyclePrices\Delete.cshtml" />
-    <Content Include="Areas\Administration\Views\BicyclePrices\Details.cshtml" />
-    <Content Include="Areas\Administration\Views\BicyclePrices\Edit.cshtml" />
-    <Content Include="Areas\Administration\Views\BicyclePrices\Index.cshtml" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\plugins\scayt\LICENSE.md" />
@@ -237,6 +232,12 @@
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
     <Content Include="Areas\Administration\Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_TopMenuPartial.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\CreateNycTour.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\Details.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\CreateBikeTour.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

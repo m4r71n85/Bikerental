@@ -23,21 +23,6 @@ namespace BikerRental.Web.Areas.Administration.Controllers
             return View(db.Bicycles.ToList());
         }
 
-        // GET: /Administration/Bicycle/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Bicycle bicycle = db.Bicycles.Find(id);
-            if (bicycle == null)
-            {
-                return HttpNotFound();
-            }
-            return View(bicycle);
-        }
-
         // GET: /Administration/Bicycle/Create
         public ActionResult Create()
         {
@@ -50,6 +35,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateInput(false)] 
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Image,Description,FrontPage,Hidden,Prices")] Bicycle bicycle, HttpPostedFileBase image)
         {
@@ -83,6 +69,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateInput(false)] 
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Image,Description,FrontPage,Hidden,Prices")] Bicycle bicycle, HttpPostedFileBase image)
         {
