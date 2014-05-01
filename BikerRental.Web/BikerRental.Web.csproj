@@ -235,6 +235,8 @@
     <Content Include="Scripts\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
     <Content Include="Scripts\ckeditor\samples\sample_posteddata.php" />
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
+    <Content Include="Areas\Administration\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_TopMenuPartial.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

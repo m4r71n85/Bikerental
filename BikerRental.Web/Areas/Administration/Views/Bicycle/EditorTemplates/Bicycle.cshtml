@@ -9,6 +9,12 @@
 
 <p>
     <label>Image</label>
+    @if (Html.ValueFor(x => x.Image).ToString() != "")
+    {
+        var a = Html.ValueFor(x => x.Image);
+        <img src="@Url.Content(string.Format("~/Content/Images/Raw/{0}?h=40", Html.ValueFor(x => x.Image)))" />
+        @Html.HiddenFor(x => x.Image)
+    }
     @Html.TextBoxFor(x => x.Image, new { type = "file" })
 </p>
 <p>

@@ -53,47 +53,15 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Image,Description,FrontPage,Hidden,Prices")] Bicycle bicycle, HttpPostedFileBase image)
         {
-            bicycle.Image = this.SaveFile(image, ModelState);
-
             if (ModelState.IsValid)
             {
+                bicycle.Image = this.SaveFile(image, ModelState);
                 db.Bicycles.Add(bicycle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(bicycle);
-        }
-        private string SaveFile(HttpPostedFileBase image, ModelStateDictionary ModelState)
-        {
-            if (image != null)
-            {
-                string path = Server.MapPath("~/Content/Images/Raw");
-                
-
-                if (image.ContentLength > 10240 && false)
-                {
-                    ModelState.AddModelError("photo", "The size of the file should not exceed 10 KB");
-                    return null;
-                }
-
-                var supportedTypes = new[] { "jpg", "jpeg", "png" };
-
-                var fileExt = System.IO.Path.GetExtension(image.FileName).Substring(1);
-
-                if (!supportedTypes.Contains(fileExt))
-                {
-                    ModelState.AddModelError("Image", "Invalid type. Only the following types (jpg, jpeg, png) are supported.");
-                    return null;
-                }
-                if (!Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path);
-                }
-                image.SaveAs(Path.Combine(path, image.FileName));
-                return image.FileName;
-            }
-            return null;
         }
 
         // GET: /Administration/Bicycle/Edit/5
@@ -120,6 +88,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         {
             string fileName = this.SaveFile(image, ModelState);
             if (fileName != null) {
+                this.DeleteFile(bicycle.Image);
                 bicycle.Image = fileName;
             }
             if (ModelState.IsValid)
@@ -164,6 +133,46 @@ namespace BikerRental.Web.Areas.Administration.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+
+        private void DeleteFile(string fileName)
+        {
+            string path = Server.MapPath("~/Content/Images/Raw");
+            string completePath = Path.Combine(path, fileName);
+            System.IO.File.Delete(completePath);
+        }
+
+        private string SaveFile(HttpPostedFileBase image, ModelStateDictionary ModelState)
+        {
+            if (image != null)
+            {
+                string path = Server.MapPath("~/Content/Images/Raw");
+
+
+                if (image.ContentLength > 10240 && false)
+                {
+                    ModelState.AddModelError("photo", "The size of the file should not exceed 10 KB");
+                    return null;
+                }
+
+                var supportedTypes = new[] { "jpg", "jpeg", "png" };
+
+                var fileExt = System.IO.Path.GetExtension(image.FileName).Substring(1);
+
+                if (!supportedTypes.Contains(fileExt))
+                {
+                    ModelState.AddModelError("Image", "Invalid type. Only the following types (jpg, jpeg, png) are supported.");
+                    return null;
+                }
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                image.SaveAs(Path.Combine(path, image.FileName));
+                return image.FileName;
+            }
+            return null;
         }
     }
 }

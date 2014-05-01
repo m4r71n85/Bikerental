@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            <img src="@Url.Content(string.Format("~/Content/Images/Raw/{0}", item.Image))" />
+            <img src="@Url.Content(string.Format("~/Content/Images/Raw/{0}?h=40", item.Image))" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
