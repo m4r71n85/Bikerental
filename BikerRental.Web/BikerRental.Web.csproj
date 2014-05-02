@@ -181,6 +181,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\BaseController.cs" />
     <Compile Include="Areas\Administration\Controllers\BicycleController.cs" />
     <Compile Include="Areas\Administration\Controllers\ToursController.cs" />
     <Compile Include="Areas\Administration\Models\BicyclePricesViewModel.cs" />
@@ -232,12 +233,16 @@
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
     <Content Include="Areas\Administration\Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_TopMenuPartial.cshtml" />
-    <Content Include="Areas\Administration\Views\Tours\CreateNycTour.cshtml" />
     <Content Include="Areas\Administration\Views\Tours\Delete.cshtml" />
     <Content Include="Areas\Administration\Views\Tours\Details.cshtml" />
     <Content Include="Areas\Administration\Views\Tours\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Tours\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Tours\CreateBikeTour.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\EditorTemplates\Tour.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\CreateNycTour.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\BikeTours.cshtml" />
+    <Content Include="Areas\Administration\Views\Tours\NycTours.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

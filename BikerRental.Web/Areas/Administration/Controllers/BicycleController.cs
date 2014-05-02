@@ -13,7 +13,7 @@ using ImageResizer;
 
 namespace BikerRental.Web.Areas.Administration.Controllers
 {
-    public class BicycleController : Controller
+    public class BicycleController : BaseController
     {
         private DataContext db = new DataContext();
 
@@ -120,46 +120,6 @@ namespace BikerRental.Web.Areas.Administration.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-
-        private void DeleteFile(string fileName)
-        {
-            string path = Server.MapPath("~/Content/Images/Raw");
-            string completePath = Path.Combine(path, fileName);
-            System.IO.File.Delete(completePath);
-        }
-
-        private string SaveFile(HttpPostedFileBase image, ModelStateDictionary ModelState)
-        {
-            if (image != null)
-            {
-                string path = Server.MapPath("~/Content/Images/Raw");
-
-
-                if (image.ContentLength > 10240 && false)
-                {
-                    ModelState.AddModelError("photo", "The size of the file should not exceed 10 KB");
-                    return null;
-                }
-
-                var supportedTypes = new[] { "jpg", "jpeg", "png" };
-
-                var fileExt = System.IO.Path.GetExtension(image.FileName).Substring(1);
-
-                if (!supportedTypes.Contains(fileExt))
-                {
-                    ModelState.AddModelError("Image", "Invalid type. Only the following types (jpg, jpeg, png) are supported.");
-                    return null;
-                }
-                if (!Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path);
-                }
-                image.SaveAs(Path.Combine(path, image.FileName));
-                return image.FileName;
-            }
-            return null;
         }
     }
 }

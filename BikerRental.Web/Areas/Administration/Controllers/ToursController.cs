@@ -11,7 +11,7 @@ using BikeRental.Data;
 
 namespace BikerRental.Web.Areas.Administration.Controllers
 {
-    public class ToursController : Controller
+    public class ToursController : BaseController
     {
         private DataContext db = new DataContext();
 
@@ -19,6 +19,16 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         public ActionResult Index()
         {
             return View(db.Tours.ToList());
+        }
+
+        public ActionResult BikeTours()
+        {
+            return View(db.Tours.Where(x => x.Type == TourType.Bicycle).ToList());
+        }
+
+        public ActionResult NycTours()
+        {
+            return View(db.Tours.Where(x => x.Type == TourType.NYC).ToList());
         }
 
         // GET: /Administration/Tours/CreateBikeTour
@@ -29,23 +39,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
             return View(tour);
         }
 
-        // POST: /Administration/Tours/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CreateBikeTour([Bind(Include = "Id,Type,Name,Image,Description,Duration,Schedules,Address1,Address2,DepartureTime,ContactNumber,Notice,OnlinePrice,OnstatePrice,Enabled,RightPanel,HomePage,FrontPage")] Tour tour)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Tours.Add(tour);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(tour);
-        }
-
+        // GET: /Administration/Tours/CreateNycTour
         public ActionResult CreateNycTour()
         {
             var tour = new Tour();
@@ -53,15 +47,19 @@ namespace BikerRental.Web.Areas.Administration.Controllers
             return View(tour);
         }
 
+
+
         // POST: /Administration/Tours/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateInput(false)] 
         [ValidateAntiForgeryToken]
-        public ActionResult CreateNycTour([Bind(Include = "Id,Type,Name,Image,Description,Duration,Schedules,Address1,Address2,DepartureTime,ContactNumber,Notice,OnlinePrice,OnstatePrice,Enabled,RightPanel,HomePage,FrontPage")] Tour tour)
+        public ActionResult Create([Bind(Include = "Id,Type,Name,Image,Description,Duration,Schedules,Address1,Address2,DepartureTime,ContactNumber,Notice,OnlinePrice,OnstatePrice,Enabled,RightPanel,HomePage,FrontPage")] Tour tour, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
+                tour.Image = this.SaveFile(image, ModelState);
                 db.Tours.Add(tour);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -89,6 +87,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="Id,Type,Name,Image,Description,Duration,Schedules,Address1,Address2,DepartureTime,ContactNumber,Notice,OnlinePrice,OnstatePrice,Enabled,RightPanel,HomePage,FrontPage")] Tour tour)
         {
