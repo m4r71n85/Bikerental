@@ -37,7 +37,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         [HttpPost]
         [ValidateInput(false)] 
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Image,Description,FrontPage,Hidden,Prices")] Bicycle bicycle, HttpPostedFileBase image)
+        public ActionResult Create([Bind(Include = "Name,Image,Description,FrontPage,Hidden,Prices")] Bicycle bicycle, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {

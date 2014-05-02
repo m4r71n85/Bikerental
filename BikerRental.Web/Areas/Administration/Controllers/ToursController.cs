@@ -55,7 +55,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         [HttpPost]
         [ValidateInput(false)] 
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Type,Name,Image,Description,Duration,Schedules,Address1,Address2,DepartureTime,ContactNumber,Notice,OnlinePrice,OnstatePrice,Enabled,RightPanel,HomePage,FrontPage")] Tour tour, HttpPostedFileBase image)
+        public ActionResult Create([Bind(Include = "Type,Name,Image,Description,Duration,Schedules,Address1,Address2,DepartureTime,ContactNumber,Notice,OnlinePrice,OnstatePrice,Enabled,RightPanel,HomePage,FrontPage")] Tour tour, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,14 @@ namespace BikerRental.Web.Areas.Administration.Controllers
             {
                 db.Entry(tour).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (tour.Type == TourType.Bicycle)
+                {
+                    return RedirectToAction("BikeTours");
+                }
+                else
+                {
+                    return RedirectToAction("NycTours");
+                }
             }
             return View(tour);
         }
@@ -123,7 +130,14 @@ namespace BikerRental.Web.Areas.Administration.Controllers
             Tour tour = db.Tours.Find(id);
             db.Tours.Remove(tour);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            if (tour.Type == TourType.Bicycle)
+            {
+                return RedirectToAction("BikeTours");
+            }
+            else
+            {
+                return RedirectToAction("NycTours");
+            }
         }
 
         protected override void Dispose(bool disposing)

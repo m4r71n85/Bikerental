@@ -214,3 +214,7 @@
 /// <reference path="ckeditor/plugins/specialchar/dialogs/lang/zh.js" />
 /// <reference path="ckeditor/samples/plugins/dialog/assets/my_dialog.js" />
 /// <reference path="ckeditor/samples/plugins/htmlwriter/assets/outputforflash/swfobject.js" />
+/// <reference path="jquery-ui-1.10.4.js" />
+/// <reference path="../content/jqueryui.timepicker/jquery-ui-timepicker-addon.js" />
+/// <reference path="../content/enlargeit/enlargeit.js" />
+/// <reference path="../content/tcal.js" />

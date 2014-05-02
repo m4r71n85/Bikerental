@@ -1,0 +1,51 @@
+﻿@model BikeRental.Models.Feedback
+
+@Html.HiddenFor(model => model.Id)
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Title)
+        @Html.ValidationMessageFor(model => model.Title)
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextAreaFor(model => model.Description, new { @rows = 3, @cols = 40 })
+        @Html.ValidationMessageFor(model => model.Description)
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.CreatedAt, new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.CreatedAt)
+        @Html.ValidationMessageFor(model => model.CreatedAt)
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Rating, new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Rating)
+        @Html.ValidationMessageFor(model => model.Rating)
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.PostedBy, new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.PostedBy)
+        @Html.ValidationMessageFor(model => model.PostedBy)
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Enabled, new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Enabled)
+        @Html.ValidationMessageFor(model => model.Enabled)
+    </div>
+</div>

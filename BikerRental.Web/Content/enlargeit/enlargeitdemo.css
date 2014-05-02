@@ -1,0 +1,35 @@
+
+/*body {
+  background-color:#bbbbcc;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:6pt;
+  margin: 0px;
+  padding:0px;
+}
+*/
+ .deskueber {
+  border: none;
+  font-family: Garamond, TimesNewRoman, Times, serif;
+  font-weight: bold;
+  font-size: 20pt;
+  font-variant: small-caps;
+  letter-spacing: 1pt;
+  color: #660000;
+  width:100%;
+}
+
+ .deskklein {
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 10pt;
+  letter-spacing: 0.3pt;
+  color: #331111;
+  text-decoration: none;
+}
+
+.thumbnail { 
+  border-width: 1px; 
+  border-style: solid; 
+  border-color: black; 
+}

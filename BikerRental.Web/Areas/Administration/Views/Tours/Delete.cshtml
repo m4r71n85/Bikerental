@@ -32,7 +32,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image)
+            <img src="@Url.Content(string.Format("~/Content/Images/Raw/{0}?h=40", item.Image))" />
         </dd>
 
         <dt>

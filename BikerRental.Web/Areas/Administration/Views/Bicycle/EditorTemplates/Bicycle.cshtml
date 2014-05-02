@@ -1,4 +1,6 @@
-﻿@model BikeRental.Models.Bicycle
+﻿@using BikerRental.Web.Areas.Administration.Models;
+
+@model BikeRental.Models.Bicycle
 
 @Html.HiddenFor(x => x.Id)
 
@@ -12,7 +14,7 @@
     @if (Html.ValueFor(x => x.Image).ToString() != "")
     {
         var a = Html.ValueFor(x => x.Image);
-        <img src="@Url.Content(string.Format("~/Content/Images/Raw/{0}?h=40", Html.ValueFor(x => x.Image)))" />
+        <img src="@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", Html.ValueFor(x => x.Image), ImageSizes.MEDIUM))" />
         @Html.HiddenFor(x => x.Image)
     }
     @Html.TextBoxFor(x => x.Image, new { type = "file" })

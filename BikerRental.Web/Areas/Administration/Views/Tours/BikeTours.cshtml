@@ -1,7 +1,9 @@
-﻿@model IEnumerable<BikeRental.Models.Tour>
+﻿@using BikerRental.Web.Areas.Administration.Models;
+
+@model IEnumerable<BikeRental.Models.Tour>
 
 @{
-    ViewBag.Title = "Bike Tours";
+    ViewBag.Title = "List Bike Tours";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -35,7 +37,7 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Image)
+            <img src="@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", item.Image, ImageSizes.SMALL))" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Duration)
