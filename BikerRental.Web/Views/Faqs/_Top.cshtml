@@ -1,0 +1,63 @@
+﻿@using BikeRental.Models
+@model List<Faq>
+
+<table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td valign="top" class="box">
+                <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td valign="top" class="blue_top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="100%" valign="top" style="padding-left:10px" class="banner_whtext">Frequently Asked Questions</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td valign="top" align="center">
+                                <table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" align="left" style="padding-left:10px; padding-right:10px">
+                                                @{
+                                                    int counter = 1;
+                                                    foreach (Faq faq in Model)
+                                                    {
+                                                        <a style="text-decoration:none" onclick="hideshow('Panel@(counter)')" href="#" id="pnlLink">
+                                                            <h2 style="font-family:Arial; font-size:12px; color:#006600; text-decoration:none">@faq.Question</h2>
+                                                        </a>
+                                                        <div style="display:none" class="faqanswer" id="Panel@(counter)">
+                                                            <div>
+                                                                <p>@faq.Answer</p>
+                                                            </div>
+                                                        </div>
+                                                        counter++;
+                                                    }
+}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

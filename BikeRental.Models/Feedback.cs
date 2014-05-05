@@ -32,7 +32,9 @@ namespace BikeRental.Models
         public int Rating { get; set; }
         
         [Required]
-        public string PostedBy { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
         public bool Enabled { get; set; }
     }
 }

@@ -38,5 +38,6 @@ namespace BikeRental.Models
         public bool RightPanel { get; set; }
         public bool HomePage { get; set; }
         public bool FrontPage { get; set; }
+        public bool WeeklyDeal { get; set; }
     }
 }

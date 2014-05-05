@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 body{
@@ -15,11 +15,11 @@ margin:0 auto;
 	text-align:center
 	}
 .topbg{
-background:url(../images/front/topbg.png) repeat-x bottom;
+background:url(/Content/Images/Bikerental/Front/topbg.png) repeat-x bottom;
 height:99px
 }
 .topmenu{
-background:url(../images/front/bluemenu.png) repeat-x ;
+background:url(/Content/Images/Bikerental/Front/bluemenu.png) repeat-x ;
 height:35px;}
 
 	.logocover{position:relative}
@@ -43,9 +43,9 @@ height:35px;}
 	text-align:center
 	}
 .leftbg{
-background:url(../images/front/leftbg.png) repeat-y}
+background:url(/Content/Images/Bikerental/Front/leftbg.png) repeat-y}
 .leftbg2{
-background:url(../images/front/leftbottom.png) repeat-x top #c2e8ff; height:292px}
+background:url(/Content/Images/Bikerental/Front/leftbottom.png) repeat-x top #c2e8ff; height:292px}
 .round{
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -59,8 +59,8 @@ background:url(../images/front/leftbottom.png) repeat-x top #c2e8ff; height:292p
 	padding:4px; 
 	padding-left:10px
 	}
-	.reservenow{background-image:url(../images/front/reservenow.png); background-repeat:no-repeat; width:185px; height:34px; cursor:pointer; border:0px solid #FFFFFF}
-.submitbutton{background-image:url(../images/front/submit_bttn.png); background-repeat:no-repeat; width:78px; height:24px; cursor:pointer; border:0px solid #FFFFFF}
+	.reservenow{background-image:url(/Content/Images/Bikerental/Front/reservenow.png); background-repeat:no-repeat; width:185px; height:34px; cursor:pointer; border:0px solid #FFFFFF}
+.submitbutton{background-image:url(/Content/Images/Bikerental/Front/submit_bttn.png); background-repeat:no-repeat; width:78px; height:24px; cursor:pointer; border:0px solid #FFFFFF}
 
 .righttext{font-family:Arial, Helvetica, sans-serif;
 	font-weight: bold;
@@ -71,9 +71,9 @@ background:url(../images/front/leftbottom.png) repeat-x top #c2e8ff; height:292p
 	color:#054388}
 .righttext span{color:#ff0000}
 
-.rightpanel{ background:url(../images/front/bannertop.png) no-repeat; width:249px; height:50px}
+.rightpanel{ background:url(/Content/Images/Bikerental/Front/bannertop.png) no-repeat; width:249px; height:50px}
 
-.footerbg{ background:url(../images/front/footerbg.png) repeat-x; height:111px; }
+.footerbg{ background:url(/Content/Images/Bikerental/Front/footerbg.png) repeat-x; height:111px; }
 	.footertext{font-family:Arial, Helvetica, sans-serif;
 		font-weight: bold;
 		font-size: 11px;
@@ -91,12 +91,12 @@ background:url(../images/front/leftbottom.png) repeat-x top #c2e8ff; height:292p
 /************ new part ****************/
 
 .blue_top{
-	background:url(../images/front/top_bar.png) top center repeat-x;
+	background:url(/Content/Images/Bikerental/Front/top_bar.png) top center repeat-x;
 	height:50px;
 }
 
 .yellow_top{
-	background:url(../images/front/banner_side.png) top center no-repeat;
+	background:url(/Content/Images/Bikerental/Front/banner_side.png) top center no-repeat;
 	height:50px;
 	width:125px;
 }
@@ -207,24 +207,24 @@ background-color:#00438a;
 /*price box*/
 
 .pricebox_top{
-background:url(../images/front/price_box_top.png) top center no-repeat;
+background:url(/Content/Images/Bikerental/Front/price_box_top.png) top center no-repeat;
 height:32px;
 width:149px;
 }
 
 .pricebox_mid{
-background:url(../images/front/price_box_mid.png) top center no-repeat;
+background:url(/Content/Images/Bikerental/Front/price_box_mid.png) top center no-repeat;
 height:32px;
 width:149px;
 }
 
 .pricebox_bar{
-background:url(../images/front/price_box_bar.png) top center repeat-y;
+background:url(/Content/Images/Bikerental/Front/price_box_bar.png) top center repeat-y;
 width:149px;
 }
 
 .pricebox_yellow_bar{
-background:url(../images/front/price_box_yellow_bar.png) top center repeat-y;
+background:url(/Content/Images/Bikerental/Front/price_box_yellow_bar.png) top center repeat-y;
 width:149px;
 }
 
@@ -419,14 +419,14 @@ width:149px;
 }
 
 .tour_pic{
-/*background:url(../images/front/new_york_pic.png) top center no-repeat;*/
+/*background:url(/Content/Images/Bikerental/Front/new_york_pic.png) top center no-repeat;*/
 width:250px;
 height:205px;
 
 }
 
 .tour_base{
-background:url(../images/front/base.png) bottom left no-repeat;
+background:url(/Content/Images/Bikerental/Front/base.png) bottom left no-repeat;
 width:66px;
 height:50px;
 }
@@ -563,7 +563,7 @@ padding:8px 0px;
 line-height:18px;
 }
 .form-send-feedback	{
-	background: url(../images/front/send_bttn.png) no-repeat;
+	background: url(/Content/Images/Bikerental/Front/send_bttn.png) no-repeat;
 	border: none;
 	cursor: pointer;
 	display: block;
@@ -657,7 +657,7 @@ line-height:18px;
 /*navigation*/
 
 .topnav { margin:0; padding:2px 0 1px; height:35px;
-background:url(../images/front/bluemenu.png) repeat-x ;
+background:url(/Content/Images/Bikerental/Front/bluemenu.png) repeat-x ;
 height:25px;
 }
 .topnav ul { list-style:none; padding:0; margin:0; }
@@ -677,14 +677,14 @@ display:block; float:left; padding:0 0; line-height:28px;}
 
 /*Calendar Stylesheet*/
 .tcalInput {
-	background: url('../img/cal.gif') 100% 50% no-repeat;
+	background: url('/Content/Images/Bikerental/Front/cal.gif') 100% 50% no-repeat;
 	padding-right: 20px;
 	cursor: pointer;
 }
 
 /* additional properties for input boxe in activated state, above still applies unless in conflict */
 .tcalActive {
-	background-image: url('../img/no_cal.gif');
+	background-image: url('/Content/Images/Bikerental/Front/no_cal.gif');
 }
 /* container of calendar's pop-up */
 #tcal {
@@ -744,10 +744,10 @@ display:block; float:left; padding:0 0; line-height:28px;}
 	font-weight: bold;
 	white-space: nowrap;
 }
-#tcalPrevYear { background-image: url('../img/prev_year.gif'); }
-#tcalPrevMonth { background-image: url('../img/prev_mon.gif'); }
-#tcalNextMonth { background-image: url('../img/next_mon.gif'); }
-#tcalNextYear { background-image: url('../img/next_year.gif'); }
+#tcalPrevYear { background-image: url('/Content/Images/Bikerental/Front/prev_year.gif'); }
+#tcalPrevMonth { background-image: url('/Content/Images/Bikerental/Front/prev_mon.gif'); }
+#tcalNextMonth { background-image: url('/Content/Images/Bikerental/Front/next_mon.gif'); }
+#tcalNextYear { background-image: url('/Content/Images/Bikerental/Front/next_year.gif'); }
 
 /* table containing week days header and calendar grid */
 #tcalGrid {

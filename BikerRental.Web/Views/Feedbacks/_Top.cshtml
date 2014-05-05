@@ -1,0 +1,114 @@
+﻿<table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td valign="top" class="box">
+                <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td valign="top" class="blue_top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+
+                                            <td width="100%" valign="top" style="padding-left:10px" class="banner_whtext">TELL US WHAT DO YOU THINK</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" class="box">
+
+                <table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td valign="top" class="whtext_exp">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">
+                                <form onsubmit="return tt2();" id="feedback" name="feedback" accept-charset="utf-8" method="post" action="@Url.Action("Create", "Feedbacks")">
+                                    <table width="490" border="0" align="center" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                <td valign="top" align="center">
+                                                    <table width="200" border="0" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td valign="top">
+                                                                    <input type="text" onblur="if(this.value == '') { this.value = 'First Name'; } " onfocus="if(this.value  == 'First Name'){ this.value = ''; } " class="input" value="First Name" id="firstName" name="FirstName">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td valign="top">
+                                                                    <input type="text" onblur="if(this.value == '') { this.value = 'Last Name'; } " onfocus="if(this.value  == 'Last Name'){ this.value = ''; } " class="input" value="Last Name" id="lastName" name="LastName">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td valign="top">
+                                                                    <input type="text" onblur="if(this.value == '') { this.value = 'Email Address'; } " onfocus="if(this.value  == 'Email Address'){ this.value = ''; } " class="input" value="Email Address" id="emailAddress" name="Email">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td valign="top" class="label">Rate Our Services</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td valign="top">
+                                                                    <img title="Rate 1" style="cursor: pointer;" onclick="changeImg(this)" src="http://itechnoweb.com/bikerental/assets/images/ratingstars/star-ps.gif" id="star1">
+                                                                    <img title="Rate 2" style="cursor: pointer;" onclick="changeImg(this)" src="http://itechnoweb.com/bikerental/assets/images/ratingstars/star-ps.gif" id="star2">
+                                                                    <img title="Rate 3" style="cursor: pointer;" onclick="changeImg(this)" src="http://itechnoweb.com/bikerental/assets/images/ratingstars/star-ps.gif" id="star3">
+                                                                    <img title="Rate 4" style="cursor: pointer;" onclick="changeImg(this)" src="http://itechnoweb.com/bikerental/assets/images/ratingstars/star-ps.gif" id="star4">
+                                                                    <img title="Rate 5" style="cursor: pointer;" onclick="changeImg(this)" src="http://itechnoweb.com/bikerental/assets/images/ratingstars/star-ps.gif" id="star5">
+                                                                    <br><div style="float:left; padding-top:3px">Your Rating : </div><div style="float:left">&nbsp;<input type="text" style="width:10px; text-align:left; border:0px" readonly="readonly" id="feedbackRating" value="5" name="Rating"> Stars</div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td valign="top" align="center">
+                                                    <table width="200" border="0" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td valign="top">
+                                                                    <input type="text" name="Title" id="title" value="Title" class="input" onfocus="if(this.value  == 'Title'){ this.value = ''; } " onblur="if(this.value == '') { this.value = 'Title'; } ">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td valign="top">
+                                                                    <!--  <textarea name="comment" id="comment" cols="45" rows="6" class="textarea">
+                                                                     Enter Your Comment
+                                                                     </textarea> -->
+                                                                    <textarea onblur="if(this.value=='')this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value='';" class="textarea" rows="6" cols="45" id="comment" name="Description">Enter Your Comment</textarea>
+
+
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td valign="top" align="right">
+                                                                    <input type="submit" class="form-send-feedback" value="">
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

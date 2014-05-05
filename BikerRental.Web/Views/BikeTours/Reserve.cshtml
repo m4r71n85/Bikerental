@@ -1,0 +1,19 @@
+﻿@using BikeRental.Models
+@using System.Collections
+@{
+    ViewBag.Title = "Bike Tours";
+}
+@section Top {
+    @Html.Partial("_TopReserve", (Tour)ViewBag.tour, new ViewDataDictionary { { "Tours", ViewBag.Tours } })
+}
+@section Middle{
+    @Html.Partial("_Middle")
+}
+
+@section Right{
+    @Html.Partial("_Right")
+}
+
+@section Left{
+    @Html.Partial("_Left")
+}

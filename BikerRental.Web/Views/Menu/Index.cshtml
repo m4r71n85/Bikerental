@@ -1,0 +1,40 @@
+﻿@using BikeRental.Models
+@{
+    var controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
+}
+<ul id="sddm">
+    <li>@Html.ActionLink("HOME", "Index", "Home", null, new { @style = controller=="Home"?"color: #b5dd3e;":"" })</li>
+    <li>
+        @Html.ActionLink("BIKE TOURS", "Index", "BikeTours", null, new { @style = controller == "BikeTours" ? "color: #b5dd3e;" : "", @onmouseover = "mopen('m1')", @onmouseout = "mclosetime()" })
+        <div id="m1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+            @foreach (Tour bikeTour in ViewBag.bikeTours)
+            {
+                @Html.ActionLink(bikeTour.Name, "Reserve", "BikeTours", new { id = bikeTour.Id }, null);
+                
+            }
+        </div>
+    </li>
+    <li>
+        @Html.ActionLink("NYC TOURS", "Index", "NycTours", null, new { @style = controller == "NycTours" ? "color: #b5dd3e;" : "", @onmouseover = "mopen('m2')", @onmouseout = "mclosetime()" })
+        <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+            @foreach (Tour nycTour in ViewBag.nycTours)
+            {
+                @Html.ActionLink("asd", "Reserve", "NycTours", new { id = nycTour.Id }, null);
+
+            }
+        </div>
+    </li>
+    <li>
+        @Html.ActionLink("BIKE RENTALS", "Index", "BikeRental", null, new { @style = controller == "BikeRental" ? "color: #b5dd3e;" : "", @onmouseover = "mopen('m3')", @onmouseout = "mclosetime()" })
+        <div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+            @foreach (Bicycle bike in ViewBag.bikes)
+            {
+                @Html.ActionLink(@bike.Name, "Reserve", "NycTours", new { id = bike.Id }, null);
+
+            }
+        </div>
+    </li>
+    <li>@Html.ActionLink("EXPERIENCE", "Index", "Feedbacks", null, new { @style = controller == "Feedbacks" ? "color: #b5dd3e;" : "" })</li>
+    <li>@Html.ActionLink("FAQ", "Index", "Faqs", null, new { @style = controller == "Faqs" ? "color: #b5dd3e;" : "" })</li>
+    <li>@Html.ActionLink("FIND US", "Index", "Findus", null, new { @style = controller == "Findus" ? "color: #b5dd3e;" : "" })</li>
+</ul>

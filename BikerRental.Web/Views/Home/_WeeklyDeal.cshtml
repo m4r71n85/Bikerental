@@ -1,0 +1,68 @@
+﻿@using BikeRental.Models
+@model Tour
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#00438a">
+    <tr>
+        <td colspan="2">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="56%" align="center" valign="middle" style="padding:5px; text-align:center; color:#ffdb2d;
+                            font-family:Arial, Helvetica, sans-serif; font-weight:bold">
+                        Weekly <br />
+                        Deals
+                    </td>
+                    <td width="44%" style="padding-right:10px">
+                        <a href="http://itechnoweb.com/bikerental/home/showFormWeeklyDeal">
+                            <img src="http://itechnoweb.com/bikerental/assets/images/front/savenow.png" />
+                        </a>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table width="249" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td class="rightpanel">
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="52%" valign="middle" style="color:#FFFFFF; padding-left:10px; font-family:Arial; font-weight:bold; font-size:13px; vertical-align:middle">
+                                    @Model.Name
+                                </td>
+                                <td width="36%" valign="middle" style="color:#FFFFFF; padding-left:10px; font-family:Arial; font-size:10px; vertical-align:middle">
+                                    online<br>
+                                    special
+                                </td>
+                                <td width="12%" valign="middle" align="right" style="color:#FFFFFF; font-family:Arial; font-size:28px; vertical-align:middle; padding-right:7px">$@Convert.ToInt32(Model.OnlinePrice)</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="bottom" class="tour_pic"
+                        style="background-image: url('@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", Model.Image, ImageSizes.FE_LARGE))'); background-position: center;">
+
+
+                        <table width="200" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="tour_base">
+                                    <table width="60" border="0" align="left" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td valign="top" class="tour_text_blue">
+                                                regular<br />price<br />
+                                                <span class="tour_text_blue_1" style=" text-decoration:none; background-image:url(http://itechnoweb.com/bikerental/assets/images/front/linethru.png); background-repeat:no-repeat; background-position:center; vertical-align:middle; padding:0px">$@Convert.ToInt32(Model.OnstatePrice)</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,77 @@
+﻿@using BikeRental.Models
+@model List<Feedback>
+
+<table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td valign="top" class="box">
+                <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td valign="top" class="blue_top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+
+                                            <td width="100%" valign="top" style="padding-left:10px" class="banner_whtext">WHAT OTHERS SAY ABOUT US</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding-top:5px" class="box">
+                <table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td width="125px" valign="top">&nbsp;</td>
+                            <td valign="top">
+                                <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        @foreach (Feedback feedback in Model) { 
+                                        <tr class="d1">
+                                            <td width="33" align="center" style="padding-top:12px;">&nbsp;</td>
+                                            <td valign="top" align="left">
+                                                <table width="510" border="0" align="center" cellspacing="0" cellpadding="0" style="padding:10px">
+                                                    <tbody>
+                                                        <tr><td colspan="2"><b>@feedback.Title</b></td></tr>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                <p>@feedback.Description</p>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+
+                                                            <td width="50%" align="left">
+                                                                @for (int i = 0; i < @feedback.Rating; i++)
+                                                                {
+                                                                    <img border="0" src="http://itechnoweb.com/bikerental/assets/images/ratingstars/star.gif">
+                                                                }
+                                                            </td>
+                                                            <td width="50%" align="left"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td width="33" align="center" style="padding-top:12px;">&nbsp;</td>
+                                        </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td width="125px" valign="top">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

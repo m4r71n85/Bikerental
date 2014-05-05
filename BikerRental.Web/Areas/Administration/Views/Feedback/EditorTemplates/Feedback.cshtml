@@ -35,10 +35,26 @@
 </div>
 
 <div class="form-group">
-    @Html.LabelFor(model => model.PostedBy, new { @class = "control-label col-md-2" })
+    @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md-2" })
     <div class="col-md-10">
-        @Html.EditorFor(model => model.PostedBy)
-        @Html.ValidationMessageFor(model => model.PostedBy)
+        @Html.EditorFor(model => model.FirstName)
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.LastName)
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
     </div>
 </div>
 

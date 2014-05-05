@@ -1,31 +1,113 @@
-﻿@{
+﻿@using BikeRental.Models
+@{
     ViewBag.Title = "Home Page";
 }
+@section Top {
+    <img src="http://itechnoweb.com/bikerental/assets/images/front/home_image_top.png" />
+}
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-</div>
+@section Middle{
+    @Html.Partial("_Middle")
+}
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+@section Bottom{
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:Arial, Helvetica, sans-serif; font-size:12px">
+    <tr>
+        <td style="padding-right:0px; padding-left:0px" valign="top" width="25%">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="background-color:#00438a; padding:3px 0px 3px 10px; text-align:left; text-transform:uppercase; color:#FFFFFF; height:40px">
+                        Central Park Bike Tour Quick Fact Sheet
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:10px">
+                        <div style="overflow:auto; height:150px">
+                            Sed sapien sapien, dictum eu malesuada at, lacinia at mauris. Fusce mi est, sollicitudin sed venenatis at, sagittis at eros. Donec sit amet enim at odio mattis condimentum. Pellentesque non interdum mauris. Praesent varius consequat purus lacinia faucibus. Etiam sodales sapien mi. Integer dapibus consequat est nec sollicitudin. Vivamus id condimentum massa.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="http://itechnoweb.com/bikerental/./assets/images/projectimages/pages/resized/home_pic_4_large.png" width="220px">
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style="padding-right:10px; padding-left:10px" valign="top" width="25%">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#d4f1ff">
+                <tr>
+                    <td style="background-color:#009bee; padding:3px 0px 3px 10px; text-align:left; text-transform:uppercase; color:#FFFFFF; height:40px">
+                        Central Park Bike Rental
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:10px">
+                        <div style="overflow:auto; height:150px">
+                            Our Central Park bike rentals are an affordable, convenient and exciting way to see one of the most important landmarks in New York City. Whether you decide to explore the park&#39;s 843 acres and 47 miles of trails on your own, or take one of our guided tours, we make it simple and easy to get the reliable, fun equipment you need.
+
+                            We offer an all-inclusive rental package to make your experience in the park even better. This includes a map, a helmet, a chain lock, and a basket at no extra charge. At Bike Rental Central Park we have a fleet of over 200 bicycles which includes a full range of sizes and styles so you and your friends and family can enjoy a day on comfort bikes, hybrids, or mountain bikes. We also offer baby seats, baby trailers, and tandem bikes.
+
+                            We are open from 8:00am to 12:00am (midnight) all year, so you can rent your bikes or return them at a time that is most convenient for you. We can also deliver your bikes to many of the major hotels in the surrounding area or you can come in and use the lockers at the location before you get started. We are the largest bike rental company near Central Park, and we serve thousands of customers every year.
+
+                            Call us for more information at 212-664-9600 or 646-853-0403 or save even more money by reserving your bike
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="http://itechnoweb.com/bikerental/./assets/images/projectimages/pages/resized/home_pic_1_large.png" width="220px">
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style="padding-right:10px; padding-left:0px" valign="top" width="25%">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="background-color:#00438a; padding:3px 0px 3px 10px; text-align:left; text-transform:uppercase; color:#FFFFFF; height:40px">
+                        Central Park Bike Delivery
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:10px">
+                        <div style="overflow:auto; height:150px">
+                            Sed sapien sapien, dictum eu malesuada at, lacinia at mauris. Fusce mi est, sollicitudin sed venenatis at, sagittis at eros. Donec sit amet enim at odio mattis condimentum. Pellentesque non interdum mauris. Praesent varius consequat purus lacinia faucibus. Etiam sodales sapien mi. Integer dapibus consequat est nec sollicitudin. Vivamus id condimentum massa.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="http://itechnoweb.com/bikerental/./assets/images/projectimages/pages/resized/home_pic_2_large.png" width="220px">
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td valign="top" width="25%">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="background-color:#00438a; padding:3px 0px 3px 10px; text-align:left; text-transform:uppercase; color:#FFFFFF; height:40px">
+                        Central Park Location
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:10px">
+                        <div style="overflow:auto; height:150px">
+                            Vestibulum posuere rutrum purus nec rutrum. Maecenas lobortis tempor ligula, in faucibus eros viverra ut. Integer blandit, arcu vitae ultrices egestas, nibh orci sagittis magna, eget sodales enim enim aliquet sapien. Fusce
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="http://itechnoweb.com/bikerental/./assets/images/projectimages/pages/resized/home_pic_3_large.png" width="220px">
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+}
+
+@section Right{
+    @Html.Partial("_WeeklyDeal", (Tour)ViewBag.weeklyDeal)
+}

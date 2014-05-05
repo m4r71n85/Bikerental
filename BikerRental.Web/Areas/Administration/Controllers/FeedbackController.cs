@@ -47,7 +47,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Title,Description,CreatedAt,Rating,PostedBy,Enabled")] Feedback feedback)
+        public ActionResult Create([Bind(Include = "Title,Description,CreatedAt,Rating,FirstName,LastName,Email,Enabled")] Feedback feedback)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Title,Description,CreatedAt,Rating,PostedBy,Enabled")] Feedback feedback)
+        public ActionResult Edit([Bind(Include = "Id,Title,Description,CreatedAt,Rating,FirstName,LastName,Email,Enabled")] Feedback feedback)
         {
             if (ModelState.IsValid)
             {

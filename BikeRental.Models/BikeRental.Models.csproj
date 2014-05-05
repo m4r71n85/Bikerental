@@ -61,6 +61,7 @@
     <Compile Include="BicyclePrices.cs" />
     <Compile Include="Faq.cs" />
     <Compile Include="Feedback.cs" />
+    <Compile Include="ImageSizes.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

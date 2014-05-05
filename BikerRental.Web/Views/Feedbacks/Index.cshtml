@@ -1,0 +1,110 @@
+﻿@using BikeRental.Models
+@using System.Collections
+@{
+    ViewBag.Title = "Bike Tours";
+}
+@section Top {
+    @Html.Partial("_Top", (List<Tour>)ViewBag.tours)
+}
+
+@section Middle{
+    @Html.Partial("_Middle", (List<Feedback>)ViewBag.feedbacks)
+}
+
+@section Right{
+    @Html.Partial("_Right")
+}
+
+@section Left{
+    @Html.Partial("_Left")
+}
+
+@section scripts{
+    <script type="text/javascript">
+    function tt2(){
+	    if(document.getElementById('firstName').value=="First Name")
+	    {
+		    alert("First Name Field Left empty");
+		    document.getElementById('firstName').focus();
+		    return false;
+	    }
+	    if(document.getElementById('lastName').value=="Last Name")
+	    {
+		    alert("Last Name Field Left empty");
+		    document.getElementById('lastName').focus();
+		    return false;
+	    }
+	    if(document.getElementById('emailAddress').value=="Email Address")
+	    {
+		    alert("Email Field Left empty");
+		    document.getElementById('emailAddress').focus();
+		    return false;
+	    }
+	    if(validateEmail1(document.getElementById('emailAddress').value)==false)
+	    {
+		    alert("In-Valid Email id");
+		    document.getElementById('emailAddress').focus();
+		    return false;
+	    }
+	    if (document.getElementById('title').value == "Title") {
+	        alert("Title Field Left empty");
+	        document.getElementById('title').focus();
+	        return false;
+	    }
+	    if(document.getElementById('comment').value=="Enter Your Comment")
+	    {
+		    alert("Comment Field Left empty");
+		    document.getElementById('comment').focus();
+		    return false;
+	    }
+
+    }
+    function validateEmail1(email) {
+
+	       var reg = /^([A-Za-z0-9_\-\.])+\@@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	       if(reg.test(email) == false) {
+	          return false;
+	       }
+	       else
+	       {
+		       return true;
+	       }
+	    }
+
+
+    function changeImg(theimg)
+    {
+	    //alert(theimg.src);
+	    if(theimg.id=="star1")
+	    {
+		    document.getElementById('feedbackRating').value= 1;
+	    }
+	    if(theimg.id=="star2")
+	    {
+		    document.getElementById('feedbackRating').value= 2;
+	    }
+	    if(theimg.id=="star3")
+	    {
+		    document.getElementById('feedbackRating').value= 3;
+	    }
+	    if(theimg.id=="star4")
+	    {
+		    document.getElementById('feedbackRating').value= 4;
+	    }
+	    if(theimg.id=="star5")
+	    {
+		    document.getElementById('feedbackRating').value= 5;
+	    }
+
+    }
+    </script>
+}
+
+@section styles{
+<style type="text/css">
+    tr.d1:nth-child(2n+1) {
+        background-color: #D5F1FF;
+        color: black;
+    }
+</style>
+}

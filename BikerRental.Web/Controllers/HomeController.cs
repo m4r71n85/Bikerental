@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BikeRental.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,12 @@ namespace BikerRental.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private DataContext db = new DataContext();
+
         public ActionResult Index()
         {
+            var weeklyDeal = db.Tours.Where(x => x.WeeklyDeal == true).FirstOrDefault();
+            ViewBag.weeklyDeal = weeklyDeal;
             return View();
         }
 

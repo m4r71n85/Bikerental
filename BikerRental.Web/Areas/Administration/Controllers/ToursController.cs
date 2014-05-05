@@ -55,14 +55,21 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         [HttpPost]
         [ValidateInput(false)] 
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Type,Name,Image,Description,Duration,Schedules,Address1,Address2,DepartureTime,ContactNumber,Notice,OnlinePrice,OnstatePrice,Enabled,RightPanel,HomePage,FrontPage")] Tour tour, HttpPostedFileBase image)
+        public ActionResult Create([Bind(Include = "Type,Name,Image,Description,Duration,Schedules,Address1,Address2,DepartureTime,ContactNumber,Notice,OnlinePrice,OnstatePrice,Enabled,RightPanel,HomePage,FrontPage,WeeklyDeal")] Tour tour, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
                 tour.Image = this.SaveFile(image, ModelState);
                 db.Tours.Add(tour);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                if (tour.Type == TourType.Bicycle)
+                {
+                    return RedirectToAction("BikeTours");
+                }
+                else
+                {
+                    return RedirectToAction("NycTours");
+                }
             }
 
             return View(tour);
@@ -89,7 +96,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Type,Name,Image,Description,Duration,Schedules,Address1,Address2,DepartureTime,ContactNumber,Notice,OnlinePrice,OnstatePrice,Enabled,RightPanel,HomePage,FrontPage")] Tour tour)
+        public ActionResult Edit([Bind(Include = "Id,Type,Name,Image,Description,Duration,Schedules,Address1,Address2,DepartureTime,ContactNumber,Notice,OnlinePrice,OnstatePrice,Enabled,RightPanel,HomePage,FrontPage,WeeklyDeal")] Tour tour)
         {
             if (ModelState.IsValid)
             {

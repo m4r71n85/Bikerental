@@ -1,0 +1,64 @@
+﻿@using BikeRental.Models
+@using System.Collections
+@{
+    ViewBag.Title = "Bike Tours";
+}
+@section Top {
+    @Html.Partial("_Top", (List<Tour>)ViewBag.tours)
+}
+
+@section Middle{
+    @Html.Partial("_Middle")
+}
+
+@section Right{
+    @Html.Partial("_Right")
+}
+
+@section Left{
+    @Html.Partial("_Left")
+}
+@section scripts{
+    <script>
+        function tt1() {
+            if (document.getElementById('requesterName').value == "Your Name *") {
+                alert("Name Field Left empty");
+                document.getElementById('requesterName').focus();
+                return false;
+            }
+
+            if (document.getElementById('requesterEmail').value == "Email *") {
+                alert("Email Field Left empty");
+                document.getElementById('requesterEmail').focus();
+                return false;
+            }
+            if (validateEmail(document.getElementById('requesterEmail').value) == false) {
+                alert("In-Valid Email id");
+                document.getElementById('requesterEmail').focus();
+                return false;
+            }
+            if (document.getElementById('requesterSubject').value == "Message Subject *") {
+                alert("Subject Field Left empty");
+                document.getElementById('requesterSubject').focus();
+                return false;
+            }
+
+            if (document.getElementById('requestMessage').value == "Message *") {
+                alert("Message Field Left empty");
+                document.getElementById('requestMessage').focus();
+                return false;
+            }
+
+        }
+    function validateEmail(email) {
+
+        var reg = /^([A-Za-z0-9_\-\.])+\@@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(email) == false) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+}
