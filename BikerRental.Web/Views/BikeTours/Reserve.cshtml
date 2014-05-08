@@ -17,3 +17,64 @@
 @section Left{
     @Html.Partial("_Left")
 }
+
+@section scripts{
+    <script type="text/javascript">
+        $(".choose").live("mouseover", function () {
+            $(".popup").show();
+        });
+
+
+        $(".choose").live("mouseout", function () {
+            $(".popup").hide();
+        });
+
+        $(".popup").live("mouseover", function () {
+            $(this).show();
+        });
+        $(".popup").live("mouseout", function () {
+            $(this).hide();
+        });
+
+        function func1(a) {
+            window.location.href = "http://itechnoweb.com/bikerental/biketours/reserveTour" + "/" + a;
+        }
+    </script>
+}
+
+@section styles{
+    <style type="text/css">
+        .container {
+            position: relative;
+        }
+
+        .choose {
+            height: 50px;
+            border: 0px solid #00CC00;
+            cursor: pointer;
+        }
+
+            .choose:hover {
+            }
+
+        .popup {
+            padding: 2px;
+            background-color: #f5f5f5;
+            position: absolute;
+            top: 50px;
+            left: 5px;
+            width: 330px;
+            display: none;
+            border: 1px solid #999;
+        }
+
+        .hoverit a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .hoverit a:hover {
+            color: #0066CC;
+        }
+    </style>
+}

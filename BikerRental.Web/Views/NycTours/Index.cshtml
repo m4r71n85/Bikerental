@@ -1,14 +1,14 @@
 ﻿@using BikeRental.Models
 @using System.Collections
 @{
-    ViewBag.Title = "Bike Tours";
+    ViewBag.Title = "NYC Tours";
 }
 @section Top {
-    @Html.Partial("_Top", (List<Tour>)ViewBag.tours)
+    @Html.Partial("_TopIndex", (List<Tour>)ViewBag.tours)
 }
 
 @section Middle{
-    @Html.Partial("_Middle")
+    @Html.Partial("_MiddleIndex")
 }
 
 @section Right{

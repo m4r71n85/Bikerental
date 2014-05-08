@@ -78,7 +78,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td width="99px" valign="top" height="156px" align="center" style="background-image: url('@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", tour.Image, ImageSizes.FR_LIST_TOURS))'); background-position: center top; background-repeat: no-repeat">
-                                                                <a href="biketours/reserveTour/21">
+                                                                <a href="@Url.Action("Reserve", "BikeTours", new { id=tour.Id }, null)">
                                                                     <img width="99px" height="156px" src="http://itechnoweb.com/bikerental/assets/images/front/space.png">
                                                                 </a>
                                                             </td>

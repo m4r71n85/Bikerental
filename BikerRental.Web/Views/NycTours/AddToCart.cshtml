@@ -1,0 +1,17 @@
+﻿@using BikeRental.Models
+@using System.Collections
+@{
+    ViewBag.Title = "Bike Tours";
+}
+
+@section Top {
+    @Html.Partial("_TopAddToCart", (List<Tour>)ViewBag.tours)
+}
+
+@section Right{
+    @Html.Partial("_Right")
+}
+
+@section Left{
+    @Html.Partial("_Left")
+}

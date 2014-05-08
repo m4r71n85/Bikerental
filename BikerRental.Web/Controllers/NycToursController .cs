@@ -21,5 +21,21 @@ namespace BikerRental.Web.Controllers
             ViewBag.tours = tours;
             return View();
         }
+
+        public ActionResult Reserve(int id)
+        {
+            List<Tour> tours = db.Tours.Where(x => x.Type == TourType.NYC && x.Id != id).ToList();
+            Tour tour = db.Tours.Where(x => x.Id == id).FirstOrDefault();
+            ViewBag.tours = tours;
+            ViewBag.tour = tour;
+
+            return View();
+        }
+
+        public ActionResult AddToCart(int id)
+        {
+            Tour tour = db.Tours.Where(x => x.Id == id).FirstOrDefault();
+            return View(tour);
+        }
 	}
 }

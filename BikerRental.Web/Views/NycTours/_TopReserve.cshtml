@@ -1,0 +1,200 @@
+﻿@using BikeRental.Models
+@model Tour
+<table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td valign="top" class="box">
+                <table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td valign="top" class="blue_top">
+
+                                <div class="container">
+                                    <div class="popup" style="display: none;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="forum">
+                                            <tbody>
+                                                @foreach (Tour tour in ViewBag.tours)
+                                                {
+                                                    <tr>
+                                                        <td valign="top" style="padding:8px; width:60px">
+                                                            <a href="@Url.Action("Reserve", "NycTours", new { id = tour.Id }, null)">
+                                                                <img style="width:60px;border:1px solid #999999; background-color:#FFFFFF" src="@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", tour.Image, ImageSizes.FE_SMALL))">
+                                                            </a>
+                                                        </td>
+                                                        <td valign="top" class="hoverit" style="padding:8px; text-align:left">
+                                                            <div>
+                                                                <a href="@Url.Action("Reserve", "NycTours", new { id = tour.Id }, null)">
+                                                                    @tour.Name<br>
+                                                                    <div style="padding-top:8px; font-size:11px; font-weight:normal">Duration:@tour.Duration<br>Online price: $@Convert.ToInt32(@tour.OnlinePrice)</div>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                <tr><td style="border-bottom:1px solid #333333; height:2px" colspan="2"></td></tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <table width="380" border="0" cellspacing="0" cellpadding="0" class="choose">
+                                        <tbody>
+                                            <tr>
+                                                <td width="33" align="center" style="padding-top:12px;">
+                                                    <table width="18" border="0" align="center" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center" style="padding-bottom:4px;">
+                                                                    <img width="18" height="9" alt="up" src="http://itechnoweb.com/bikerental/assets/images/front/arrow_up.png">
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center"><img width="18" height="9" alt="down" src="http://itechnoweb.com/bikerental/assets/images/front/arrow_down.png"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td width="295" valign="top" class="banner_whtext">@Model.Name</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </td>
+                            <td width="125px" valign="top" class="yellow_top">
+                                <table width="120" border="0" align="center" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" class="banner_whtext_1">
+                                                online<br>
+                                                special
+                                            </td>
+                                            <td valign="top" class="banner_bluetext_2">$@Convert.ToInt32(@Model.OnlinePrice)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" class="blue_box">
+
+                <table width="500" border="0" align="center" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td width="250" valign="top" align="left">
+                                <table width="100%" border="0" align="left" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top" align="center">
+                                                <table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+                                                    <tbody>
+                                                        <tr>
+
+                                                            <td valign="bottom" style="background-image: url('@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", Model.Image, ImageSizes.FE_LARGE)) '); background-repeat: no-repeat; background-position: center; width: 250px; height: 285px;" class="tour_pic">
+                                                                <table width="200" border="0" cellspacing="0" cellpadding="0">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="tour_base">
+                                                                                <table width="60" border="0" align="left" cellspacing="0" cellpadding="0">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td valign="top" class="tour_text_blue">
+                                                                                                regular<br>price<br>
+                                                                                                <span style=" text-decoration:none; background-image:url(http://itechnoweb.com/bikerental/assets/images/front/linethru.png); background-repeat:no-repeat; background-position:center; vertical-align:middle; padding:0px" class="tour_text_blue_1">$@Model.OnstatePrice</span>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" align="center" style="padding:10px 0px 0px 10px;">
+                                                <table width="230" border="0" align="center" cellspacing="0" cellpadding="0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign="top" align="left">
+                                                                @*<!--<img src="http://itechnoweb.com/bikerental/assets/images/front/facebook_like.png" alt="facebook_like" width="248" height="104" />-->
+                                                                <!-- AddThis Button BEGIN -->
+                                                                <div>
+                                                                    <a fb:like:layout="button_count" class="addthis_button_facebook_like at300b"><div data-ref=".U2fgcmpDLMg.like" class="fb-like fb_iframe_widget" data-layout="button_count" data-show_faces="false" data-action="like" data-width="90" data-font="arial" data-href="http://itechnoweb.com/bikerental/biketours/reserveTour/21" data-send="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=172525162793917&amp;font=arial&amp;href=http%3A%2F%2Fitechnoweb.com%2Fbikerental%2Fbiketours%2FreserveTour%2F21&amp;layout=button_count&amp;locale=en_US&amp;ref=.U2fgcmpDLMg.like&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=90"><span style="vertical-align: bottom; width: 78px; height: 20px;"><iframe width="90px" scrolling="no" height="1000px" frameborder="0" name="f2d66237aef24e" allowtransparency="true" title="fb:like Facebook Social Plugin" style="border: medium none; visibility: visible; width: 78px; height: 20px;" src="http://www.facebook.com/plugins/like.php?action=like&amp;app_id=172525162793917&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FdgdTycPTSRj.js%3Fversion%3D40%23cb%3Df327210c0a22874%26domain%3Ditechnoweb.com%26origin%3Dhttp%253A%252F%252Fitechnoweb.com%252Ff3dee686c161fd2%26relation%3Dparent.parent&amp;font=arial&amp;href=http%3A%2F%2Fitechnoweb.com%2Fbikerental%2Fbiketours%2FreserveTour%2F21&amp;layout=button_count&amp;locale=en_US&amp;ref=.U2fgcmpDLMg.like&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=90" class=""></iframe></span></div></a>
+                                                                </div>
+                                                                <div>
+                                                                    <a class="addthis_button_tweet at300b"><iframe scrolling="no" frameborder="0" id="twitter-widget-0" allowtransparency="true" src="http://platform.twitter.com/widgets/tweet_button.1399101891.html#_=1399316595512&amp;count=horizontal&amp;counturl=http%3A%2F%2Fitechnoweb.com%2Fbikerental%2Fbiketours%2FreserveTour%2F21&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fitechnoweb.com%2Fbikerental%2Fbiketours%2FreserveTour%2F21&amp;size=m&amp;text=Bikerental%20%3A%3A%20Bike%20Tours%3A&amp;url=http%3A%2F%2Fitechnoweb.com%2Fbikerental%2Fbiketours%2FreserveTour%2F21%23.U2fgchrLMvQ.twitter" class="twitter-share-button twitter-tweet-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 109px; height: 20px;"></iframe></a>
+                                                                </div>
+                                                                <div style="margin-top:5px">
+                                                                    <a g:plusone:size="medium" class="addthis_button_google_plusone at300b"><div style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;" id="___plusone_0"><iframe width="100%" scrolling="no" frameborder="0" hspace="0" marginheight="0" marginwidth="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I0_1399316596137" name="I0_1399316596137" src="https://apis.google.com/u/0/_/+1/fastbutton?usegapi=1&amp;size=medium&amp;hl=en-US&amp;origin=http%3A%2F%2Fitechnoweb.com&amp;url=http%3A%2F%2Fitechnoweb.com%2Fbikerental%2Fbiketours%2FreserveTour%2F21&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.vMquq0VrB3A.O%2Fm%3D__features__%2Fam%3DEQ%2Frt%3Dj%2Fd%3D1%2Fz%3Dzcms%2Frs%3DAItRSTMU2jN4kiG7F3gj7X0DgTLSIyHDCA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh&amp;id=I0_1399316596137&amp;parent=http%3A%2F%2Fitechnoweb.com&amp;pfname=&amp;rpctoken=41786902" data-gapiattached="true" title="+1"></iframe></div></a>
+                                                                </div>
+                                                                <script src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=undefined" type="text/javascript"></script><div style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;" id="_atssh"><iframe id="_atssh529" title="AddThis utility frame" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px none; left: 0px; top: 0px;" src="//ct1.addthis.com/static/r07/sh157.html#"></iframe></div>
+                                                                <script type="text/javascript" src="http://ct1.addthis.com/static/r07/core130.js"></script>
+                                                                <!-- AddThis Button END -->*@
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td valign="top" style="padding-left:10px">
+                                <div style="overflow:auto; width:250px; height:300px">
+                                    <table width="230" border="0" align="center" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                <td valign="top" class="tour_text_1">
+                                                    @Html.Raw(Model.Description)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" class="tour_text_2">duration: @Model.Duration</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td valign="top" class="nyctours_nights_2">
+                                                    @Model.Address1 <br />
+                                                    New York NY 10019			<br><br>
+                                                    availability: Daily at 10AM <br>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td valign="top" class="nyctours_nights_4">
+                                                    <span class="nyctours_nights_3">For more information call us at</span><br>@Model.ContactNumber
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center"><span style="text-align:justify; color:#333" class="nyctours_nights_3">.</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center">
+                                                    <a href="http://itechnoweb.com/bikerental/biketours/showFormAddToCart/21">
+                                                        <img width="140" height="33" border="0" title="add_to_cart" src="http://itechnoweb.com/bikerental/assets/images/front/reserve_bttn_2.png">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top" align="center">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

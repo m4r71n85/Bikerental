@@ -186,7 +186,11 @@
     <Compile Include="Areas\Administration\Controllers\FaqController.cs" />
     <Compile Include="Areas\Administration\Controllers\FeedbackController.cs" />
     <Compile Include="Areas\Administration\Controllers\ToursController.cs" />
+    <Compile Include="Controllers\asassaasController.cs" />
+    <Compile Include="Controllers\PrivacyPolicyController.cs" />
+    <Compile Include="Controllers\CancellationPolicyController.cs" />
     <Compile Include="Controllers\BikerentalController.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\FindusController.cs" />
     <Compile Include="Controllers\FeedbacksController.cs" />
     <Compile Include="Controllers\FaqsController.cs" />
@@ -202,7 +206,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\contactMail.cs" />
+    <Compile Include="Models\ContactMail.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -215,13 +219,13 @@
     <Content Include="Views\BikeTours\_TopIndex.cshtml" />
     <Content Include="Views\BikeTours\_Right.cshtml" />
     <Content Include="Views\Shared\_Left.cshtml" />
-    <Content Include="Views\NycTours\_Middle.cshtml" />
+    <Content Include="Views\NycTours\_MiddleIndex.cshtml" />
     <Content Include="Views\NycTours\_Right.cshtml" />
-    <Content Include="Views\NycTours\_Top.cshtml" />
+    <Content Include="Views\NycTours\_TopIndex.cshtml" />
     <Content Include="Views\NycTours\Index.cshtml" />
     <Content Include="Views\Bikerental\_Middle.cshtml" />
     <Content Include="Views\Bikerental\_Right.cshtml" />
-    <Content Include="Views\Bikerental\_Top.cshtml" />
+    <Content Include="Views\Bikerental\_TopIndex.cshtml" />
     <Content Include="Views\Bikerental\Index.cshtml" />
     <Content Include="Views\Feedbacks\_Middle.cshtml" />
     <Content Include="Views\Feedbacks\_Right.cshtml" />
@@ -237,6 +241,29 @@
     <Content Include="Views\BikeTours\Reserve.cshtml" />
     <Content Include="Views\BikeTours\_TopReserve.cshtml" />
     <Content Include="Views\Shared\_Right.cshtml" />
+    <Content Include="Views\NycTours\_TopReserve.cshtml" />
+    <Content Include="Views\NycTours\Reserve.cshtml" />
+    <Content Include="Views\NycTours\_MiddleReserve.cshtml" />
+    <Content Include="Views\Bikerental\Reserve.cshtml" />
+    <Content Include="Views\Bikerental\_TopReserve.cshtml" />
+    <Content Include="Views\AboutUs\_Right.cshtml" />
+    <Content Include="Views\AboutUs\_Top.cshtml" />
+    <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\PrivacyPolicy\_Right.cshtml" />
+    <Content Include="Views\PrivacyPolicy\_Top.cshtml" />
+    <Content Include="Views\PrivacyPolicy\Index.cshtml" />
+    <Content Include="Views\CancellationPolicy\_Right.cshtml" />
+    <Content Include="Views\CancellationPolicy\_Top.cshtml" />
+    <Content Include="Views\CancellationPolicy\Index.cshtml" />
+    <Content Include="Views\NycTours\AddToCart.cshtml" />
+    <Content Include="Views\NycTours\_TopAddToCart.cshtml" />
+    <Content Include="Views\Bikerental\AddToCart.cshtml" />
+    <Content Include="Views\Bikerental\_TopAddToCart.cshtml" />
+    <Content Include="Views\asassaas\Create.cshtml" />
+    <Content Include="Views\asassaas\Delete.cshtml" />
+    <Content Include="Views\asassaas\Details.cshtml" />
+    <Content Include="Views\asassaas\Edit.cshtml" />
+    <Content Include="Views\asassaas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bikerental.css" />
@@ -746,6 +773,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Base\" />
     <Folder Include="Content\Images\Bikerental\" />
+    <Folder Include="Views\ReserveBike\" />
+    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

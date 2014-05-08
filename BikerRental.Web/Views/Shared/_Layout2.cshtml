@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Bikerental :: @ViewBag.Title</title>
+    @*<link rel="shortcut icon" href="@Url.Content("~/Content/Images/Bikerental/favicon.ico")" />*@
     @*@Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")*@
     @Scripts.Render("~/bundles/jquery")
@@ -1825,9 +1826,12 @@ document.onclick = mclose;
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td width="86%" class="footertext" style="padding-left:20px">
-                            <a href="http://itechnoweb.com/bikerental/bikerental/aboutus" class="footertext">About Us</a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://itechnoweb.com/bikerental/bikerental/cancellationpolicy" class="footertext">Cancellation Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="http://itechnoweb.com/bikerental/bikerental/privacypolicy" class="footertext">Privacy Policy</a>
+                            @Html.ActionLink("About Us", "Index", "AboutUs")
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("Cancellation Policy", "Index", "CancellationPolicy")
+                            @*footertext*@
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            @Html.ActionLink("Privacy Policy", "Index", "PrivacyPolicy")
                         </td>
                         <td width="14%" colspan="2" rowspan="3"><img src="http://itechnoweb.com/bikerental/assets/images/front/footerlogo.png" width="89" height="89"></td>
                     </tr>

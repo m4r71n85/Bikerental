@@ -4,7 +4,7 @@
     ViewBag.Title = "Bike Tours";
 }
 @section Top {
-    @Html.Partial("_Top", (List<Tour>)ViewBag.tours)
+    @Html.Partial("_TopIndex", (List<Bicycle>)ViewBag.bikes, new ViewDataDictionary { { "bike", ViewBag.bike } })
 }
 
 @section Middle{
