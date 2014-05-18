@@ -109,5 +109,7 @@
 }
 
 @section Right{
-    @Html.Partial("_WeeklyDeal", (Tour)ViewBag.weeklyDeal)
+    @if((ViewBag.weeklyDeal)!=null){
+        Html.Partial("_WeeklyDeal", (Tour)ViewBag.weeklyDeal);
+    }
 }

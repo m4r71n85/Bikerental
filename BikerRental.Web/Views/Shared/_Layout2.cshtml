@@ -1,4 +1,5 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿@using BikerRental.Web.Helpers;
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
     <meta charset="utf-8" />
@@ -150,7 +151,7 @@ document.onclick = mclose;
                                     </td>
                                     <td width="20%" valign="bottom" align="right" style="padding-right:10px; font-family:Arial; font-size:13px;
                 font-weight:bold; color:#054388">
-                                        Cart (<span id="cartitemcounter"><a href="http://itechnoweb.com/bikerental/cart" style="text-decoration:none">0 items </a></span>)
+                                        Cart (<span id="cartitemcounter"><a href="@Url.Action("Index", "Cart")" style="text-decoration:none">@CartHelper.Quantity() items </a></span>)
                                     </td>
                                     <td width="14%"><img src="http://itechnoweb.com/bikerental/assets/images/front/tripadvisor.png" width="125" height="81" /></td>
                                 </tr>
@@ -219,7 +220,7 @@ document.onclick = mclose;
                                                     //alert(document.reservation.targetDate.value);
                                                     //document.reservation.submit();
                                                     //return false;
-                                                    if(document.reservation.targetDate.value=="Date *")
+                                                    if(document.reservation.targetDate.value=="Date *" || false)
                                                     {
                                                         alert("Date Field Left empty");
                                                         document.reservation.targetDate.focus();
@@ -1481,13 +1482,18 @@ document.onclick = mclose;
                                 <div><img src="http://itechnoweb.com/bikerental/assets/images/front/leftend.png" /></div>
                                 @RenderSection("Left", required: false)
                             </td>
-                            <td colspan="2" class="bluetext" style="padding-top:7px; padding-bottom:5px">The Official Central Park Bike Rental and Tour Company</td>
+                            <td colspan="2" class="bluetext" style="padding-top:7px; padding-bottom:5px; vertical-align:top">
+                                The Official Central Park Bike Rental and Tour Company
+                                @RenderSection("Head", required: false)
+                            </td>
                         </tr>
                         <tr>
                             <td width="520" valign="top">
                                 @RenderSection("Top", required: false)
                             </td>
                             <td width="249" valign="top">
+                                @if (!IsSectionDefined("RightTop"))
+                                {
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                         <td>
@@ -1788,7 +1794,8 @@ document.onclick = mclose;
 
 
                                 </table>
-
+                                }
+                                @RenderSection("RightTop", required: false)
                             </td>
                         </tr>
                         <tr>

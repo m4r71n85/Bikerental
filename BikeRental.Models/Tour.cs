@@ -39,5 +39,7 @@ namespace BikeRental.Models
         public bool HomePage { get; set; }
         public bool FrontPage { get; set; }
         public bool WeeklyDeal { get; set; }
+
+        public virtual List<ReservedTour> ReservedTour { get; set; }
     }
 }

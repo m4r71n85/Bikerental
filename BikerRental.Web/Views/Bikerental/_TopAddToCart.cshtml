@@ -1,7 +1,7 @@
 ﻿@using BikeRental.Models
 @model Bicycle
 
-<form enctype="multipart/form-data" name="tourReservations" accept-charset="utf-8" method="post" action="http://itechnoweb.com/bikerental/bikerental/addToCart/1">
+<form enctype="multipart/form-data" name="tourReservations" accept-charset="utf-8" method="post" action="@Url.Action("AddToCart", "BikeRental")">
     <table width="100%" border="0" cellspacing="5" cellpadding="3" style="padding:10px; border:1px solid #666666; border-bottom:3px solid #666; -webkit-border-radius: 3px;-moz-border-radius: 3px; border-radius: 3px;">
         <tbody>
             <tr>
@@ -97,6 +97,7 @@
                 </td>
                 <td align="left" style="padding-bottom:10px">
                     <input type="hidden" name="BicycleId" value="@Model.Id">
+                    @Html.AntiForgeryToken()
                     <input type="button" onclick="tt2();" style="background-color:#1190de; -webkit-border-radius: 3px;-moz-border-radius: 3px; border-radius: 3px; cursor:pointer; border:1px solid #054388; font-size:16px; font-weight:bold; color:#fff; text-shadow:#333333 1px 1px 3px; padding:6px 12px 6px 12px" value="Add to Cart" name="tourReservation">
                 </td>
             </tr>

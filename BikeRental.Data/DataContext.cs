@@ -13,6 +13,7 @@ namespace BikeRental.Data
     {
         public DataContext() : base("BicycleRentalConnection")
         {
+
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
         }
         public IDbSet<Bicycle> Bicycles { get; set; }
@@ -21,6 +22,7 @@ namespace BikeRental.Data
         public IDbSet<Feedback> Feedbacks { get; set; }
         public IDbSet<Page> Pages { get; set; }
         public IDbSet<Tour> Tours { get; set; }
+        public IDbSet<Cart> Cart { get; set; }
         public IDbSet<ReservedBicycle> ReservedBicycles { get; set; }
         public IDbSet<ReservedTour> ReservedTours { get; set; }
     }

@@ -21,9 +21,9 @@
 <script>
     function tt2() {
 
-        if (document.tourReservations.targetDate.value == "Date *") {
+        if (document.tourReservations.Date.value == "Date *") {
             alert("Date Field Left empty");
-            document.tourReservations.targetDate.focus();
+            document.tourReservations.Date.focus();
             return;
         }
 
@@ -34,41 +34,29 @@
                 return;
             }
         }
-        if (document.tourReservations.male.value == "Male *") {
-            alert("Male Field Left empty");
-            document.tourReservations.male.focus();
-            return;
-        }
-        if (document.getElementById("male").value == "No of Bikes *") {
+        if (document.tourReservations.male.value == "No of Bikes *") {
             alert("No of Bikes Left empty");
             document.tourReservations.male.focus();
             return;
         }
-        if (document.getElementById("rowFemale").style.display != "none") {
-            if (document.tourReservations.female.value == "Female *") {
-                alert("Female Field Left empty");
-                document.tourReservations.female.focus();
-                return;
-            }
-        }
-        if (document.tourReservations.bookingName.value == "Name *") {
+        if (document.tourReservations.Name.value == "Name *") {
             alert("Booking Name Field Left empty");
-            document.tourReservations.bookingName.focus();
+            document.tourReservations.Name.focus();
             return;
         }
-        if (document.tourReservations.bookingEmail.value == "Email Address *") {
+        if (document.tourReservations.Email.value == "Email Address *") {
             alert("Booking Email Field Left empty");
-            document.tourReservations.bookingEmail.focus();
+            document.tourReservations.Email.focus();
             return;
         }
-        if (validateEmail1(document.tourReservations.bookingEmail.value) == false) {
+        if (validateEmail1(document.tourReservations.Email.value) == false) {
             alert("In-Valid Email id");
-            document.tourReservations.bookingEmail.focus();
+            document.tourReservations.Email.focus();
             return false;
         }
-        if (document.tourReservations.bookingPhone.value == "Phone Number *") {
+        if (document.tourReservations.Phone.value == "Phone Number *") {
             alert("Booking Phone Field Left empty");
-            document.tourReservations.bookingPhone.focus();
+            document.tourReservations.Phone.focus();
             return;
         }
         document.tourReservations.submit();

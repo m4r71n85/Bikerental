@@ -7,10 +7,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Helpers;
 using BikerRental.Web.Helpers;
-
+using System.Data.Entity;
+ 
 namespace BikerRental.Web.Controllers
 {
-    public class BikerentalController : Controller
+    public class CartController : Controller
     {
         private DataContext db = new DataContext();
 
@@ -18,6 +19,9 @@ namespace BikerRental.Web.Controllers
         // GET: /Bikerental/
         public ActionResult Index()
         {
+            List<ReservedBicycle> reservedBikes = db.ReservedBicycles.Where(x => x.Cart.SessionId == Session.SessionID).Include(x=>x.Bicycle).ToList();
+
+            ViewBag.reservedBikes = reservedBikes;                  
             return View();
         }
 
@@ -31,7 +35,6 @@ namespace BikerRental.Web.Controllers
             return View();
         }
 
-        [HttpGet]
         public ActionResult AddToCart(int id)
         {
             Bicycle bike = db.Bicycles.Where(x => x.Id == id).FirstOrDefault();
@@ -44,16 +47,16 @@ namespace BikerRental.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                decimal? price = db.BicyclePrices.Where(x => x.BicycleId == reservedbicycle.Id && x.Duration == reservedbicycle.Duration).Select(x => x.OnlinePrice).FirstOrDefault();
+                reservedbicycle.Price = price??0;
                 CartHelper.UserCart.ReservedBicycles.Add(reservedbicycle);
                 CartHelper.SaveChanges();
-
-                //ViewBag.BicycleId = new SelectList(db.Bicycles, "Id", "Name", reservedbicycle.BicycleId);
-                return RedirectToAction("Index", "Cart");
-                    
+                
+                return RedirectToAction("Index");
             }
 
-            return RedirectToAction("Index");
-            
+            ViewBag.BicycleId = new SelectList(db.Bicycles, "Id", "Name", reservedbicycle.BicycleId);
+            return View(reservedbicycle);
         }
 	}
 }

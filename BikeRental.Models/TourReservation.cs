@@ -13,6 +13,7 @@ namespace BikeRental.Models
         public int Male { get; set; }
         public int Female { get; set; }
         public int Children { get; set; }
+        public decimal Price { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }

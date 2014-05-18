@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using BikeRental.Data.Migrations;
+using System.Data.Entity;
+using BikeRental.Data;
 
 namespace BikerRental.Web
 {
@@ -16,6 +19,8 @@ namespace BikerRental.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer<DataContext>
+                (new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
         }
     }
 }

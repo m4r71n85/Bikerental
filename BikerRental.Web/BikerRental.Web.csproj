@@ -187,6 +187,7 @@
     <Compile Include="Areas\Administration\Controllers\FeedbackController.cs" />
     <Compile Include="Areas\Administration\Controllers\ToursController.cs" />
     <Compile Include="Controllers\asassaasController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\PrivacyPolicyController.cs" />
     <Compile Include="Controllers\CancellationPolicyController.cs" />
     <Compile Include="Controllers\BikerentalController.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CartHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContactMail.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -264,6 +266,9 @@
     <Content Include="Views\asassaas\Details.cshtml" />
     <Content Include="Views\asassaas\Edit.cshtml" />
     <Content Include="Views\asassaas\Index.cshtml" />
+    <Content Include="Views\Cart\_Right.cshtml" />
+    <Content Include="Views\Cart\_Head.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bikerental.css" />
@@ -385,6 +390,7 @@
     <Content Include="Areas\Administration\Views\Feedback\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Feedback\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Feedback\EditorTemplates\Feedback.cshtml" />
+    <None Include="Properties\PublishProfiles\Bikerental.pubxml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -772,9 +778,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Base\" />
+    <Folder Include="Areas\Administration\Views\Cart\" />
     <Folder Include="Content\Images\Bikerental\" />
     <Folder Include="Views\ReserveBike\" />
-    <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

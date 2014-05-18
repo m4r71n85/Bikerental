@@ -1,0 +1,74 @@
+﻿@using BikeRental.Models
+@using BikerRental.Web.Helpers;
+@using System.Linq
+@using System.Data.Entity;
+@using BikeRental.Data;
+@model List<ReservedBicycle>
+
+<form accept-charset="utf-8" method="post" action="http://itechnoweb.com/bikerental/cart/update">
+    <table cellspacing="0" cellpadding="6" border="0" style="width:100%; border:1px solid #CCCCCC">
+
+        <tbody>
+            <tr style="background-color:#0086d7; color:#FFFFFF">
+
+                <th width="31%" style="padding-left:10px; text-align:left;">Item </th>
+                <th width="11%">Quantity</th>
+                <!-- <th width="11%">TotalQTY</th> -->
+                <th width="13%" style="text-align:right">Unit Price</th>
+                <th width="12%" style="text-align:right">Sub-Total</th>
+                <th width="11%" align="right">Operation</th>
+            </tr>
+            @{
+                decimal total = 0;
+                foreach (ReservedBicycle bike in Model)
+                {
+                <tr>
+                    <td align="left">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img title="All City Bike Tour" src="http://itechnoweb.com/bikerental/./assets/images/projectimages/tours/resized/cyce_thumb.jpg">
+                                    </td>
+                                    <td valign="top">
+                                        <strong>@bike.Bicycle.Name</strong>
+                                        <p>
+                                            <strong>Duration:</strong> @bike.Duration Hours<br>
+                                            <strong>Tourdate:</strong> @bike.Date<br>
+                                        </p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style="display: none;">
+                        @bike.Quantity
+                    </td>
+                    <td align="center">X @bike.Price<br><input type="text" style="text-align:center" size="5" maxlength="3" value="7" name="1[adultqty]"></td>
+
+                    <td style="text-align:right">$@(bike.Quantity*bike.Price)</td>
+                    <td align="right"><input type="button" onclick="removeitem('e74d075e0ab8b7747a6dbfbcb41ae553','All City Bike Tour')" value="Remove" name="rmitem"></td>
+                </tr>
+                    total += bike.Quantity * bike.Price;
+                }
+            }
+
+
+            <tr style="background-color:#CCCCCC">
+                <td colspan="2"></td>
+                <td align="right"><strong>Total</strong></td>
+                <td align="right">$@total</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p align="right" class="cartbut">
+        <input type="submit" value="Update your Cart" name=""> &nbsp;<input type="button" style="background-color:#990000" onclick="removeitem('all','all item')" value="Remove All" name="rmitem">&nbsp;<input type="button" style="background-color:#006600" onclick="proceed2checkout()" value="Continue" name="chkout">
+    </p>
+
+
+
+    <!--  Body end -->
+</form>

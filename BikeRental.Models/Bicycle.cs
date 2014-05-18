@@ -7,14 +7,18 @@
     public class Bicycle
     {
         private ICollection<BicyclePrices> prices;
+        private ICollection<ReservedBicycle> reservedBicycle;
         public Bicycle()
         {
             this.prices = new HashSet<BicyclePrices>();
+            this.reservedBicycle = new HashSet<ReservedBicycle>();
         }
         public int Id { get; set; }
         
         [Required]
         public string Name { get; set; }
+
+        public string Test { get; set; }
 
         [Required]
         public string Image { get; set; }
@@ -27,6 +31,7 @@
             get { return this.prices; }
             set { this.prices = value; }
         }
+
         public void CreateBicyclePrices(int count = 1)
         {
             for (int i = 0; i < count; i++)
