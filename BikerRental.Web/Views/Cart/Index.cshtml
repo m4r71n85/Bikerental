@@ -30,4 +30,10 @@
         }
     }
 </script>
+
+<script>
+    $('.removeBike').live("click", function () {
+        window.location.href = "@(Url.Action("ExcludeFromCart", "Bikerental"))/" + $(this).data('reservation-id');
+    })
+    </script>
 }

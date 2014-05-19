@@ -35,28 +35,28 @@ namespace BikerRental.Web.Controllers
             return View();
         }
 
-        public ActionResult AddToCart(int id)
-        {
-            Bicycle bike = db.Bicycles.Where(x => x.Id == id).FirstOrDefault();
-            return View(bike);
-        }
+        //public ActionResult AddToCart(int id)
+        //{
+        //    Bicycle bike = db.Bicycles.Where(x => x.Id == id).FirstOrDefault();
+        //    return View(bike);
+        //}
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult AddToCart([Bind(Include = "Date,Duration,Quantity,Name,Email,Phone,BicycleId")] ReservedBicycle reservedbicycle)
-        {
-            if (ModelState.IsValid)
-            {
-                decimal? price = db.BicyclePrices.Where(x => x.BicycleId == reservedbicycle.Id && x.Duration == reservedbicycle.Duration).Select(x => x.OnlinePrice).FirstOrDefault();
-                reservedbicycle.Price = price??0;
-                CartHelper.UserCart.ReservedBicycles.Add(reservedbicycle);
-                CartHelper.SaveChanges();
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult AddToCart([Bind(Include = "Date,Duration,Quantity,Name,Email,Phone,BicycleId")] ReservedBicycle reservedbicycle)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        decimal? price = db.BicyclePrices.Where(x => x.BicycleId == reservedbicycle.Id && x.Duration == reservedbicycle.Duration).Select(x => x.OnlinePrice).FirstOrDefault();
+        //        reservedbicycle.Price = price??0;
+        //        CartHelper.UserCart.ReservedBicycles.Add(reservedbicycle);
+        //        CartHelper.SaveChanges();
                 
-                return RedirectToAction("Index");
-            }
+        //        return RedirectToAction("Index");
+        //    }
 
-            ViewBag.BicycleId = new SelectList(db.Bicycles, "Id", "Name", reservedbicycle.BicycleId);
-            return View(reservedbicycle);
-        }
+        //    ViewBag.BicycleId = new SelectList(db.Bicycles, "Id", "Name", reservedbicycle.BicycleId);
+        //    return View(reservedbicycle);
+        //}
 	}
 }

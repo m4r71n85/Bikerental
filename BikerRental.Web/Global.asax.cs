@@ -20,7 +20,7 @@ namespace BikerRental.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Database.SetInitializer<DataContext>
-                (new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
+            (new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
         }
     }
 }

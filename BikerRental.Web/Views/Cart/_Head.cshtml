@@ -28,7 +28,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img title="All City Bike Tour" src="http://itechnoweb.com/bikerental/./assets/images/projectimages/tours/resized/cyce_thumb.jpg">
+                                        <img src="@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", bike.Bicycle.Image, ImageSizes.SMALL))" />
                                     </td>
                                     <td valign="top">
                                         <strong>@bike.Bicycle.Name</strong>
@@ -45,10 +45,14 @@
                     <td style="display: none;">
                         @bike.Quantity
                     </td>
-                    <td align="center">X @bike.Price<br><input type="text" style="text-align:center" size="5" maxlength="3" value="7" name="1[adultqty]"></td>
+                    <td align="center">X @bike.Price<br>
+                        @bike.Quantity
+                        @*<input type="text" style="text-align:center" size="5" maxlength="3" value="@bike.Quantity" name="1[adultqty]">*@</td>
 
                     <td style="text-align:right">$@(bike.Quantity*bike.Price)</td>
-                    <td align="right"><input type="button" onclick="removeitem('e74d075e0ab8b7747a6dbfbcb41ae553','All City Bike Tour')" value="Remove" name="rmitem"></td>
+                    <td align="right">
+                        <input type="button" value="Remove" data-reservation-id="@bike.Id" class="removeBike">
+                    </td>
                 </tr>
                     total += bike.Quantity * bike.Price;
                 }

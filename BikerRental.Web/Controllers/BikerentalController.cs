@@ -38,12 +38,26 @@ namespace BikerRental.Web.Controllers
             return View(bike);
         }
 
+        [HttpGet]
+        public ActionResult ExcludeFromCart(int id)
+        {
+            ReservedBicycle bike = db.ReservedBicycles.Find(id);
+            if (bike != null) { 
+                db.ReservedBicycles.Remove(bike);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index", "Cart");
+
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddToCart([Bind(Include = "Date,Duration,Quantity,Name,Email,Phone,BicycleId")] ReservedBicycle reservedbicycle)
+        public ActionResult AddBikeToCart([Bind(Include = "Date,Duration,Quantity,Name,Email,Phone,BicycleId")] ReservedBicycle reservedbicycle)
         {
             if (ModelState.IsValid)
             {
+                decimal price = db.BicyclePrices.Where(x => x.BicycleId == reservedbicycle.BicycleId && x.Duration == reservedbicycle.Duration).Select(x => x.OnlinePrice).FirstOrDefault() ?? 0;
+                reservedbicycle.Price = price;
                 CartHelper.UserCart.ReservedBicycles.Add(reservedbicycle);
                 CartHelper.SaveChanges();
 

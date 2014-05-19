@@ -38,13 +38,22 @@ namespace BikerRental.Web.Helpers
             }
         }
         public static void SaveChanges(){
+            HttpContext.Current.Session.Add("init", true);
             Db.SaveChanges();
         }
-        public static int Quantity()
+        public static int? Quantity()
         {
-            int qty = UserCart.ReservedBicycles.Sum(x => x.Quantity);
-            qty += UserCart.Tours.Sum(x=>x.Male + x.Female);
-            
+            int qty = 0;
+            List<ReservedBicycle> reservedBikes = Db.ReservedBicycles.ToList();
+            List<ReservedTour> reservedTours = Db.ReservedTours.ToList();
+            if (reservedBikes != null) {
+                qty += reservedBikes.Sum(x => x.Quantity);
+            }
+            if (reservedTours != null)
+            {
+                qty += reservedTours.Sum(x => x.Male + x.Female);
+            }
+
             return qty;
         }
 
