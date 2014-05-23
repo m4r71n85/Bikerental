@@ -44,6 +44,7 @@ namespace BikerRental.Web.Helpers
         public static int? Quantity()
         {
             int qty = 0;
+            return 0;
             List<ReservedBicycle> reservedBikes = Db.ReservedBicycles.ToList();
             List<ReservedTour> reservedTours = Db.ReservedTours.ToList();
             if (reservedBikes != null) {
