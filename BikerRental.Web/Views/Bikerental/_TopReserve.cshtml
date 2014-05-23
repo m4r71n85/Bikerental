@@ -96,7 +96,7 @@
                                     <tbody>
                                         @foreach (BicyclePrices price in Model.Prices){
                                         <tr>
-                                            <td valign="top" class="bluetext_time">@price.Duration hour</td>
+                                            <td valign="top" class="bluetext_time">@price.Duration</td>
                                         </tr>
                                         }
                                     </tbody>
@@ -108,7 +108,7 @@
                                         @foreach (BicyclePrices price in Model.Prices)
                                         {
                                         <tr>
-                                            <td valign="top" class="bluetext_time">$@price.OnlinePrice</td>
+                                            <td valign="top" class="bluetext_time">$@((int)price.OnlinePrice)</td>
                                         </tr>
                                         }
                                     </tbody>

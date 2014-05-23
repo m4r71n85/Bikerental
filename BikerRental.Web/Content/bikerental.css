@@ -177,9 +177,13 @@ background-color:#00438a;
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	color:#00438a;
-	text-align:center;
-	font-size:14px;
-	line-height:50px;
+	text-align:right;
+	font-size:13px;
+	line-height:27px;
+}
+
+.yellow_box .bluetext_time{
+    text-align: center;
 }
 
 
@@ -588,8 +592,9 @@ line-height:18px;
 
 .divscroll{
 	width:200px;
-	height:220px;
-	overflow:auto;
+	height:240px;
+	overflow-y:auto;
+    overflow-x:hidden;
 }
 
 .top_back{
@@ -622,37 +627,15 @@ line-height:18px;
 	padding:7px 0px;
 }
 
-.viewlarger_div{
+.quick-reserve-quantity{
 	float:right;
 	padding:3px 12px;
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight: bold;
-	color:#fc0000;
 	text-align:center;
 	font-size:12px;
 	text-decoration:none;
 }
-
-
-.viewlarger_div a{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#fc0000;
-	text-align:center;
-	font-size:12px;
-	text-decoration:none;
-}
-
-.viewlarger_div a:hover{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#000000;
-	text-align:center;
-	font-size:12px;
-	text-decoration:none;
-}
-
-
 
 /*navigation*/
 
@@ -807,4 +790,53 @@ display:block; float:left; padding:0 0; line-height:28px;}
 	-moz-border-radius: 3px;
 	border-radius: 3px;}
 	
-/*admin */
+#sddm {
+                        z-index: 3000;
+                    }
+
+                        #sddm li {
+                            font: bold 11px arial;
+                        }
+
+                        #sddm div {
+                            position: absolute;
+                            visibility: hidden;
+                            margin: 30px 0 0 0;
+                            padding: 0;
+                            background: #EAEBD8;
+                            width: 200px;
+                            border: 1px solid #5970B2;
+                            -webkit-border-radius: 10px;
+                            -moz-border-radius: 10px;
+                            border-radius: 10px;
+                            -webkit-box-shadow: #B3B3B3 0px 3px 5px;
+                            -moz-box-shadow: #B3B3B3 0px 3px 5px;
+                            box-shadow: #B3B3B3 0px 3px 5px;
+                            z-index: 2000;
+                        }
+
+                            #sddm div a {
+                                position: relative;
+                                display: block;
+                                margin: 0;
+                                padding: 5px 10px;
+                                width: auto;
+                                white-space: nowrap;
+                                text-align: left;
+                                text-decoration: none;
+                                color: #2875DE;
+                                text-transform: none;
+                                font: 11px arial;
+                                width: 200px;
+                                z-index: 2000;
+                            }
+
+                                #sddm div a:hover {
+                                    color: #333;
+                                    width: 200px;
+                                    z-index: 2000;
+                                }
+
+.xdsoft_datetimepicker .xdsoft_time_box > div > div.xdsoft_disabled{
+    display: none;
+}

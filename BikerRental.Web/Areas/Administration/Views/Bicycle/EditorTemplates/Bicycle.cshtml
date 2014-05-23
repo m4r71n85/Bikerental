@@ -31,7 +31,20 @@
     <label>Hidden</label>
     @Html.EditorFor(x => x.Hidden)
 </p>
-<div id="phoneNumbers">
+<table>
+    <thead>
+        <tr>
+            <th>
+                Duration
+            </th>
+            <th>
+                Online price
+            </th>
+            <th>
+                Onstate price
+            </th>
+        </tr>
+    </thead>
     @Html.EditorFor(x => x.Prices)
-</div>
+</table>
 

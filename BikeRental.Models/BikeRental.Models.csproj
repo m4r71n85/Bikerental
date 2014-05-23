@@ -60,10 +60,12 @@
     <Compile Include="Bicycle.cs" />
     <Compile Include="BicyclePrices.cs" />
     <Compile Include="Cart.cs" />
+    <Compile Include="Durations.cs" />
     <Compile Include="Faq.cs" />
     <Compile Include="Feedback.cs" />
     <Compile Include="ImageSizes.cs" />
     <Compile Include="BikerReservation.cs" />
+    <Compile Include="BikeTour.cs" />
     <Compile Include="TourReservation.cs" />
     <Compile Include="Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

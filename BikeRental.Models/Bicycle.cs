@@ -18,8 +18,6 @@
         [Required]
         public string Name { get; set; }
 
-        public string Test { get; set; }
-
         [Required]
         public string Image { get; set; }
 
@@ -34,9 +32,9 @@
 
         public void CreateBicyclePrices(int count = 1)
         {
-            for (int i = 0; i < count; i++)
+            foreach (string duration in Durations.All())
             {
-                this.prices.Add(new BicyclePrices());
+                this.prices.Add(new BicyclePrices() { Duration = duration });
             }
         }
     }

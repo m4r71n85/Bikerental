@@ -1,5 +1,6 @@
 namespace BikeRental.Data.Migrations
 {
+    using BikeRental.Models;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -17,28 +18,70 @@ namespace BikeRental.Data.Migrations
 
         protected override void Seed(DataContext context)
         {
-            context.Bicycles.Add(new Models.Bicycle()
-            {
-                Description = "test",
-                FrontPage = true,
-                Hidden = true,
-                Image = "test",
-                Name = "test bike",
-                Test  = "Yahoo",
-                Prices = new List<Models.BicyclePrices>()
-            });
-            //  This method will be called after migrating to the latest version.
+            SeedBicycles(context);
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+        private void SeedBicycles(DataContext context)
+        {
+            if (!context.Bicycles.Any()) {
+                
+                context.Bicycles.Add(new Models.Bicycle()
+                {
+                    Name = "Male Bike",
+                    Description = "Adult",
+                    Image = "01.jpg",
+                    Prices = GetPrices()
+                });
+                context.Bicycles.Add(new Models.Bicycle()
+                {
+                    Name = "Female Bike",
+                    Description = "Adult",
+                    Image = "02.jpg",
+                    Prices = GetPrices()
+                });
+                context.Bicycles.Add(new Models.Bicycle()
+                {
+                    Name = "Tandem Bike",
+                    Description = "Bike Built for 2",
+                    Image = "03.jpg",
+                    Prices = GetPrices()
+                });
+                context.Bicycles.Add(new Models.Bicycle()
+                {
+                    Name = "Kids Bike",
+                    Description = "Unisex - Boys & Girls",
+                    Image = "04.jpg",
+                    Prices = GetPrices()
+                });
+                context.Bicycles.Add(new Models.Bicycle()
+                {
+                    Name = "Kids Trailer",
+                    Description = "Tag-a-long",
+                    Image = "05.jpg",
+                    Prices = GetPrices()
+                });
+                context.Bicycles.Add(new Models.Bicycle()
+                {
+                    Name = "Baby Seat",
+                    Description = "12 Months and Older",
+                    Image = "06.jpg",
+                    Prices = GetPrices()
+                });
+
+            }
+        }
+
+        private ICollection<BicyclePrices> GetPrices()
+        {
+            List<BicyclePrices> prices = new List<BicyclePrices>();
+            int counter = 14;
+            foreach (string duration in Durations.All())
+            {
+                prices.Add(new BicyclePrices { Duration = duration, OnlinePrice = counter, OnstatePrice = counter + 6 });
+                counter += 4;
+            }
+
+            return prices;
         }
     }
 }

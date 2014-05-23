@@ -9,7 +9,7 @@ namespace BikeRental.Models
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public int Duration { get; set; }
+        public string Duration { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
         public string Name { get; set; }

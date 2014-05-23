@@ -198,6 +198,8 @@
     <Compile Include="Controllers\NycToursController .cs" />
     <Compile Include="Controllers\BikeToursController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\QuickReservationController.cs" />
+    <Compile Include="ViewModels\TourRentals.cs" />
     <Content Include="Areas\Administration\Views\Bicycle\EditorTemplates\BicyclePrices.cshtml" />
     <None Include="Areas\Administration\Views\Bicycle\EditorTemplates\Bicycle.cshtml" />
     <Compile Include="Areas\Administration\Models\ImageSizes.cs" />
@@ -212,6 +214,14 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Content Include="Scripts\bikerental.js" />
+    <Content Include="Scripts\datetimepicker\jquery.datetimepicker.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jscrollpane\jquery.jscrollpane.min.js" />
+    <Content Include="Scripts\jscrollpane\jquery.mousewheel.js" />
+    <Content Include="Styles\datetimepicker\jquery.datetimepicker.css" />
+    <Content Include="Styles\jquery.jscrollpane.css" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Home\_WeeklyDeal.cshtml" />
     <Content Include="Views\Home\_Middle.cshtml" />
@@ -261,14 +271,10 @@
     <Content Include="Views\NycTours\_TopAddToCart.cshtml" />
     <Content Include="Views\Bikerental\AddToCart.cshtml" />
     <Content Include="Views\Bikerental\_TopAddToCart.cshtml" />
-    <Content Include="Views\asassaas\Create.cshtml" />
-    <Content Include="Views\asassaas\Delete.cshtml" />
-    <Content Include="Views\asassaas\Details.cshtml" />
-    <Content Include="Views\asassaas\Edit.cshtml" />
-    <Content Include="Views\asassaas\Index.cshtml" />
     <Content Include="Views\Cart\_Right.cshtml" />
     <Content Include="Views\Cart\_Head.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\QuickReservation\_BikeRental.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bikerental.css" />

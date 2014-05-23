@@ -27,7 +27,7 @@ namespace BikerRental.Web.Areas.Administration.Controllers
         public ActionResult Create()
         {
             Bicycle bicycle = new Bicycle();
-            bicycle.CreateBicyclePrices(5);
+            bicycle.CreateBicyclePrices(9);
             return View(bicycle);
         }
 
