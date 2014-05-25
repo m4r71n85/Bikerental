@@ -24,23 +24,24 @@ namespace BikeRental.Data.Migrations
 
         private void SeedBicycleTours(DataContext context)
         {
-            //if (!context.BikeTours.Any())
-            //{
-            //    context.BikeTours.Add(new Models.BikeTour()
-            //    {
-            //        Name = "Central Park Bike Tour",
-            //        Address = "Address",
-            //        AllowTimesReservation = "10:00,13:00,16:00",
-            //        ContactNumber = "0123",
-            //        Description = "Description",
-            //        Duration = "24 hours",
-            //        Enabled = true,
-            //        Image = "image.jpg",
-            //        OnlinePrice = 25.00m,
-            //        OnstatePrice = 30.00m,
-            //        RightPanel = true
-            //    });
-            //}
+            if (!context.BikeTours.Any())
+            {
+                context.BikeTours.Add(new Models.BikeTour()
+                {
+                    Name = "Central Park Bike Tour",
+                    Address = "Address",
+                    AllowTimesReservation = "10:00,13:00,16:00",
+                    ContactNumber = "0123",
+                    Description = "Description",
+                    Duration = "24 hours",
+                    Enabled = true,
+                    Image = "image.jpg",
+                    OnlinePrice = 25.00m,
+                    OnstatePrice = 30.00m,
+                    RightPanel = true,
+                    
+                });
+            }
         }
 
         private void SeedBicycles(DataContext context)

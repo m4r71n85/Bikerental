@@ -11,7 +11,6 @@ namespace BikeRental.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        [Required]
         public string AllowWeekdaysReservation { get; set; }
         public string AllowTimesReservation { get; set; }
         public string Image { get; set; }
@@ -28,6 +27,5 @@ namespace BikeRental.Models
         public bool RightPanel { get; set; }
         public bool HomePage { get; set; }
         public bool WeeklyDeal { get; set; }
-        //public virtual List<ReservedTour> ReservedTour { get; set; }
     }
 }

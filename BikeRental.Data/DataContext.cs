@@ -18,6 +18,7 @@ namespace BikeRental.Data
         }
         public IDbSet<Bicycle> Bicycles { get; set; }
         public IDbSet<BicyclePrices> BicyclePrices { get; set; }
+        public IDbSet<BikeTour> BikeTours { get; set; }
         public IDbSet<Faq> Faqs { get; set; }
         public IDbSet<Feedback> Feedbacks { get; set; }
         public IDbSet<Page> Pages { get; set; }
