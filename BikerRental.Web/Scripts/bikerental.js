@@ -1,4 +1,53 @@
-﻿var timeout = 500;
+﻿//Quick reservation
+function styleDateTimePicker() {
+    $('.datetime-picker').datetimepicker('option', 'beforeShowDay');
+
+    $('.datetime-picker').datetimepicker({
+        minDate: 0,
+        minTime: '08:00',
+        maxTime: '19:01',
+        step: 30,
+    });
+}
+
+function styleDateTimePickerAdvanced() {
+    function unavailable(date) {
+        return 'xdsoft_disabled';
+    }
+
+    $('.datetime-picker-advanced').each(function(item){
+        var self = $(this);
+        var allowedTimes = self.data('allow-times').split(',');
+        allowedTimes = allowedTimes[0] == "" ? [] : allowedTimes;
+        var allowedWeekdays = self.data('allow-weekdays').split(',');
+        allowedWeekdays = allowedWeekdays[0] == "" ? ['1', '2', '3', '4', '5', '6', '7'] : allowedWeekdays;
+        console.log(allowedWeekdays);
+        self.datetimepicker({
+            minDate: 0,
+            allowTimes: allowedTimes,
+            beforeShowDay: function (date) {
+                if (allowedWeekdays.indexOf((date.getDay() + 1).toString()) == -1) {
+                    return 'xdsoft_disabled';
+                }
+                return;
+            }
+        });
+    });
+}
+
+
+function styleScroller() {
+    $('.scroll-pane').jScrollPane();
+}
+
+function chooseTourOrRentalSuccess() {
+    styleScroller();
+    styleDateTimePicker();
+    styleDateTimePickerAdvanced();
+}
+//END Quick reservation
+
+var timeout = 500;
 var closetimer = 0;
 var ddmenuitem = 0;
 

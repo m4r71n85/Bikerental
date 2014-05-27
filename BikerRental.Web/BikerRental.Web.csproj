@@ -186,7 +186,6 @@
     <Compile Include="Areas\Administration\Controllers\FaqController.cs" />
     <Compile Include="Areas\Administration\Controllers\FeedbackController.cs" />
     <Compile Include="Areas\Administration\Controllers\ToursController.cs" />
-    <Compile Include="Controllers\asassaasController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\PrivacyPolicyController.cs" />
     <Compile Include="Controllers\CancellationPolicyController.cs" />
@@ -275,6 +274,7 @@
     <Content Include="Views\Cart\_Head.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\QuickReservation\_BikeRental.cshtml" />
+    <Content Include="Views\QuickReservation\_BikeTours.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bikerental.css" />

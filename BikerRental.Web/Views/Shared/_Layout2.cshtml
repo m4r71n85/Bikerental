@@ -12,7 +12,6 @@
     <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
     <link href="~/Content/bikerental.css" rel="stylesheet" />
     <script src="~/Content/enlargeit/enlargeit.js"></script>
-    <script src="~/Scripts/bikerental.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <link href="~/Content/enlargeit/enlargeitdemo.css" rel="stylesheet" />
     <link href="~/Styles/datetimepicker/jquery.datetimepicker.css" rel="stylesheet" />
@@ -20,6 +19,7 @@
     <link href="~/Styles/jquery.jscrollpane.css" rel="stylesheet" />
     <script src="~/Scripts/jscrollpane/jquery.jscrollpane.min.js"></script>
     <script src="~/Scripts/jscrollpane/jquery.mousewheel.js"></script>
+    <script src="~/Scripts/bikerental.js"></script>
 </head>
 <body>
     <table width="1009" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -79,16 +79,16 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            @using (Ajax.BeginForm("ChooseTourOrRental", "QuickReservation", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "reservation-details", OnSuccess="styleScroller" }))
+                                                            @using (Ajax.BeginForm("ChooseTourOrRental", "QuickReservation", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "reservation-details", OnSuccess = "chooseTourOrRentalSuccess" }))
                                                             {
-                                                                    <select name="tourOrRental" id="tourOrRental" style="width: 200px" class="round" onchange="$(this.form).submit();">
-                                                                        <option value="0" selected="selected">Choose Tour or Rental *</option>
-                                                                        <option value='@TourOrRental.BikeRental'>Bike Rental</option>
-                                                                        <option value='@TourOrRental.BikeTour'>Bike Tour</option>
-                                                                        <option value='@TourOrRental.DoubleDeckerBusTour'>Double Decker Bus Tour</option>
-                                                                        <option value='@TourOrRental.Cruise'>Cruise</option>
-                                                                        <option value='@TourOrRental.Packages'>Packages</option>
-                                                                    </select>
+                                                                <select name="tourOrRental" id="tourOrRental" style="width: 200px" class="round" onchange="$(this.form).submit();" autocomplete="off">
+                                                                    <option value="0" selected="selected">Choose Tour or Rental *</option>
+                                                                    <option value='@TourOrRental.BikeRental'>Bike Rental</option>
+                                                                    <option value='@TourOrRental.BikeTour'>Bike Tour</option>
+                                                                    <option value='@TourOrRental.DoubleDeckerBusTour'>Double Decker Bus Tour</option>
+                                                                    <option value='@TourOrRental.Cruise'>Cruise</option>
+                                                                    <option value='@TourOrRental.Packages'>Packages</option>
+                                                                </select>
                                                             }
                                                         </td>
                                                     </tr>
@@ -474,31 +474,5 @@
     @RenderBody()
     @RenderSection("scripts", required: false)
     @RenderSection("styles", required: false)
-    <script>
-        function styleScroller() {
-            function unavailable(date) {
-                return [false, ""];
-            }
-            $('.scroll-pane').jScrollPane();
-            $('.datetime-picker').datetimepicker('option', 'beforeShowDay', unavailable);
-
-            $('.datetime-picker').datetimepicker({
-                minDate: 0,
-                minTime: '08:00',
-                maxTime: '19:01',
-                step: 30,
-                hours12: true,
-                beforeShowDay: function (date) {
-                    @for (int i = 0; i < 1; i++)
-			        {
-			            @:return 'xdsoft_disabled';
-			        }
-                    
-                }
-            });
-        }
-
-
-    </script>
 </body>
 </html>

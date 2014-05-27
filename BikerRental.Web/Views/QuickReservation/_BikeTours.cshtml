@@ -1,0 +1,164 @@
+﻿@using BikeRental.Models
+@model List<BikeTour>
+<form action="http://itechnoweb.com/bikerental/bike/reserveBike" method="post" accept-charset="utf-8" name="reservation" enctype="multipart/form-data">
+    <table width="100%" border="0" cellspacing="0" cellpadding="3" style="padding:10px;">
+        <tr>
+            <td>
+                <input name="targetDate" class="datetime-picker" id="datepicker" type="text" class="tcal"
+                       style="-webkit-border-radius: 3px;
+	                    -moz-border-radius: 3px;
+	                    border-radius: 3px;
+	                    background-color:#FFFFFF;
+	                    border:1px solid #FFFFFF;
+	                    width:176px;
+                        font-family:Arial;
+	                    font-size:12px;
+	                    color:#054388;
+	                    padding:4px;
+	                    padding-left:14px;
+	                    z-index: 100; "
+                        value="Date *"
+                        onfocus="if(this.value  == 'Date *'){ this.value = ''; } "
+                        onblur="if(this.value == '') { this.value = 'Date *'; } " />
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <select name="duration" id="duration" style="width: 200px" class="round">
+                    <option value="">Duration *</option>
+                    @{ int count = 0; }
+                    @foreach (string duration in Durations.All())
+                    {
+                        <option value="@count">@duration</option>
+                        count++;
+                    }
+                </select>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center" class="bluetext" style="font-size:11px">EQUIPMENT</td>
+        </tr>
+
+
+
+
+        <!--  Start of left panel bike rental image scroll part -->
+        <tr id="bikerentalscroller">
+            <td align="center" style="padding:0px;">
+                <table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td valign="top">
+                            <table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="top">
+
+                                        <div class="divscroll scroll-pane" id="equipments">
+
+                                            <table width="185" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                @foreach (BikeTour bikeTour in Model)
+                                                {
+                                                    <tr>
+                                                        <td valign="top">
+
+                                                            <table width="185" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td valign="top" class="top_back">
+                                                                        <table width="180" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                            <tr>
+                                                                                <td width="28" align="center" valign="top">
+                                                                                    <input type="checkbox" name="bikeId[]" value="@bikeTour.Id" />
+                                                                                </td>
+                                                                                <td width="142" valign="top" class="top_back_heading">@bikeTour.Name</td>
+                                                                            </tr>
+                                                                        </table>
+
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" valign="top" style="background-color:#FFFFFF">
+                                                                        <div class="quick-reserve-quantity">
+                                                                            Starting Time
+                                                                            <input type="text" class="datetime-picker-advanced"
+                                                                                   data-allow-times="@bikeTour.AllowTimesReservation"
+                                                                                   data-allow-weekdays="@bikeTour.AllowWeekdaysReservation"/>
+                                                                        </div>
+                                                                        <img src='@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", bikeTour.Image, ImageSizes.FR_QUICK_RESERVE))'
+                                                                             onclick="enlarge(this);" longdesc="http://itechnoweb.com/bikerental/./assets/images/projectimages/bikes/resized/1349530260_444287850_1-Pictures-of--Hercules-Roadeo-24-Gears-Cycle_large.jpg"
+                                                                             class="thumbnail" alt="@bikeTour.Name" width="170" style="border:0px" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" class="bottom_back">
+                                                                        <table width="180" border="0" align="center" cellpadding="2" cellspacing="2">
+                                                                            <tr>
+                                                                                @*@{
+                                                                                    count = 0;
+                                                                                    int[] showPrices = new int[] { 1, 3, 5, 7, 8, 9 };
+                                                                                }
+                                                                                @foreach (BicyclePrices price in bike.Prices)
+                                                                                {
+                                                                                    count++;
+                                                                                    if (!showPrices.Contains(count)) { continue; }
+
+                                                                                    <td align="center" valign="bottom" class="bottom_back_text">
+                                                                                        @(price.Duration)<br />$@((int)price.OnlinePrice)
+                                                                                    </td>
+                                                                                }*@
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!--  End of left panel bike rental image scroll part -->
+
+        <tr>
+            <td>
+                <input name="bookingName" type="text" class="round" value="First Name *"
+                       onfocus="if (this.value == 'First Name *') { this.value = ''; } "
+                       onblur="if (this.value == '') { this.value = 'First Name *'; } " />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="bookingName" type="text" class="round" value="Last Name *"
+                       onfocus="if (this.value == 'Last Name *') { this.value = ''; } "
+                       onblur="if (this.value == '') { this.value = 'Last Name *'; } " />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="bookingEmail" type="text" class="round" value="Email Address *"
+                       onfocus="if(this.value  == 'Email Address *'){ this.value = ''; } "
+                       onblur="if(this.value == '') { this.value = 'Email Address *'; } " />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="bookingPhone" type="text" class="round" value="Phone Number *"
+                       onfocus="if(this.value  == 'Phone Number *'){ this.value = ''; } "
+                       onblur="if(this.value == '') { this.value = 'Phone Number *'; } " />
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding-bottom:10px"><input name="quickReservation" type="button" value="" class="reservenow" onclick=tt(); /></td>
+        </tr>
+    </table>
+    <input type="hidden" id="InterestedType" name="InterestedType" value="sdsd" />
+</form>
