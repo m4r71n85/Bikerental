@@ -275,6 +275,7 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\QuickReservation\_BikeRental.cshtml" />
     <Content Include="Views\QuickReservation\_BikeTours.cshtml" />
+    <Content Include="Views\QuickReservation\_BusTours.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bikerental.css" />

@@ -23,10 +23,11 @@ namespace BikerRental.Web.QuickReservation
                     List<Bicycle> bikes = db.Bicycles.ToList();
                     return PartialView("_BikeRental", bikes);
                 case TourOrRental.BikeTour:
-                    List<BikeTour> tours = db.BikeTours.ToList();
-                    return PartialView("_BikeTours", tours);
+                    List<BikeTour> bikeTours = db.BikeTours.ToList();
+                    return PartialView("_BikeTours", bikeTours);
                 case TourOrRental.DoubleDeckerBusTour:
-                    break;
+                    List<DoubleDeckerBusTour> busTours = db.BusTours.ToList();
+                    return PartialView("_BusTours", busTours);
                 case TourOrRental.Cruise:
                     break;
                 case TourOrRental.Packages:

@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Bicycle.cs" />
     <Compile Include="BicyclePrices.cs" />
+    <Compile Include="DoubleDeckerBusTour.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="Durations.cs" />
     <Compile Include="Faq.cs" />

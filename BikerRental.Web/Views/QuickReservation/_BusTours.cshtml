@@ -1,0 +1,124 @@
+﻿@using BikeRental.Models
+@model List<DoubleDeckerBusTour>
+<form action="http://itechnoweb.com/bikerental/bike/reserveBike" method="post" accept-charset="utf-8" name="reservation" enctype="multipart/form-data">
+    <table width="100%" border="0" cellspacing="0" cellpadding="3" style="padding:10px;">
+
+        <tr>
+            <td align="center" class="bluetext" style="font-size:11px">DESTINATIONS</td>
+        </tr>
+
+
+
+
+        <!--  Start of left panel bike rental image scroll part -->
+        <tr id="bikerentalscroller">
+            <td align="center" style="padding:0px;">
+                <table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td valign="top">
+                            <table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="top">
+
+                                        <div class="divscroll scroll-pane" id="equipments">
+
+                                            <table width="185" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                @foreach (DoubleDeckerBusTour busTour in Model)
+                                                {
+                                                    <tr>
+                                                        <td valign="top">
+
+                                                            <table width="185" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td valign="top" class="top_back">
+                                                                        <table width="180" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                            <tr>
+                                                                                <td width="28" align="center" valign="top">
+                                                                                    <input type="checkbox" name="bikeId[]" value="@busTour.Id" />
+                                                                                </td>
+                                                                                <td width="142" valign="top" class="top_back_heading">@busTour.Name</td>
+                                                                            </tr>
+                                                                        </table>
+
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" valign="top" style="background-color:#FFFFFF">
+                                                                        
+                                                                        <img src='@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", busTour.Image, ImageSizes.FR_QUICK_RESERVE))'
+                                                                             onclick="enlarge(this);" longdesc="http://itechnoweb.com/bikerental/./assets/images/projectimages/bikes/resized/1349530260_444287850_1-Pictures-of--Hercules-Roadeo-24-Gears-Cycle_large.jpg"
+                                                                             class="thumbnail" alt="@busTour.Name" width="185" style="border:0px" />
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" class="bottom_back">
+                                                                        <table width="185" border="0" align="center" cellpadding="2" cellspacing="2" style="margin-top:-2px">
+                                                                            <tr>
+                                                                                <td align="center" valign="bottom" class="bottom_back_text">
+                                                                                    @busTour.Duration<br />$@((int)(busTour.OnlinePrice))
+                                                                                </td>
+                                                                                <td align="center" valign="bottom" class="bottom_back_text">
+                                                                                    <div class="quick-reserve-quantity">
+                                                                                        Starting Time
+                                                                                        <input type="text" class="datetime-picker-advanced"
+                                                                                               data-allow-times="@busTour.AllowTimesReservation"
+                                                                                               data-allow-weekdays="@busTour.AllowWeekdaysReservation"
+                                                                                               style="width:100px" />
+                                                                                    </div>
+                                                                                </td>
+
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!--  End of left panel bike rental image scroll part -->
+
+        <tr>
+            <td>
+                <input name="bookingName" type="text" class="round" value="First Name *"
+                       onfocus="if (this.value == 'First Name *') { this.value = ''; } "
+                       onblur="if (this.value == '') { this.value = 'First Name *'; } " />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="bookingName" type="text" class="round" value="Last Name *"
+                       onfocus="if (this.value == 'Last Name *') { this.value = ''; } "
+                       onblur="if (this.value == '') { this.value = 'Last Name *'; } " />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="bookingEmail" type="text" class="round" value="Email Address *"
+                       onfocus="if(this.value  == 'Email Address *'){ this.value = ''; } "
+                       onblur="if(this.value == '') { this.value = 'Email Address *'; } " />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="bookingPhone" type="text" class="round" value="Phone Number *"
+                       onfocus="if(this.value  == 'Phone Number *'){ this.value = ''; } "
+                       onblur="if(this.value == '') { this.value = 'Phone Number *'; } " />
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="padding-bottom:10px"><input name="quickReservation" type="button" value="" class="reservenow" onclick=tt(); /></td>
+        </tr>
+    </table>
+    <input type="hidden" id="InterestedType" name="InterestedType" value="sdsd" />
+</form>

@@ -20,6 +20,84 @@ namespace BikeRental.Data.Migrations
         {
             SeedBicycles(context);
             SeedBicycleTours(context);
+            SeedBusTours(context);
+        }
+
+        private void SeedBusTours(DataContext context)
+        {
+            if (!context.BusTours.Any())
+            {
+                context.BusTours.Add(new Models.DoubleDeckerBusTour()
+                {
+                    Name = "Downtown Bus Tour",
+                    Address = "Address",
+                    AllowTimesReservation = "10:00,13:00,16:00",
+                    ContactNumber = "0123",
+                    Description = "Description",
+                    Duration = "10 hours",
+                    Enabled = true,
+                    Image = "image.jpg",
+                    OnlinePrice = 25.00m,
+                    OnstatePrice = 30.00m,
+                    RightPanel = true,
+                });
+                context.BusTours.Add(new Models.DoubleDeckerBusTour()
+                {
+                    Name = "Uptown Bus Tour",
+                    Address = "Address",
+                    AllowTimesReservation = "10:00,13:00,16:00",
+                    ContactNumber = "0123",
+                    Description = "Description",
+                    Duration = "10 hours",
+                    Enabled = true,
+                    Image = "image.jpg",
+                    OnlinePrice = 25.00m,
+                    OnstatePrice = 30.00m,
+                    RightPanel = true,
+                });
+                context.BusTours.Add(new Models.DoubleDeckerBusTour()
+                {
+                    Name = "Night Bus Tour",
+                    Address = "Address",
+                    AllowTimesReservation = "10:00,13:00,16:00",
+                    ContactNumber = "0123",
+                    Description = "Description",
+                    Duration = "10 hours",
+                    Enabled = true,
+                    Image = "image.jpg",
+                    OnlinePrice = 25.00m,
+                    OnstatePrice = 30.00m,
+                    RightPanel = true,
+                });
+                context.BusTours.Add(new Models.DoubleDeckerBusTour()
+                {
+                    Name = "Brooklyn Bus Tour",
+                    Address = "Address",
+                    AllowTimesReservation = "10:00,13:00,16:00",
+                    ContactNumber = "0123",
+                    Description = "Description",
+                    Duration = "10 hours",
+                    Enabled = true,
+                    Image = "image.jpg",
+                    OnlinePrice = 25.00m,
+                    OnstatePrice = 30.00m,
+                    RightPanel = true,
+                });
+                context.BusTours.Add(new Models.DoubleDeckerBusTour()
+                {
+                    Name = "All City Bus Tour",
+                    Address = "Address",
+                    AllowTimesReservation = "10:00,13:00,16:00",
+                    ContactNumber = "0123",
+                    Description = "Description",
+                    Duration = "72 hours",
+                    Enabled = true,
+                    Image = "image.jpg",
+                    OnlinePrice = 25.00m,
+                    OnstatePrice = 30.00m,
+                    RightPanel = true,
+                });
+            }
         }
 
         private void SeedBicycleTours(DataContext context)
