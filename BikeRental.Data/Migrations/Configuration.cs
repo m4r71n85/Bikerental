@@ -33,13 +33,74 @@ namespace BikeRental.Data.Migrations
                     AllowTimesReservation = "10:00,13:00,16:00",
                     ContactNumber = "0123",
                     Description = "Description",
-                    Duration = "24 hours",
+                    Duration = "10 hours",
                     Enabled = true,
                     Image = "image.jpg",
                     OnlinePrice = 25.00m,
                     OnstatePrice = 30.00m,
                     RightPanel = true,
                     
+                });
+                context.BikeTours.Add(new Models.BikeTour()
+                {
+                    Name = "Brooklyn Bike Tour",
+                    Address = "Address",
+                    AllowTimesReservation = "14:00",
+                    ContactNumber = "0123",
+                    Description = "Description",
+                    Duration = "24 hours",
+                    Enabled = true,
+                    Image = "image.jpg",
+                    OnlinePrice = 25.00m,
+                    OnstatePrice = 30.00m,
+                    RightPanel = true,
+
+                });
+                context.BikeTours.Add(new Models.BikeTour()
+                {
+                    Name = "New York at Night Bike Tour",
+                    Address = "Address",
+                    AllowTimesReservation = "19:00",
+                    ContactNumber = "0123",
+                    Description = "Description",
+                    Duration = "8 hours",
+                    Enabled = true,
+                    Image = "image.jpg",
+                    OnlinePrice = 25.00m,
+                    OnstatePrice = 30.00m,
+                    RightPanel = true,
+
+                });
+                context.BikeTours.Add(new Models.BikeTour()
+                {
+                    Name = "All City Bike Tour",
+                    Address = "Address",
+                    AllowTimesReservation = "10:00",
+                    ContactNumber = "0123",
+                    Description = "Description",
+                    Duration = "12 hours",
+                    Enabled = true,
+                    Image = "image.jpg",
+                    OnlinePrice = 25.00m,
+                    OnstatePrice = 30.00m,
+                    RightPanel = true,
+
+                });
+                context.BikeTours.Add(new Models.BikeTour()
+                {
+                    Name = "Harlem Bike Tour",
+                    Address = "Address",
+                    AllowTimesReservation = "14:00",
+                    AllowWeekdaysReservation = "2,4,5,7",
+                    ContactNumber = "0123",
+                    Description = "Description",
+                    Duration = "8 hours",
+                    Enabled = true,
+                    Image = "image.jpg",
+                    OnlinePrice = 25.00m,
+                    OnstatePrice = 30.00m,
+                    RightPanel = true,
+
                 });
             }
         }

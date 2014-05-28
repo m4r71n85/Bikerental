@@ -16,6 +16,6 @@ namespace BikeRental.Models
         public const string FE_LARGE_RESERVE = "?h=250&w=386&mode=crop";
         public const string FR_LIST_TOURS = "?h=156&w=99&mode=crop";
 
-        public const string FR_QUICK_RESERVE = "?h=115&w=170&mode=crop";
+        public const string FR_QUICK_RESERVE = "?h=115&w=185&mode=crop";
     }
 }

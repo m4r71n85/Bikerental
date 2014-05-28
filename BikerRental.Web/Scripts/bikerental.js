@@ -21,7 +21,6 @@ function styleDateTimePickerAdvanced() {
         allowedTimes = allowedTimes[0] == "" ? [] : allowedTimes;
         var allowedWeekdays = self.data('allow-weekdays').split(',');
         allowedWeekdays = allowedWeekdays[0] == "" ? ['1', '2', '3', '4', '5', '6', '7'] : allowedWeekdays;
-        console.log(allowedWeekdays);
         self.datetimepicker({
             minDate: 0,
             allowTimes: allowedTimes,
