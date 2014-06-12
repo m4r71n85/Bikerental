@@ -8,6 +8,7 @@ namespace BikeRental.Models
     public class Cart
     {
         private ICollection<ReservedBicycle> bicycles;
+        private ICollection<ReservedBikeTour> bikeTours;
         private ICollection<ReservedTour> tour;
         public int Id { get; set; }
         public string SessionId { get; set; }
@@ -15,6 +16,7 @@ namespace BikeRental.Models
         public Cart()
         {
             this.bicycles = new HashSet<ReservedBicycle>();
+            this.bikeTours = new HashSet<ReservedBikeTour>();
             this.tour = new HashSet<ReservedTour>();
         }
 
@@ -22,6 +24,11 @@ namespace BikeRental.Models
         {
             get { return this.bicycles; }
             set { this.bicycles = value; }
+        }
+        public virtual ICollection<ReservedBikeTour> ReservedBikeTours
+        {
+            get { return this.bikeTours; }
+            set { this.bikeTours = value; }
         }
         public virtual ICollection<ReservedTour> ReservedTours
         {

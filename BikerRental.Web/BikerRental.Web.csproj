@@ -213,6 +213,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Content Include="Assets\Images\Loaders\loader.gif" />
+    <Content Include="Assets\Images\Loaders\loader-horizontal.gif" />
     <Content Include="Scripts\bikerental.js" />
     <Content Include="Scripts\datetimepicker\jquery.datetimepicker.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -276,6 +278,8 @@
     <Content Include="Views\QuickReservation\_BikeRental.cshtml" />
     <Content Include="Views\QuickReservation\_BikeTours.cshtml" />
     <Content Include="Views\QuickReservation\_BusTours.cshtml" />
+    <Content Include="Views\Cart\_CartBikes.cshtml" />
+    <Content Include="Views\Cart\_CartBikeTours.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bikerental.css" />

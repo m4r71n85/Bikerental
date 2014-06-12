@@ -46,6 +46,8 @@ namespace BikerRental.Web.Helpers
             int qty = 0;
             List<ReservedBicycle> reservedBikes = UserCart.ReservedBicycles.ToList();
             List<ReservedTour> reservedTours = UserCart.ReservedTours.ToList();
+            int reservedBikeTours = UserCart.ReservedBikeTours.Count();
+
             if (reservedBikes != null) {
                 qty += reservedBikes.Sum(x => x.Quantity);
             }
@@ -53,6 +55,7 @@ namespace BikerRental.Web.Helpers
             {
                 qty += reservedTours.Sum(x => x.Male + x.Female);
             }
+            qty += reservedBikeTours;
 
             return qty;
         }
@@ -61,6 +64,13 @@ namespace BikerRental.Web.Helpers
         {
             ReservedBicycle reservedBike = Db.ReservedBicycles.Find(id);
             Db.ReservedBicycles.Remove(reservedBike);
+            Db.SaveChanges();
+        }
+
+        internal static void RemoveBikeTourReservation(int id)
+        {
+            ReservedBikeTour reservedBikeTour = Db.ReservedBikeTours.Find(id);
+            Db.ReservedBikeTours.Remove(reservedBikeTour);
             Db.SaveChanges();
         }
     }

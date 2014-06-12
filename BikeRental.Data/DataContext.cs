@@ -26,6 +26,7 @@ namespace BikeRental.Data
         public IDbSet<Tour> Tours { get; set; }
         public IDbSet<Cart> Cart { get; set; }
         public IDbSet<ReservedBicycle> ReservedBicycles { get; set; }
+        public IDbSet<ReservedBikeTour> ReservedBikeTours { get; set; }
         public IDbSet<ReservedTour> ReservedTours { get; set; }
     }
 }

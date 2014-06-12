@@ -1,0 +1,39 @@
+﻿@using BikeRental.Models;
+@model ReservedBikeTour
+
+<tr>
+    <td align="left">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", Model.BikeTour.Image, ImageSizes.SMALL))" />
+                    </td>
+                    <td valign="top">
+                        <strong>@Model.BikeTour.Name</strong>
+                        <p>
+                            @*<strong>Duration:</strong> @Model.Duration Hours<br>*@
+                            <strong>Tourdate:</strong> @Model.Date<br>
+                        </p>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </td>
+    <td align="center">
+        1<br/>
+        X $@Model.Price
+        @*<input type="text" style="text-align:center" size="5" maxlength="3" value="@Model.Quantity" name="1[adultqty]">*@
+    </td>
+
+    <td style="text-align:right">$@Model.Price</td>
+    <td align="right">
+        @using (Html.BeginForm("RemoveBikeTourReservation", null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <input type="submit" value="Remove" data-reservation-id="@Model.Id" class="removeBike">
+        }
+    </td>
+</tr>

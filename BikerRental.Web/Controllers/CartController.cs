@@ -21,7 +21,7 @@ namespace BikerRental.Web.Controllers
         {
 
             ViewBag.reservedBikes = db.ReservedBicycles.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.Bicycle).ToList();
-            ViewBag.reservedBikeTours = CartHelper.UserCart.ReservedTours.ToList();
+            ViewBag.reservedBikeTours = db.ReservedBikeTours.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.BikeTour).ToList();
             return View();
         }
 
@@ -41,6 +41,14 @@ namespace BikerRental.Web.Controllers
         {
             CartHelper.RemoveBikeReservation(id);
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemoveBikeTourReservation(int id)
+        {
+            CartHelper.RemoveBikeTourReservation(id);
+            return Redirect("Index");
         }
         //public ActionResult AddToCart(int id)
         //{

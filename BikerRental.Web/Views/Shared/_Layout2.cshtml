@@ -79,9 +79,9 @@
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            @using (Ajax.BeginForm("ChooseTourOrRental", "QuickReservation", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "reservation-details", OnSuccess = "chooseTourOrRentalSuccess" }))
+                                                            @using (Ajax.BeginForm("ChooseTourOrRental", "QuickReservation", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "reservation-details", OnSuccess = "chooseTourOrRentalSuccess", LoadingElementId="ajax-loader" }))
                                                             {
-                                                                <select name="tourOrRental" id="tourOrRental" style="width: 200px" class="round" onchange="$(this.form).submit();" autocomplete="off">
+                                                                <select name="tourOrRental" id="tourOrRental" style="width: 100%" class="round" onchange="$(this.form).submit();" autocomplete="off">
                                                                     <option value="@TourOrRental.Empty" selected="selected">Choose Tour or Rental *</option>
                                                                     <option value='@TourOrRental.BikeRental'>Bike Rental</option>
                                                                     <option value='@TourOrRental.BikeTour'>Bike Tour</option>
@@ -89,6 +89,7 @@
                                                                     @*<option value='@TourOrRental.Cruise'>Cruise</option>
                                                                     <option value='@TourOrRental.Packages'>Packages</option>*@
                                                                 </select>
+                                                                <img src="~/Assets/Images/Loaders/loader-horizontal.gif" id="ajax-loader" style="width:100%" />
                                                             }
                                                         </td>
                                                     </tr>

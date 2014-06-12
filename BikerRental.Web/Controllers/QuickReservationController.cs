@@ -37,6 +37,36 @@ namespace BikerRental.Web.QuickReservation
                     return null;
             }
             return PartialView("_BikeRental");
+        
+        }
+
+        [HttpPost]
+        public ActionResult AddBikeToursToCart()
+        {
+            string[] bikeTourIds = Request.Form.GetValues("bikeTourId");
+            string firstName = Request.Form["firstName"];
+            string lastName = Request.Form["lastName"];
+            string email = Request.Form["email"];
+            string phoneNumber = Request.Form["phoneNumber"];
+            foreach (string _bikeTourId in bikeTourIds)
+            {
+                int bikeTourId = int.Parse(_bikeTourId);
+                DateTime reserveDate = DateTime.Parse(Request.Form["tourDate_"+bikeTourId]);
+                ReservedBikeTour reservedTour = new ReservedBikeTour()
+                {
+                    BikeTourId = bikeTourId,
+                    Date = reserveDate,
+                    Email = email,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Phone = phoneNumber,
+                    Price = db.BikeTours.Find(bikeTourId).OnlinePrice ?? 0
+                };
+
+                CartHelper.UserCart.ReservedBikeTours.Add(reservedTour);
+                CartHelper.SaveChanges();
+            }
+            return RedirectToAction("Index", "Cart");
         }
 
         [HttpPost]
@@ -62,8 +92,6 @@ namespace BikerRental.Web.QuickReservation
                     Phone = phoneNumber,
                     Quantity = quantity
                 };
-                var a = db.BicyclePrices
-                    .Where(x => x.BicycleId == reservedbicycle.BicycleId && x.Duration.Equals(reservedbicycle.Duration)).ToList();
 
                 decimal price = db.BicyclePrices
                     .Where(x => x.BicycleId ==reservedbicycle.BicycleId && x.Duration.Equals(reservedbicycle.Duration))

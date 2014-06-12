@@ -1,5 +1,5 @@
 ﻿@using BikeRental.Models
-@model Tour
+@model BikeTour
 <table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -13,7 +13,7 @@
                                     <div class="popup" style="display: none;">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="forum">
                                             <tbody>
-                                                @foreach (Tour tour in ViewBag.tours)
+                                                @foreach (BikeTour tour in ViewBag.tours)
                                                 {
                                                     <tr>
                                                         <td valign="top" style="padding:8px; width:60px">
@@ -163,7 +163,7 @@
 
                                             <tr>
                                                 <td valign="top" class="nyctours_nights_2">
-                                                    @Model.Address1 <br />
+                                                    @Model.Address <br />
                                                     New York NY 10019			<br><br>
                                                     availability: Daily at 10AM <br>
                                                 </td>

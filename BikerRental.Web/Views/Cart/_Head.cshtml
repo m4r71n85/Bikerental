@@ -20,45 +20,16 @@
                 decimal total = 0;
                 foreach (ReservedBicycle bike in (ViewBag.reservedBikes as List<ReservedBicycle>))
                 {
-                <tr>
-                    <td align="left">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", bike.Bicycle.Image, ImageSizes.SMALL))" />
-                                    </td>
-                                    <td valign="top">
-                                        <strong>@bike.Bicycle.Name</strong>
-                                        <p>
-                                            <strong>Duration:</strong> @bike.Duration Hours<br>
-                                            <strong>Tourdate:</strong> @bike.Date<br>
-                                        </p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td style="display: none;">
-                        @bike.Quantity
-                    </td>
-                    <td align="center">
-                        @bike.Quantity<br/>
-                        X $@bike.Price
-                        @*<input type="text" style="text-align:center" size="5" maxlength="3" value="@bike.Quantity" name="1[adultqty]">*@</td>
-
-                    <td style="text-align:right">$@(bike.Quantity*bike.Price)</td>
-                    <td align="right">
-                        @using (Html.BeginForm("RemoveBikeReservation", null, FormMethod.Post))
-                        {
-                            @Html.AntiForgeryToken()
-                            <input type="hidden" name="Id" value="@bike.Id"/>
-                            <input type="submit" value="Remove" data-reservation-id="@bike.Id" class="removeBike">
-                        }
-                    </td>
-                </tr>
+                    @Html.Partial("_CartBikes", bike);
+                
                     total += bike.Quantity * bike.Price;
+                }
+
+                foreach (ReservedBikeTour bikeTour in (ViewBag.reservedBikeTours as List<ReservedBikeTour>))
+                {
+                    @Html.Partial("_CartBikeTours", bikeTour);
+
+                    total += bikeTour.Price;
                 }
             }
 

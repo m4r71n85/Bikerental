@@ -17,15 +17,15 @@ namespace BikerRental.Web.Controllers
         // GET: /BikeTours/
         public ActionResult Index()
         {
-            List<Tour> tours = db.Tours.Where(x => x.Type == TourType.Bicycle).Take(5).ToList();
+            List<BikeTour> tours = db.BikeTours.Take(5).ToList();
             ViewBag.tours = tours;
             return View();
         }
 
         public ActionResult Reserve(int id)
         {
-            List<Tour> tours = db.Tours.Where(x => x.Type == TourType.Bicycle && x.Id != id).ToList();
-            Tour tour = db.Tours.Where(x => x.Id == id).FirstOrDefault();
+            List<BikeTour> tours = db.BikeTours.ToList();
+            BikeTour tour = db.BikeTours.Find(id);
             ViewBag.tours = tours;
             ViewBag.tour = tour;
 

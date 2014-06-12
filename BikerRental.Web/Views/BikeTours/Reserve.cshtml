@@ -4,7 +4,7 @@
     ViewBag.Title = "Bike Tours";
 }
 @section Top {
-    @Html.Partial("_TopReserve", (Tour)ViewBag.tour, new ViewDataDictionary { { "Tours", ViewBag.Tours } })
+    @Html.Partial("_TopReserve", (BikeTour)ViewBag.tour, new ViewDataDictionary { { "Tours", ViewBag.Tours } })
 }
 @section Middle{
     @Html.Partial("_Middle")
@@ -20,19 +20,19 @@
 
 @section scripts{
     <script type="text/javascript">
-        $(".choose").live("mouseover", function () {
+        $(".choose").on("mouseover", function () {
             $(".popup").show();
         });
 
 
-        $(".choose").live("mouseout", function () {
+        $(".choose").on("mouseout", function () {
             $(".popup").hide();
         });
 
-        $(".popup").live("mouseover", function () {
+        $(".popup").on("mouseover", function () {
             $(this).show();
         });
-        $(".popup").live("mouseout", function () {
+        $(".popup").on("mouseout", function () {
             $(this).hide();
         });
 
