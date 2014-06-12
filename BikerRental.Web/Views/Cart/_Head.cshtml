@@ -3,9 +3,7 @@
 @using System.Linq
 @using System.Data.Entity;
 @using BikeRental.Data;
-@model List<ReservedBicycle>
 
-<form accept-charset="utf-8" method="post" action="http://itechnoweb.com/bikerental/cart/update">
     <table cellspacing="0" cellpadding="6" border="0" style="width:100%; border:1px solid #CCCCCC">
 
         <tbody>
@@ -20,7 +18,7 @@
             </tr>
             @{
                 decimal total = 0;
-                foreach (ReservedBicycle bike in Model)
+                foreach (ReservedBicycle bike in (ViewBag.reservedBikes as List<ReservedBicycle>))
                 {
                 <tr>
                     <td align="left">
@@ -45,13 +43,19 @@
                     <td style="display: none;">
                         @bike.Quantity
                     </td>
-                    <td align="center">X @bike.Price<br>
-                        @bike.Quantity
+                    <td align="center">
+                        @bike.Quantity<br/>
+                        X $@bike.Price
                         @*<input type="text" style="text-align:center" size="5" maxlength="3" value="@bike.Quantity" name="1[adultqty]">*@</td>
 
                     <td style="text-align:right">$@(bike.Quantity*bike.Price)</td>
                     <td align="right">
-                        <input type="button" value="Remove" data-reservation-id="@bike.Id" class="removeBike">
+                        @using (Html.BeginForm("RemoveBikeReservation", null, FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="Id" value="@bike.Id"/>
+                            <input type="submit" value="Remove" data-reservation-id="@bike.Id" class="removeBike">
+                        }
                     </td>
                 </tr>
                     total += bike.Quantity * bike.Price;
@@ -71,8 +75,3 @@
     <p align="right" class="cartbut">
         <input type="submit" value="Update your Cart" name=""> &nbsp;<input type="button" style="background-color:#990000" onclick="removeitem('all','all item')" value="Remove All" name="rmitem">&nbsp;<input type="button" style="background-color:#006600" onclick="proceed2checkout()" value="Continue" name="chkout">
     </p>
-
-
-
-    <!--  Body end -->
-</form>

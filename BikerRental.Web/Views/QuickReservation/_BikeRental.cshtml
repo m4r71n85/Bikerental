@@ -1,25 +1,26 @@
 ﻿@using BikeRental.Models
 @model List<Bicycle>
-<form action="http://itechnoweb.com/bikerental/bike/reserveBike" method="post" accept-charset="utf-8" name="reservation" enctype="multipart/form-data">
+@using (Html.BeginForm("AddBikesToCart", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     <table width="100%" border="0" cellspacing="0" cellpadding="3" style="padding:10px;">
         <tr>
             <td>
-                <input name="targetDate" class="datetime-picker" id="datepicker" type="text" class="tcal"
-                       style="-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	background-color:#FFFFFF;
-	border:1px solid #FFFFFF;
-	width:176px;
-    font-family:Arial;
-	font-size:12px;
-	color:#054388;
-	padding:4px;
-	padding-left:14px;
-	z-index: 100; "
-                       value="Date *"
-                       onfocus="if(this.value  == 'Date *'){ this.value = ''; } "
-                       onblur="if(this.value == '') { this.value = 'Date *'; } " />
+                <input name="date" class="datetime-picker" id="datepicker" type="text" class="tcal"
+                    style="-webkit-border-radius: 3px;
+	                -moz-border-radius: 3px;
+	                border-radius: 3px;
+	                background-color:#FFFFFF;
+	                border:1px solid #FFFFFF;
+	                width:176px;
+                    font-family:Arial;
+	                font-size:12px;
+	                color:#054388;
+	                padding:4px;
+	                padding-left:14px;
+	                z-index: 100; "
+                    value="Date *"
+                    onfocus="if(this.value  == 'Date *'){ this.value = ''; } "
+                    onblur="if(this.value == '') { this.value = 'Date *'; } " />
             </td>
         </tr>
         <tr>
@@ -30,7 +31,7 @@
                     @{ int count = 0; }
                     @foreach (string duration in Durations.All())
                     {
-                        <option value="@count">@duration</option>
+                        <option value="@duration">@duration</option>
                         count++;
                     }
                 </select>
@@ -69,7 +70,7 @@
                                                                         <table width="180" border="0" align="center" cellpadding="0" cellspacing="0">
                                                                             <tr>
                                                                                 <td width="28" align="center" valign="top">
-                                                                                    <input type="checkbox" name="bikeId[]" value="@bike.Id" />
+                                                                                    <input type="checkbox" name="bikeId" value="@bike.Id" />
                                                                                 </td>
                                                                                 <td width="142" valign="top" class="top_back_heading">@bike.Name</td>
                                                                             </tr>
@@ -81,7 +82,7 @@
                                                                     <td align="center" valign="top" style="background-color:#FFFFFF">
                                                                         <div class="quick-reserve-quantity">
                                                                             Quantity
-                                                                            <select name="quantity">
+                                                                            <select name="quantity_@bike.Id">
                                                                                 @for (int i = 0; i <= 99; i++)
                                                                                 {
                                                                                     <option value="@i">@i</option>
@@ -133,28 +134,31 @@
 
         <tr>
             <td>
-                <input name="bookingName" type="text" class="round" value="Name *"
+                <input name="name" type="text" class="round" value="Name *"
                        onfocus="if(this.value  == 'Name *'){ this.value = ''; } "
                        onblur="if(this.value == '') { this.value = 'Name *'; } " />
             </td>
         </tr>
         <tr>
             <td>
-                <input name="bookingEmail" type="text" class="round" value="Email Address *"
+                <input name="email" type="text" class="round" value="Email Address *"
                        onfocus="if(this.value  == 'Email Address *'){ this.value = ''; } "
                        onblur="if(this.value == '') { this.value = 'Email Address *'; } " />
             </td>
         </tr>
         <tr>
             <td>
-                <input name="bookingPhone" type="text" class="round" value="Phone Number *"
+                <input name="phone" type="text" class="round" value="Phone Number *"
                        onfocus="if(this.value  == 'Phone Number *'){ this.value = ''; } "
                        onblur="if(this.value == '') { this.value = 'Phone Number *'; } " />
             </td>
         </tr>
         <tr>
-            <td align="center" style="padding-bottom:10px"><input name="quickReservation" type="button" value="" class="reservenow" onclick=tt(); /></td>
+            <td align="center" style="padding-bottom:10px">
+                @*<input name="quickReservation" type="button" value="" class="reservenow" onclick=tt(); />*@
+                <input name="quickReservation" type="submit" value="" class="reservenow" onclick=tt(); />
+            </td>
         </tr>
     </table>
     <input type="hidden" id="InterestedType" name="InterestedType" value="sdsd" />
-</form>
+}

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using BikeRental.Models;
 using BikerRental.Web.ViewModels;
 using BikeRental.Data;
+using BikerRental.Web.Helpers;
 
 namespace BikerRental.Web.QuickReservation
 {
@@ -33,9 +34,48 @@ namespace BikerRental.Web.QuickReservation
                 case TourOrRental.Packages:
                     break;
                 default:
-                    break;
+                    return null;
             }
             return PartialView("_BikeRental");
         }
+
+        [HttpPost]
+        public ActionResult AddBikesToCart()
+        {
+            string[] bikeIds = Request.Form.GetValues("bikeId");
+            DateTime rentDate = DateTime.Parse(Request.Form["date"]);
+            string duration = Request.Form["duration"];
+            string name = Request.Form["name"];
+            string email = Request.Form["email"];
+            string phoneNumber = Request.Form["phoneNumber"];
+
+            foreach (string bikeId in bikeIds)
+            {
+                int quantity = int.Parse(Request.Form["quantity_"+bikeId]);
+                ReservedBicycle reservedbicycle = new ReservedBicycle()
+                {
+                    BicycleId = int.Parse(bikeId),
+                    Date = rentDate,
+                    Duration = duration,
+                    Email = email,
+                    Name = name,
+                    Phone = phoneNumber,
+                    Quantity = quantity
+                };
+                var a = db.BicyclePrices
+                    .Where(x => x.BicycleId == reservedbicycle.BicycleId && x.Duration.Equals(reservedbicycle.Duration)).ToList();
+
+                decimal price = db.BicyclePrices
+                    .Where(x => x.BicycleId ==reservedbicycle.BicycleId && x.Duration.Equals(reservedbicycle.Duration))
+                    .Select(x => x.OnlinePrice).FirstOrDefault() ?? 0;
+                reservedbicycle.Price = price;
+                CartHelper.UserCart.ReservedBicycles.Add(reservedbicycle);
+                CartHelper.SaveChanges();
+            }
+            
+
+            //ViewBag.BicycleId = new SelectList(db.Bicycles, "Id", "Name", reservedbicycle.BicycleId);
+            return RedirectToAction("Index", "Cart");
+        } 
 	}
 }

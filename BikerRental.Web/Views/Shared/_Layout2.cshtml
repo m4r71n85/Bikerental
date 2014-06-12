@@ -82,19 +82,19 @@
                                                             @using (Ajax.BeginForm("ChooseTourOrRental", "QuickReservation", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "reservation-details", OnSuccess = "chooseTourOrRentalSuccess" }))
                                                             {
                                                                 <select name="tourOrRental" id="tourOrRental" style="width: 200px" class="round" onchange="$(this.form).submit();" autocomplete="off">
-                                                                    <option value="0" selected="selected">Choose Tour or Rental *</option>
+                                                                    <option value="@TourOrRental.Empty" selected="selected">Choose Tour or Rental *</option>
                                                                     <option value='@TourOrRental.BikeRental'>Bike Rental</option>
                                                                     <option value='@TourOrRental.BikeTour'>Bike Tour</option>
                                                                     <option value='@TourOrRental.DoubleDeckerBusTour'>Double Decker Bus Tour</option>
-                                                                    <option value='@TourOrRental.Cruise'>Cruise</option>
-                                                                    <option value='@TourOrRental.Packages'>Packages</option>
+                                                                    @*<option value='@TourOrRental.Cruise'>Cruise</option>
+                                                                    <option value='@TourOrRental.Packages'>Packages</option>*@
                                                                 </select>
                                                             }
                                                         </td>
                                                     </tr>
                                                 </table>
-                                            <form id="reservation-details">
-                                            </form>
+                                            <div id="reservation-details">
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>

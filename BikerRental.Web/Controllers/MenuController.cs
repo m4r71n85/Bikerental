@@ -16,12 +16,12 @@ namespace BikerRental.Web.Views
         [ChildActionOnly] 
         public ActionResult Index()
         {
-            List<Tour> bikeTours = db.Tours.Where(x => x.Type == TourType.Bicycle).ToList();
-            List<Tour> nycTours = db.Tours.Where(x => x.Type == TourType.NYC).ToList();
             List<Bicycle> bikes = db.Bicycles.ToList();
+            List<BikeTour> bikeTours = db.BikeTours.ToList();
+            List<DoubleDeckerBusTour> busTours = db.BusTours.ToList();
 
             ViewBag.bikeTours = bikeTours;
-            ViewBag.nycTours = nycTours;
+            ViewBag.busTours = busTours;
             ViewBag.bikes = bikes;
 
             return PartialView();

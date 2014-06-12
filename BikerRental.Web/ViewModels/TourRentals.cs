@@ -7,6 +7,7 @@ namespace BikerRental.Web.ViewModels
 {
     public enum TourOrRental
     {
+        Empty,
         BikeRental,
         BikeTour,
         DoubleDeckerBusTour,

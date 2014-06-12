@@ -23,7 +23,7 @@ namespace BikeRental.Models
             get { return this.bicycles; }
             set { this.bicycles = value; }
         }
-        public virtual ICollection<ReservedTour> Tours
+        public virtual ICollection<ReservedTour> ReservedTours
         {
             get { return this.tour; }
             set { this.tour = value; }
