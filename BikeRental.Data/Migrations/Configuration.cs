@@ -27,7 +27,7 @@ namespace BikeRental.Data.Migrations
         {
             if (!context.BusTours.Any())
             {
-                context.BusTours.Add(new Models.DoubleDeckerBusTour()
+                context.BusTours.Add(new Models.BusTour()
                 {
                     Name = "Downtown Bus Tour",
                     Address = "Address",
@@ -41,7 +41,7 @@ namespace BikeRental.Data.Migrations
                     OnstatePrice = 30.00m,
                     RightPanel = true,
                 });
-                context.BusTours.Add(new Models.DoubleDeckerBusTour()
+                context.BusTours.Add(new Models.BusTour()
                 {
                     Name = "Uptown Bus Tour",
                     Address = "Address",
@@ -55,7 +55,7 @@ namespace BikeRental.Data.Migrations
                     OnstatePrice = 30.00m,
                     RightPanel = true,
                 });
-                context.BusTours.Add(new Models.DoubleDeckerBusTour()
+                context.BusTours.Add(new Models.BusTour()
                 {
                     Name = "Night Bus Tour",
                     Address = "Address",
@@ -69,7 +69,7 @@ namespace BikeRental.Data.Migrations
                     OnstatePrice = 30.00m,
                     RightPanel = true,
                 });
-                context.BusTours.Add(new Models.DoubleDeckerBusTour()
+                context.BusTours.Add(new Models.BusTour()
                 {
                     Name = "Brooklyn Bus Tour",
                     Address = "Address",
@@ -83,7 +83,7 @@ namespace BikeRental.Data.Migrations
                     OnstatePrice = 30.00m,
                     RightPanel = true,
                 });
-                context.BusTours.Add(new Models.DoubleDeckerBusTour()
+                context.BusTours.Add(new Models.BusTour()
                 {
                     Name = "All City Bus Tour",
                     Address = "Address",

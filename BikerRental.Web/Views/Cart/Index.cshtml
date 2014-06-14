@@ -15,25 +15,19 @@
 }
 
 @section scripts{
-<script type="text/javascript">
-    function hideshow(idd) {
-        var cusid_ele = document.getElementsByClassName('faqanswer');
-        for (var i = 0; i < cusid_ele.length; ++i) {
-            var item = cusid_ele[i];
-            item.style.display = 'none';
+    <script type="text/javascript">
+        function hideshow(idd) {
+            var cusid_ele = document.getElementsByClassName('faqanswer');
+            for (var i = 0; i < cusid_ele.length; ++i) {
+                var item = cusid_ele[i];
+                item.style.display = 'none';
+            }
+            if (document.getElementById(idd).style.display == 'none') {
+                document.getElementById(idd).style.display = 'block';
+            }
+            else {
+                document.getElementById(idd).style.display = 'none';
+            }
         }
-        if (document.getElementById(idd).style.display == 'none') {
-            document.getElementById(idd).style.display = 'block';
-        }
-        else {
-            document.getElementById(idd).style.display = 'none';
-        }
-    }
-</script>
-
-<script>
-    $('.removeBike').live("click", function () {
-        window.location.href = "@(Url.Action("ExcludeFromCart", "Bikerental"))/" + $(this).data('reservation-id');
-    })
     </script>
 }

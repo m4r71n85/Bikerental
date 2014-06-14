@@ -27,7 +27,7 @@ namespace BikerRental.Web.QuickReservation
                     List<BikeTour> bikeTours = db.BikeTours.ToList();
                     return PartialView("_BikeTours", bikeTours);
                 case TourOrRental.DoubleDeckerBusTour:
-                    List<DoubleDeckerBusTour> busTours = db.BusTours.ToList();
+                    List<BusTour> busTours = db.BusTours.ToList();
                     return PartialView("_BusTours", busTours);
                 case TourOrRental.Cruise:
                     break;
@@ -104,6 +104,40 @@ namespace BikerRental.Web.QuickReservation
 
             //ViewBag.BicycleId = new SelectList(db.Bicycles, "Id", "Name", reservedbicycle.BicycleId);
             return RedirectToAction("Index", "Cart");
-        } 
+        }
+
+        public ActionResult AddBusToursToCart()
+        {
+            string[] busTourIds = Request.Form.GetValues("busTourId");
+            string firstName = Request.Form["firstName"];
+            string lastName = Request.Form["lastName"];
+            string email = Request.Form["email"];
+            string phoneNumber = Request.Form["phoneNumber"];
+
+            foreach (string _busTourId in busTourIds)
+            {
+                int busTourId = int.Parse(_busTourId);
+                DateTime reserveDate = DateTime.Parse(Request.Form["tourDate_" + busTourId]);
+                int kids = int.Parse(Request.Form["kids_" + busTourId]);
+                int adults = int.Parse(Request.Form["adults_" + busTourId]);
+
+                ReservedBusTour reservedTour = new ReservedBusTour()
+                {
+                    BusTourId = busTourId,
+                    Date = reserveDate,
+                    Email = email,
+                    FirstName = firstName,
+                    LastName = lastName,
+                    Phone = phoneNumber,
+                    Kids = kids,
+                    Adults = adults,
+                    Price = db.BusTours.Find(busTourId).OnlinePrice ?? 0
+                };
+
+                CartHelper.UserCart.ReservedBusTours.Add(reservedTour);
+                CartHelper.SaveChanges();
+            }
+            return RedirectToAction("Index", "Cart");
+        }
 	}
 }

@@ -1,6 +1,7 @@
 ﻿@using BikeRental.Models
-@model List<DoubleDeckerBusTour>
-<form action="http://itechnoweb.com/bikerental/bike/reserveBike" method="post" accept-charset="utf-8" name="reservation" enctype="multipart/form-data">
+@model List<BusTour>
+@using (Html.BeginForm("AddBusToursToCart", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{   
     <table width="100%" border="0" cellspacing="0" cellpadding="3" style="padding:10px;">
 
         <tr>
@@ -23,7 +24,7 @@
                                         <div class="divscroll scroll-pane" id="equipments">
 
                                             <table width="185" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                @foreach (DoubleDeckerBusTour busTour in Model)
+                                                @foreach (BusTour busTour in Model)
                                                 {
                                                     <tr>
                                                         <td valign="top">
@@ -34,9 +35,25 @@
                                                                         <table width="180" border="0" align="center" cellpadding="0" cellspacing="0">
                                                                             <tr>
                                                                                 <td width="28" align="center" valign="top">
-                                                                                    <input type="checkbox" name="bikeId[]" value="@busTour.Id" />
+                                                                                    <input type="checkbox" name="busTourId" value="@busTour.Id" />
                                                                                 </td>
-                                                                                <td width="142" valign="top" class="top_back_heading">@busTour.Name</td>
+                                                                                <td width="142" valign="top" class="top_back_heading">
+                                                                                    @busTour.Name<br />
+                                                                                    <select style="width:40%" name="adults_@busTour.Id">
+                                                                                        <option value="0">Adults</option>
+                                                                                        @for (int i = 1; i <= 99; i++)
+                                                                                        {
+                                                                                            <option value="@i">@i</option>
+                                                                                        }
+                                                                                    </select>
+                                                                                    <select style="width:40%" name="kids_@busTour.Id">
+                                                                                        <option value="0">Kids</option>
+                                                                                        @for (int i = 1; i <= 99; i++)
+                                                                                        {
+                                                                                            <option value="@i">@i</option>
+                                                                                        }
+                                                                                    </select>
+                                                                                </td>
                                                                             </tr>
                                                                         </table>
 
@@ -63,7 +80,8 @@
                                                                                         <input type="text" class="datetime-picker-advanced"
                                                                                                data-allow-times="@busTour.AllowTimesReservation"
                                                                                                data-allow-weekdays="@busTour.AllowWeekdaysReservation"
-                                                                                               style="width:100px" />
+                                                                                               style="width:100px"
+                                                                                               name="tourDate_@busTour.Id" />
                                                                                     </div>
                                                                                 </td>
 
@@ -90,35 +108,37 @@
 
         <tr>
             <td>
-                <input name="bookingName" type="text" class="round" value="First Name *"
+                <input name="firstName" type="text" class="round" value="First Name *"
                        onfocus="if (this.value == 'First Name *') { this.value = ''; } "
                        onblur="if (this.value == '') { this.value = 'First Name *'; } " />
             </td>
         </tr>
         <tr>
             <td>
-                <input name="bookingName" type="text" class="round" value="Last Name *"
+                <input name="lastName" type="text" class="round" value="Last Name *"
                        onfocus="if (this.value == 'Last Name *') { this.value = ''; } "
                        onblur="if (this.value == '') { this.value = 'Last Name *'; } " />
             </td>
         </tr>
         <tr>
             <td>
-                <input name="bookingEmail" type="text" class="round" value="Email Address *"
+                <input name="email" type="text" class="round" value="Email Address *"
                        onfocus="if(this.value  == 'Email Address *'){ this.value = ''; } "
                        onblur="if(this.value == '') { this.value = 'Email Address *'; } " />
             </td>
         </tr>
         <tr>
             <td>
-                <input name="bookingPhone" type="text" class="round" value="Phone Number *"
+                <input name="phoneNumber" type="text" class="round" value="Phone Number *"
                        onfocus="if(this.value  == 'Phone Number *'){ this.value = ''; } "
                        onblur="if(this.value == '') { this.value = 'Phone Number *'; } " />
             </td>
         </tr>
         <tr>
-            <td align="center" style="padding-bottom:10px"><input name="quickReservation" type="button" value="" class="reservenow" onclick=tt(); /></td>
+            <td align="center" style="padding-bottom:10px">
+                @*<input name="quickReservation" type="button" value="" class="reservenow" onclick=tt(); />*@
+                <input type="submit" value="" class="reservenow" onclick=tt(); />
+            </td>
         </tr>
     </table>
-    <input type="hidden" id="InterestedType" name="InterestedType" value="sdsd" />
-</form>
+}

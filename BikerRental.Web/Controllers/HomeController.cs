@@ -13,8 +13,8 @@ namespace BikerRental.Web.Controllers
 
         public ActionResult Index()
         {
-            var weeklyDeal = db.Tours.Where(x => x.WeeklyDeal == true).FirstOrDefault();
-            ViewBag.weeklyDeal = weeklyDeal;
+            //var weeklyDeal = db.Tours.Where(x => x.WeeklyDeal == true).FirstOrDefault();
+            //ViewBag.weeklyDeal = weeklyDeal;
             return View();
         }
 

@@ -19,14 +19,13 @@ namespace BikeRental.Data
         public IDbSet<Bicycle> Bicycles { get; set; }
         public IDbSet<BicyclePrices> BicyclePrices { get; set; }
         public IDbSet<BikeTour> BikeTours { get; set; }
-        public IDbSet<DoubleDeckerBusTour> BusTours { get; set; }
+        public IDbSet<BusTour> BusTours { get; set; }
         public IDbSet<Faq> Faqs { get; set; }
         public IDbSet<Feedback> Feedbacks { get; set; }
         public IDbSet<Page> Pages { get; set; }
-        public IDbSet<Tour> Tours { get; set; }
         public IDbSet<Cart> Cart { get; set; }
         public IDbSet<ReservedBicycle> ReservedBicycles { get; set; }
         public IDbSet<ReservedBikeTour> ReservedBikeTours { get; set; }
-        public IDbSet<ReservedTour> ReservedTours { get; set; }
+        public IDbSet<ReservedBusTour> ReservedBusTours { get; set; }
     }
 }

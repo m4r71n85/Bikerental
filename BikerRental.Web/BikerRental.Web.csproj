@@ -185,8 +185,9 @@
     <Compile Include="Areas\Administration\Controllers\BicycleController.cs" />
     <Compile Include="Areas\Administration\Controllers\FaqController.cs" />
     <Compile Include="Areas\Administration\Controllers\FeedbackController.cs" />
-    <Compile Include="Areas\Administration\Controllers\ToursController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\BusToursController .cs" />
     <Compile Include="Controllers\PrivacyPolicyController.cs" />
     <Compile Include="Controllers\CancellationPolicyController.cs" />
     <Compile Include="Controllers\BikerentalController.cs" />
@@ -194,7 +195,6 @@
     <Compile Include="Controllers\FindusController.cs" />
     <Compile Include="Controllers\FeedbacksController.cs" />
     <Compile Include="Controllers\FaqsController.cs" />
-    <Compile Include="Controllers\NycToursController .cs" />
     <Compile Include="Controllers\BikeToursController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\QuickReservationController.cs" />
@@ -232,10 +232,10 @@
     <Content Include="Views\BikeTours\_TopIndex.cshtml" />
     <Content Include="Views\BikeTours\_Right.cshtml" />
     <Content Include="Views\Shared\_Left.cshtml" />
-    <Content Include="Views\NycTours\_MiddleIndex.cshtml" />
-    <Content Include="Views\NycTours\_Right.cshtml" />
-    <Content Include="Views\NycTours\_TopIndex.cshtml" />
-    <Content Include="Views\NycTours\Index.cshtml" />
+    <Content Include="Views\BusTours\_MiddleIndex.cshtml" />
+    <Content Include="Views\BusTours\_Right.cshtml" />
+    <Content Include="Views\BusTours\_TopIndex.cshtml" />
+    <Content Include="Views\BusTours\Index.cshtml" />
     <Content Include="Views\Bikerental\_Middle.cshtml" />
     <Content Include="Views\Bikerental\_Right.cshtml" />
     <Content Include="Views\Bikerental\_TopIndex.cshtml" />
@@ -254,9 +254,9 @@
     <Content Include="Views\BikeTours\Reserve.cshtml" />
     <Content Include="Views\BikeTours\_TopReserve.cshtml" />
     <Content Include="Views\Shared\_Right.cshtml" />
-    <Content Include="Views\NycTours\_TopReserve.cshtml" />
-    <Content Include="Views\NycTours\Reserve.cshtml" />
-    <Content Include="Views\NycTours\_MiddleReserve.cshtml" />
+    <Content Include="Views\BusTours\_TopReserve.cshtml" />
+    <Content Include="Views\BusTours\Reserve.cshtml" />
+    <Content Include="Views\BusTours\_MiddleReserve.cshtml" />
     <Content Include="Views\Bikerental\Reserve.cshtml" />
     <Content Include="Views\Bikerental\_TopReserve.cshtml" />
     <Content Include="Views\AboutUs\_Right.cshtml" />
@@ -268,8 +268,8 @@
     <Content Include="Views\CancellationPolicy\_Right.cshtml" />
     <Content Include="Views\CancellationPolicy\_Top.cshtml" />
     <Content Include="Views\CancellationPolicy\Index.cshtml" />
-    <Content Include="Views\NycTours\AddToCart.cshtml" />
-    <Content Include="Views\NycTours\_TopAddToCart.cshtml" />
+    <Content Include="Views\BusTours\AddToCart.cshtml" />
+    <Content Include="Views\BusTours\_TopAddToCart.cshtml" />
     <Content Include="Views\Bikerental\AddToCart.cshtml" />
     <Content Include="Views\Bikerental\_TopAddToCart.cshtml" />
     <Content Include="Views\Cart\_Right.cshtml" />
@@ -280,6 +280,8 @@
     <Content Include="Views\QuickReservation\_BusTours.cshtml" />
     <Content Include="Views\Cart\_CartBikes.cshtml" />
     <Content Include="Views\Cart\_CartBikeTours.cshtml" />
+    <Content Include="Views\Cart\_CartBusTours.cshtml" />
+    <Content Include="Views\Checkout\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bikerental.css" />
@@ -383,14 +385,6 @@
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
     <Content Include="Areas\Administration\Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_TopMenuPartial.cshtml" />
-    <Content Include="Areas\Administration\Views\Tours\Delete.cshtml" />
-    <Content Include="Areas\Administration\Views\Tours\Edit.cshtml" />
-    <Content Include="Areas\Administration\Views\Tours\CreateBikeTour.cshtml" />
-    <Content Include="Areas\Administration\Views\Tours\EditorTemplates\Tour.cshtml" />
-    <Content Include="Areas\Administration\Views\Tours\CreateNycTour.cshtml" />
-    <Content Include="Areas\Administration\Views\Tours\Create.cshtml" />
-    <Content Include="Areas\Administration\Views\Tours\BikeTours.cshtml" />
-    <Content Include="Areas\Administration\Views\Tours\NycTours.cshtml" />
     <Content Include="Areas\Administration\Views\Faq\Create.cshtml" />
     <Content Include="Areas\Administration\Views\Faq\Delete.cshtml" />
     <Content Include="Areas\Administration\Views\Faq\Edit.cshtml" />
@@ -761,7 +755,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

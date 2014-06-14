@@ -21,15 +21,19 @@
                 foreach (ReservedBicycle bike in (ViewBag.reservedBikes as List<ReservedBicycle>))
                 {
                     @Html.Partial("_CartBikes", bike);
-                
                     total += bike.Quantity * bike.Price;
                 }
 
                 foreach (ReservedBikeTour bikeTour in (ViewBag.reservedBikeTours as List<ReservedBikeTour>))
                 {
                     @Html.Partial("_CartBikeTours", bikeTour);
-
                     total += bikeTour.Price;
+                }
+
+                foreach (ReservedBusTour busTour in (ViewBag.reservedBusTours as List<ReservedBusTour>))
+                {
+                    @Html.Partial("_CartBusTours", busTour);
+                    total += busTour.Price;
                 }
             }
 

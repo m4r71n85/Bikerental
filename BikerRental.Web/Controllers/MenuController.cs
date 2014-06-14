@@ -18,7 +18,7 @@ namespace BikerRental.Web.Views
         {
             List<Bicycle> bikes = db.Bicycles.ToList();
             List<BikeTour> bikeTours = db.BikeTours.ToList();
-            List<DoubleDeckerBusTour> busTours = db.BusTours.ToList();
+            List<BusTour> busTours = db.BusTours.ToList();
 
             ViewBag.bikeTours = bikeTours;
             ViewBag.busTours = busTours;

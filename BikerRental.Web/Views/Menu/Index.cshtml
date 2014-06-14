@@ -25,11 +25,11 @@
         </div>
     </li>
     <li>
-        @Html.ActionLink("DOUBLE DECKER BUS TOUR", "Index", "NycTours", null, new { @style = controller == "NycTours" ? "color: #b5dd3e;" : "", @onmouseover = "mopen('m2')", @onmouseout = "mclosetime()" })
+        @Html.ActionLink("DOUBLE DECKER BUS TOUR", "Index", "BusTour", null, new { @style = controller == "BusTour" ? "color: #b5dd3e;" : "", @onmouseover = "mopen('m2')", @onmouseout = "mclosetime()" })
         <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
-            @foreach (DoubleDeckerBusTour nycTour in ViewBag.busTours)
+            @foreach (BusTour busTour in ViewBag.busTours)
             {
-                @Html.ActionLink(nycTour.Name, "Reserve", "NycTours", new { id = nycTour.Id }, null);
+                @Html.ActionLink(busTour.Name, "Reserve", "BusTour", new { id = busTour.Id }, null);
 
             }
         </div>
