@@ -1,5 +1,5 @@
 ﻿@using BikeRental.Models
-@model Tour
+@model BusTour
 <table width="510" border="0" align="center" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -13,17 +13,17 @@
                                     <div class="popup" style="display: none;">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="forum">
                                             <tbody>
-                                                @foreach (Tour tour in ViewBag.tours)
+                                                @foreach (BusTour tour in ViewBag.tours)
                                                 {
                                                     <tr>
                                                         <td valign="top" style="padding:8px; width:60px">
-                                                            <a href="@Url.Action("Reserve", "NycTours", new { id = tour.Id }, null)">
+                                                            <a href="@Url.Action("Reserve", "BikeTours", new { id = tour.Id }, null)">
                                                                 <img style="width:60px;border:1px solid #999999; background-color:#FFFFFF" src="@Url.Content(string.Format("~/Content/Images/Raw/{0}{1}", tour.Image, ImageSizes.FE_SMALL))">
                                                             </a>
                                                         </td>
                                                         <td valign="top" class="hoverit" style="padding:8px; text-align:left">
                                                             <div>
-                                                                <a href="@Url.Action("Reserve", "NycTours", new { id = tour.Id }, null)">
+                                                                <a href="@Url.Action("Reserve", "BikeTours", new { id = tour.Id }, null)">
                                                                     @tour.Name<br>
                                                                     <div style="padding-top:8px; font-size:11px; font-weight:normal">Duration:@tour.Duration<br>Online price: $@Convert.ToInt32(@tour.OnlinePrice)</div>
                                                                 </a>
@@ -163,7 +163,7 @@
 
                                             <tr>
                                                 <td valign="top" class="nyctours_nights_2">
-                                                    @Model.Address1 <br />
+                                                    @Model.Address <br />
                                                     New York NY 10019			<br><br>
                                                     availability: Daily at 10AM <br>
                                                 </td>

@@ -1,7 +1,7 @@
 ﻿@using BikeRental.Models
 @using System.Collections
 @{
-    ViewBag.Title = "Bike Tours";
+    ViewBag.Title = "Bus Tours";
 }
 @section Top {
     @Html.Partial("_TopReserve", (BusTour)ViewBag.tour, new ViewDataDictionary { { "Tours", ViewBag.Tours } })
@@ -20,19 +20,19 @@
 
 @section scripts{
     <script type="text/javascript">
-        $(".choose").live("mouseover", function () {
+        $(".choose").on("mouseover", function () {
             $(".popup").show();
         });
 
 
-        $(".choose").live("mouseout", function () {
+        $(".choose").on("mouseout", function () {
             $(".popup").hide();
         });
 
-        $(".popup").live("mouseover", function () {
+        $(".popup").on("mouseover", function () {
             $(this).show();
         });
-        $(".popup").live("mouseout", function () {
+        $(".popup").on("mouseout", function () {
             $(this).hide();
         });
 
