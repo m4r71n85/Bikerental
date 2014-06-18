@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Acceleration.Hmac</id>
+    <version>1.0.2</version>
+    <authors>Ryan Davis</authors>
+    <owners>Ryan Davis</owners>
+    <licenseUrl>https://github.com/AccelerationNet/adwcodebase.net/raw/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/AccelerationNet/adwcodebase.net/tree/master/src/Acceleration.Hmac</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Generate and validate HMAC hashes for objects.</description>
+    <releaseNotes>Initial</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>utilities security</tags>
+    <dependencies>
+      <dependency id="Acceleration.Collections" version="1.0.3" />
+    </dependencies>
+  </metadata>
+</package>

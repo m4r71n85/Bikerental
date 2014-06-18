@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Acceleration.Collections</id>
+    <version>1.0.3</version>
+    <authors>Ryan Davis</authors>
+    <owners>Ryan Davis</owners>
+    <licenseUrl>https://github.com/AccelerationNet/adwcodebase.net/raw/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/AccelerationNet/adwcodebase.net/tree/master/src/Acceleration.Collections</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Helpers and convenience methods for
+    `System.Collections`</description>
+    <releaseNotes>Initial</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>utilities</tags>
+  </metadata>
+</package>
