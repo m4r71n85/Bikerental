@@ -1,321 +1,373 @@
 ﻿@charset "utf-8";
 /* CSS Document */
 
-body{
-font-family: Arial, Helvetica, sans-serif;
-font-size:12px;
-font-weight:normal;
-color:#000000;
-margin:0 auto;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #000000;
+    margin: 0 auto;
 }
-.bluetext{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#054388;
-	text-align:center
-	}
-.topbg{
-background:url(/Content/Images/Bikerental/Front/topbg.png) repeat-x bottom;
-height:99px
+
+.bluetext {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #054388;
+    text-align: center;
 }
-.topmenu{
-background:url(/Content/Images/Bikerental/Front/bluemenu.png) repeat-x ;
-height:35px;}
 
-	.logocover{position:relative}
-	.logo{
-	position:absolute; 
-	top:0px; 
-	left:30px; 
-	}
-	.toptext{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	font-size: 23px;
-	color:#054388;
-	text-align:center
-	}
-	.toptext span{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	font-size: 15px;
-	color:#054388;
-	text-align:center
-	}
-.leftbg{
-background:url(/Content/Images/Bikerental/Front/leftbg.png) repeat-y}
-.leftbg2{
-background:url(/Content/Images/Bikerental/Front/leftbottom.png) repeat-x top #c2e8ff; height:292px}
-.round{
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	background-color:#FFFFFF; 
-	border:1px solid #FFFFFF; 
-	width:186px; 
-	font-family:Arial; 
-	font-size:12px; 
-	color:#054388; 
-	padding:4px; 
-	padding-left:10px
-	}
-	.reservenow{background-image:url(/Content/Images/Bikerental/Front/reservenow.png); background-repeat:no-repeat; width:185px; height:34px; cursor:pointer; border:0px solid #FFFFFF}
-.submitbutton{background-image:url(/Content/Images/Bikerental/Front/submit_bttn.png); background-repeat:no-repeat; width:78px; height:24px; cursor:pointer; border:0px solid #FFFFFF}
+.topbg {
+    background: url(/Content/Images/Bikerental/Front/topbg.png) repeat-x bottom;
+    height: 99px;
+}
 
-.righttext{font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	font-size: 15px;
-	background-color:#f8db40; 
-	padding:10px; 
-	text-align:center; 
-	color:#054388}
-.righttext span{color:#ff0000}
+.topmenu {
+    background: url(/Content/Images/Bikerental/Front/bluemenu.png) repeat-x;
+    height: 35px;
+}
 
-.rightpanel{ background:url(/Content/Images/Bikerental/Front/bannertop.png) no-repeat; width:249px; height:50px}
+.logocover {
+    position: relative;
+}
 
-.footerbg{ background:url(/Content/Images/Bikerental/Front/footerbg.png) repeat-x; height:111px; }
-	.footertext{font-family:Arial, Helvetica, sans-serif;
-		font-weight: bold;
-		font-size: 11px;
-		color:#054388}
-	.footertext a{font-family:Arial, Helvetica, sans-serif;
-		font-weight: bold;
-		font-size: 11px;
-		color:#054388;
-		text-decoration:none}
-	.footertext a:hover{font-family:Arial, Helvetica, sans-serif;
-		font-weight: bold;
-		font-size: 11px;
-		color:#009900;
-		text-decoration:none}
+.logo {
+    position: absolute;
+    top: 0px;
+    left: 30px;
+}
+
+.toptext {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    color: #054388;
+    text-align: center;
+}
+
+    .toptext span {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        color: #054388;
+        text-align: center;
+    }
+
+.leftbg {
+    background: url(/Content/Images/Bikerental/Front/leftbg.png) repeat-y;
+}
+
+.leftbg2 {
+    background: url(/Content/Images/Bikerental/Front/leftbottom.png) repeat-x top #c2e8ff;
+    height: 292px;
+}
+
+.round {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    width: 186px;
+    font-family: Arial;
+    font-size: 12px;
+    color: #054388;
+    padding: 4px;
+    padding-left: 10px;
+}
+
+.reservenow {
+    background-image: url(/Content/Images/Bikerental/Front/reservenow.png);
+    background-repeat: no-repeat;
+    width: 185px;
+    height: 34px;
+    cursor: pointer;
+    border: 0px solid #FFFFFF;
+}
+
+.submitbutton {
+    background-image: url(/Content/Images/Bikerental/Front/submit_bttn.png);
+    background-repeat: no-repeat;
+    width: 78px;
+    height: 24px;
+    cursor: pointer;
+    border: 0px solid #FFFFFF;
+}
+
+.righttext {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #f8db40;
+    padding: 10px;
+    text-align: center;
+    color: #054388;
+}
+
+    .righttext span {
+        color: #ff0000;
+    }
+
+.rightpanel {
+    background: url(/Content/Images/Bikerental/Front/bannertop.png) no-repeat;
+    width: 249px;
+    height: 50px;
+}
+
+.footerbg {
+    background: url(/Content/Images/Bikerental/Front/footerbg.png) repeat-x;
+    height: 111px;
+}
+
+.footertext {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    color: #054388;
+}
+
+    .footertext a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 11px;
+        color: #054388;
+        text-decoration: none;
+    }
+
+        .footertext a:hover {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 11px;
+            color: #009900;
+            text-decoration: none;
+        }
 /************ new part ****************/
 
-.blue_top{
-	background:url(/Content/Images/Bikerental/Front/top_bar.png) top center repeat-x;
-	height:50px;
+.blue_top {
+    background: url(/Content/Images/Bikerental/Front/top_bar.png) top center repeat-x;
+    height: 50px;
 }
 
-.yellow_top{
-	background:url(/Content/Images/Bikerental/Front/banner_side.png) top center no-repeat;
-	height:50px;
-	width:125px;
+.yellow_top {
+    background: url(/Content/Images/Bikerental/Front/banner_side.png) top center no-repeat;
+    height: 50px;
+    width: 125px;
 }
 
-.box{
--moz-box-shadow: -1px  1px  6px  #c1c1c1;
--webkit-box-shadow: -1px  1px  6px  #c1c1c1;
-box-shadow: -1px  1px  6px  #c1c1c1;
+.box {
+    -moz-box-shadow: -1px 1px 6px #c1c1c1;
+    -webkit-box-shadow: -1px 1px 6px #c1c1c1;
+    box-shadow: -1px 1px 6px #c1c1c1;
 }
 
-.banner_whtext{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#ffffff;
-	text-align:left;
-	text-transform:uppercase;
-	font-size:13px;
-	padding:18px 0px 0px 0px;
-}
-
-
-.banner_whtext_1{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#ffffff;
-	text-align:center;
-	font-size:12px;
-	padding:9px 0px 0px 0px;
+.banner_whtext {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px 0px 0px 0px;
 }
 
 
-
-.banner_bluetext{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-shadow:2px 2px 1px #ffffff;	
-	text-align:center;
-	text-transform:uppercase;
-	font-size:25px;
-	line-height:20px;
-	padding:8px 0px 0px 12px;
-}
-
-
-.banner_bluetext_1{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-shadow:2px 2px 1px #ffffff;	
-	text-align:center;
-	text-transform:uppercase;
-	font-size:15px;
-}
-
-
-.blue_box{
-background-color:#d0ebfc;
-}
-
-
-.wh_box{
-	background-color:#ffffff;
-}
-
-
-.yellow_box{
-background-color:#fadd2a;
-}
-
-.deepblue_box{
-background-color:#00438a;
+.banner_whtext_1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 9px 0px 0px 0px;
 }
 
 
 
-.bluetext_time{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:right;
-	font-size:13px;
-	line-height:27px;
+.banner_bluetext {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-shadow: 2px 2px 1px #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    line-height: 20px;
+    padding: 8px 0px 0px 12px;
 }
 
-.yellow_box .bluetext_time{
+
+.banner_bluetext_1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-shadow: 2px 2px 1px #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+
+.blue_box {
+    background-color: #d0ebfc;
+}
+
+
+.wh_box {
+    background-color: #ffffff;
+}
+
+
+.yellow_box {
+    background-color: #fadd2a;
+}
+
+.deepblue_box {
+    background-color: #00438a;
+}
+
+
+
+.bluetext_time {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: right;
+    font-size: 13px;
+    line-height: 27px;
+}
+
+.yellow_box .bluetext_time {
     text-align: center;
 }
 
 
-.bluetext_off{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:center;
-	font-size:14px;
-	line-height:50px;
+.bluetext_off {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: center;
+    font-size: 14px;
+    line-height: 50px;
 }
 
 
 
-.whitetext_1{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#ffffff;
-	text-align:left;
-	font-size:13px;
-	padding:10px 15px;
+.whitetext_1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    font-size: 13px;
+    padding: 10px 15px;
 }
 
 
 /*price box*/
 
-.pricebox_top{
-background:url(/Content/Images/Bikerental/Front/price_box_top.png) top center no-repeat;
-height:32px;
-width:149px;
+.pricebox_top {
+    background: url(/Content/Images/Bikerental/Front/price_box_top.png) top center no-repeat;
+    height: 32px;
+    width: 149px;
 }
 
-.pricebox_mid{
-background:url(/Content/Images/Bikerental/Front/price_box_mid.png) top center no-repeat;
-height:32px;
-width:149px;
+.pricebox_mid {
+    background: url(/Content/Images/Bikerental/Front/price_box_mid.png) top center no-repeat;
+    height: 32px;
+    width: 149px;
 }
 
-.pricebox_bar{
-background:url(/Content/Images/Bikerental/Front/price_box_bar.png) top center repeat-y;
-width:149px;
+.pricebox_bar {
+    background: url(/Content/Images/Bikerental/Front/price_box_bar.png) top center repeat-y;
+    width: 149px;
 }
 
-.pricebox_yellow_bar{
-background:url(/Content/Images/Bikerental/Front/price_box_yellow_bar.png) top center repeat-y;
-width:149px;
-}
-
-
-.bluetext_price{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:center;
-	font-size:15px;
-	text-transform:uppercase;
-	padding:10px 0px 0px 0px;
-}
-
-.redtext_price{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#f31e10;
-	text-align:center;
-	font-size:15px;
-	text-transform:uppercase;
+.pricebox_yellow_bar {
+    background: url(/Content/Images/Bikerental/Front/price_box_yellow_bar.png) top center repeat-y;
+    width: 149px;
 }
 
 
-.bluetext_price_1{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:center;
-	font-size:12px;
-	padding:10px 0px 10px 0px;
+.bluetext_price {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 10px 0px 0px 0px;
+}
+
+.redtext_price {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #f31e10;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
 
-.whtext_price_1{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#ffffff;
-	text-align:center;
-	font-size:11px;
-	text-transform:uppercase;
-	padding:7px 0px 0px 0px;
-}
-
-.bltext_price_1{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:center;
-	font-size:11px;
-	text-transform:uppercase;
-	padding:3px 0px 0px 0px;
-	line-height:13px;
+.bluetext_price_1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 0px 10px 0px;
 }
 
 
+.whtext_price_1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 7px 0px 0px 0px;
+}
 
-.whtext_price_2{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:center;
-	font-size:15px;
-	line-height:30px;
-	padding:7px 0px 0px 0px;
+.bltext_price_1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 3px 0px 0px 0px;
+    line-height: 13px;
 }
 
 
-.whtext_price_3{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:center;
-	font-size:15px;
-	line-height:30px;
-	text-decoration:line-through;
-	padding:7px 0px 0px 0px;
+
+.whtext_price_2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: center;
+    font-size: 15px;
+    line-height: 30px;
+    padding: 7px 0px 0px 0px;
 }
 
-.bltext_price_2{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#f31e10;
-	text-align:center;
-	font-size:15px;
-	padding:7px 0px 0px 0px;
-	line-height:30px;
+
+.whtext_price_3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: center;
+    font-size: 15px;
+    line-height: 30px;
+    text-decoration: line-through;
+    padding: 7px 0px 0px 0px;
+}
+
+.bltext_price_2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #f31e10;
+    text-align: center;
+    font-size: 15px;
+    padding: 7px 0px 0px 0px;
+    line-height: 30px;
 }
 
 /*price box*/
@@ -327,133 +379,132 @@ width:149px;
 /*bike tours*/
 
 
-.whtext_tour{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#ffffff;
-	text-align:left;
-	font-size:10px;
-	text-transform:uppercase;
-	padding:7px 0px 7px 3px;
+.whtext_tour {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 7px 0px 7px 3px;
 }
 
 
-.yellowtext_tour{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#fbdc2a;
-	text-align:right;
-	font-size:10px;
-	text-transform:uppercase;
-	padding:7px 3px 7px 0px;
+.yellowtext_tour {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #fbdc2a;
+    text-align: right;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 7px 3px 7px 0px;
 }
 
-.yellowtext_tour_1{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#fbdc2a;
-	text-align:right;
-	font-size:22px;
-	text-transform:uppercase;
-}
-
-
-.whtext_tour_1{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#ffffff;
-	text-align:left;
-	font-size:8px;
-	padding:3px 2px;
-}
-
-.whtext_tour_2{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#ffffff;
-	text-align:left;
-	font-size:15px;
-	text-decoration:line-through;
+.yellowtext_tour_1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #fbdc2a;
+    text-align: right;
+    font-size: 22px;
+    text-transform: uppercase;
 }
 
 
+.whtext_tour_1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    font-size: 8px;
+    padding: 3px 2px;
+}
 
-.banner_bluetext_2{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-shadow:2px 2px 1px #ffffff;	
-	text-align:center;
-	text-transform:uppercase;
-	font-size:25px;
-	line-height:20px;
-	padding:15px 0px 0px 12px;
+.whtext_tour_2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    font-size: 15px;
+    text-decoration: line-through;
 }
 
 
-.tour_text_1{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#80888b;
-	text-align:left;
-	font-size:12px;
-	padding:10px 0px 10px 0px;
+
+.banner_bluetext_2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-shadow: 2px 2px 1px #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    line-height: 20px;
+    padding: 15px 0px 0px 12px;
 }
 
 
-.tour_text_2{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:left;
-	font-size:13px;
-	text-transform:uppercase;
-	padding:5px 0px 5px 0px;
-	line-height:22px;
+.tour_text_1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #80888b;
+    text-align: left;
+    font-size: 12px;
+    padding: 10px 0px 10px 0px;
 }
 
 
-.tour_text_3{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#80888b;
-	text-align:left;
-	font-size:11px;
-	padding:0px 0px 20px 0px;
-}
-
-.tour_pic{
-/*background:url(/Content/Images/Bikerental/Front/new_york_pic.png) top center no-repeat;*/
-width:250px;
-height:205px;
-
-}
-
-.tour_base{
-background:url(/Content/Images/Bikerental/Front/base.png) bottom left no-repeat;
-width:66px;
-height:50px;
+.tour_text_2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 5px 0px 5px 0px;
+    line-height: 22px;
 }
 
 
-.tour_text_blue{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:center;
-	font-size:11px;
-	padding:5px 0px 5px 0px;
-	line-height:14px;
+.tour_text_3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #80888b;
+    text-align: left;
+    font-size: 11px;
+    padding: 0px 0px 20px 0px;
+}
+
+.tour_pic {
+    /*background:url(/Content/Images/Bikerental/Front/new_york_pic.png) top center no-repeat;*/
+    width: 250px;
+    height: 205px;
+}
+
+.tour_base {
+    background: url(/Content/Images/Bikerental/Front/base.png) bottom left no-repeat;
+    width: 66px;
+    height: 50px;
 }
 
 
-.tour_text_blue_1{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:center;
-	font-size:18px;
-	text-decoration:line-through;
+.tour_text_blue {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: center;
+    font-size: 11px;
+    padding: 5px 0px 5px 0px;
+    line-height: 14px;
+}
+
+
+.tour_text_blue_1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: line-through;
 }
 
 /*bike tours*/
@@ -461,123 +512,124 @@ height:50px;
 
 /*nyctours_nights*/
 
-.nyctours_nights_2{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:left;
-	font-size:12px;
-	text-transform:uppercase;
-	padding:5px 0px 5px 0px;
+.nyctours_nights_2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 5px 0px 5px 0px;
 }
 
 
-.nyctours_nights_3{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#80878d;
-	text-align:left;
-	font-size:12px;
-	text-transform:none;
+.nyctours_nights_3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #80878d;
+    text-align: left;
+    font-size: 12px;
+    text-transform: none;
 }
 
 
-.nyctours_nights_base{
-background-color:#bfd9e8;
+.nyctours_nights_base {
+    background-color: #bfd9e8;
 }
 
 
-.nyctours_nights_4{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#00438a;
-	text-align:left;
-	font-size:14px;
-	text-transform:uppercase;
-	padding:5px 0px 5px 0px;
+.nyctours_nights_4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #00438a;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 5px 0px 5px 0px;
 }
 
 /*nyctours_nights*/
 
 /*experience*/
 
-.banner_whtext_exp{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#ffffff;
-	text-align:left;
-	text-transform:uppercase;
-	font-size:13px;
-	padding:14px 0px 14px 10px;
+.banner_whtext_exp {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 14px 0px 14px 10px;
 }
 
 
-.whtext_exp{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#626262;
-	text-align:left;
-	font-size:13px;
-	font-style:italic;
-	padding:14px 10px 14px 10px;
-}
-
-
-
-.input{
-background-color:#d5f1ff;
--moz-border-radius: 8px;  
--webkit-border-radius:8px; 
-border-radius: 8px;
-width:200px;
-height:26px;
-border:none;
-font-family:Arial, Helvetica, sans-serif;
-color:#00438a;
-font-size:12px;
-font-weight:normal;
-padding-left:10px;
-margin:3px 0px;
+.whtext_exp {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #626262;
+    text-align: left;
+    font-size: 13px;
+    font-style: italic;
+    padding: 14px 10px 14px 10px;
 }
 
 
 
-.textarea{
-background-color:#d5f1ff;
--moz-border-radius: 8px;  
--webkit-border-radius:8px; 
-border-radius: 8px;
-width:200px;
-border:none;
-font-family:Arial, Helvetica, sans-serif;
-color:#00438a;
-font-size:12px;
-font-weight:normal;
-padding-left:10px;
-margin:3px 0px 20px 0px;
+.input {
+    background-color: #d5f1ff;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    width: 200px;
+    height: 26px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00438a;
+    font-size: 12px;
+    font-weight: normal;
+    padding-left: 10px;
+    margin: 3px 0px;
 }
 
-.label{
-font-family:Arial, Helvetica, sans-serif;
-color:#00438a;
-font-size:12px;
-font-weight:bold;
-text-align:left;
-padding:8px 0px;
-line-height:18px;
+
+
+.textarea {
+    background-color: #d5f1ff;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    width: 200px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00438a;
+    font-size: 12px;
+    font-weight: normal;
+    padding-left: 10px;
+    margin: 3px 0px 20px 0px;
 }
-.form-send-feedback	{
-	background: url(/Content/Images/Bikerental/Front/send_bttn.png) no-repeat;
-	border: none;
-	cursor: pointer;
-	display: block;
-	float: left;
-	height: 26px;
-	margin: 0 4px 0 0;
-	padding: 0;
-	text-indent: -3000px;
-	width: 128px;
-	}
+
+.label {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #00438a;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px 0px;
+    line-height: 18px;
+}
+
+.form-send-feedback {
+    background: url(/Content/Images/Bikerental/Front/send_bttn.png) no-repeat;
+    border: none;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 26px;
+    margin: 0 4px 0 0;
+    padding: 0;
+    text-indent: -3000px;
+    width: 128px;
+}
 /*experience*/
 
 
@@ -590,106 +642,153 @@ line-height:18px;
 
 /*comfort*/
 
-.divscroll{
-	width:200px;
-	height:240px;
-	overflow-y:auto;
-    overflow-x:hidden;
+.divscroll {
+    width: 200px;
+    height: 240px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.top_back{
-	background-color:#0080e5;
-	padding:10px 0px;
+.top_back {
+    background-color: #0080e5;
+    padding: 10px 0px;
 }
 
 
-.top_back_heading{
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#ffffff;
-	text-align:left;
-	font-size:13px;
-	padding:2px 0px 0px 0px;
+.top_back_heading {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    font-size: 13px;
+    padding: 2px 0px 0px 0px;
 }
 
-.bottom_back{
-	background-color:#ffffff;
-	padding-bottom:5px;
+.bottom_back {
+    background-color: #ffffff;
+    padding-bottom: 5px;
 }
 
-.bottom_back_text{
-	background-color:#0080e5;
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color:#ffffff;
-	text-align:center;
-	font-size:10px;
-	padding:7px 0px;
+.bottom_back_text {
+    background-color: #0080e5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    font-size: 10px;
+    padding: 7px 0px;
 }
 
-.quick-reserve-quantity{
-	float:right;
-	padding:3px 12px;
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	text-align:center;
-	font-size:12px;
-	text-decoration:none;
+.quick-reserve-quantity {
+    float: right;
+    padding: 3px 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
 }
 
 /*navigation*/
 
-.topnav { margin:0; padding:2px 0 1px; height:35px;
-background:url(/Content/Images/Bikerental/Front/bluemenu.png) repeat-x ;
-height:25px;
+.topnav {
+    margin: 0;
+    padding: 2px 0 1px;
+    height: 35px;
+    background: url(/Content/Images/Bikerental/Front/bluemenu.png) repeat-x;
+    height: 25px;
 }
-.topnav ul { list-style:none; padding:0; margin:0; }
-.topnav li { float:left; padding:0 20px 10px 0; }
-.topnav li a { font:bold 13px Arial, Helvetica, sans-serif; text-transform:uppercase; text-decoration:none; color:#ffffff; 
-display:block; float:left; padding:0 0; line-height:28px;}
-.topnav li a span { display:block; background:none; padding:0 15px; }
-.topnav li a:hover { font:bold 13px Arial, Helvetica, sans-serif; text-transform:uppercase; text-decoration:none; color:#b5dd3e; 
-display:block; float:left; padding:0 0; line-height:28px;}
-.topnav li a:hover span {color:#fff;}
-.topnav li.current_page_item a {color:#fff;}
-.topnav li.current_page_item a span {color:#fff; }
 
-.topnavactive{font:bold 13px Arial, Helvetica, sans-serif; text-transform:uppercase; text-decoration:none; color:#b5dd3e; 
-display:block; float:left; padding:0 0; line-height:28px;}
+    .topnav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .topnav li {
+        float: left;
+        padding: 0 20px 10px 0;
+    }
+
+        .topnav li a {
+            font: bold 13px Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #ffffff;
+            display: block;
+            float: left;
+            padding: 0 0;
+            line-height: 28px;
+        }
+
+            .topnav li a span {
+                display: block;
+                background: none;
+                padding: 0 15px;
+            }
+
+            .topnav li a:hover {
+                font: bold 13px Arial, Helvetica, sans-serif;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: #b5dd3e;
+                display: block;
+                float: left;
+                padding: 0 0;
+                line-height: 28px;
+            }
+
+                .topnav li a:hover span {
+                    color: #fff;
+                }
+
+        .topnav li.current_page_item a {
+            color: #fff;
+        }
+
+            .topnav li.current_page_item a span {
+                color: #fff;
+            }
+
+.topnavactive {
+    font: bold 13px Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #b5dd3e;
+    display: block;
+    float: left;
+    padding: 0 0;
+    line-height: 28px;
+}
 /*navigation*/
 
 /*Calendar Stylesheet*/
 .tcalInput {
-	background: url('/Content/Images/Bikerental/Front/cal.gif') 100% 50% no-repeat;
-	padding-right: 20px;
-	cursor: pointer;
+    background: url('/Content/Images/Bikerental/Front/cal.gif') 100% 50% no-repeat;
+    padding-right: 20px;
+    cursor: pointer;
 }
 
 /* additional properties for input boxe in activated state, above still applies unless in conflict */
 .tcalActive {
-	background-image: url('/Content/Images/Bikerental/Front/no_cal.gif');
+    background-image: url('/Content/Images/Bikerental/Front/no_cal.gif');
 }
 /* container of calendar's pop-up */
 #tcal {
-	
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	background-color:#FFFFFF; 
-	border:1px solid #FFFFFF; 
-	width:186px; 
-	font-family:Arial; 
-	font-size:12px; 
-	color:#054388; 
-	padding:4px; 
-	padding-left:10px
-	z-index: 100;
-	
-	position: absolute;
-	visibility: hidden;
-	
-	
-	/*background-color: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    width: 186px;
+    font-family: Arial;
+    font-size: 12px;
+    color: #054388;
+    padding: 4px;
+    padding-left: 10px z-index: 100;
+    position: absolute;
+    visibility: hidden;
+    /*background-color: white;
 	margin-top: 2px;
 	padding: 0 2px 2px 2px;
 	border: 1px solid silver;
@@ -703,144 +802,227 @@ display:block; float:left; padding:0 0; line-height:28px;}
 
 /* table containing navigation and current month */
 #tcalControls {
-	border-collapse: collapse;
-	border: 0;
-	width: 100%;
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
 }
-#tcalControls td {
-	border-collapse: collapse;
-	border: 0;
-	padding: 0;
-	width: 16px;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	cursor: pointer;
+
+    #tcalControls td {
+        border-collapse: collapse;
+        border: 0;
+        padding: 0;
+        width: 16px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    #tcalControls th {
+        border-collapse: collapse;
+        border: 0;
+        padding: 0;
+        line-height: 25px;
+        font-size: 10px;
+        text-align: center;
+        font-family: Tahoma, Geneva, sans-serif;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+#tcalPrevYear {
+    background-image: url('/Content/Images/Bikerental/Front/prev_year.gif');
 }
-#tcalControls th {
-	border-collapse: collapse;
-	border: 0;
-	padding: 0;
-	line-height: 25px;
-	font-size: 10px;
-	text-align: center;
-	font-family: Tahoma, Geneva, sans-serif;
-	font-weight: bold;
-	white-space: nowrap;
+
+#tcalPrevMonth {
+    background-image: url('/Content/Images/Bikerental/Front/prev_mon.gif');
 }
-#tcalPrevYear { background-image: url('/Content/Images/Bikerental/Front/prev_year.gif'); }
-#tcalPrevMonth { background-image: url('/Content/Images/Bikerental/Front/prev_mon.gif'); }
-#tcalNextMonth { background-image: url('/Content/Images/Bikerental/Front/next_mon.gif'); }
-#tcalNextYear { background-image: url('/Content/Images/Bikerental/Front/next_year.gif'); }
+
+#tcalNextMonth {
+    background-image: url('/Content/Images/Bikerental/Front/next_mon.gif');
+}
+
+#tcalNextYear {
+    background-image: url('/Content/Images/Bikerental/Front/next_year.gif');
+}
 
 /* table containing week days header and calendar grid */
 #tcalGrid {
-	border-collapse: collapse;
-	border: 1px solid silver;
-	width: 100%;
+    border-collapse: collapse;
+    border: 1px solid silver;
+    width: 100%;
 }
-#tcalGrid th {
-	border: 1px solid silver;
-	border-collapse: collapse;
-	padding: 3px 0;
-	text-align: center;
-	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 10px;
-	background-color: gray;
-	color: white;
-}
-#tcalGrid td {
-	border: 0;
-	border-collapse: collapse;
-	padding: 2px 0;
-	text-align: center;
-	font-family: Tahoma, Geneva, sans-serif;
-	width: 14%;
-	font-size: 11px;
-	cursor: pointer;
-}		
-#tcalGrid td.tcalOtherMonth { color: silver; }
-#tcalGrid td.tcalWeekend { background-color: #ACD6F5; }
-#tcalGrid td.tcalToday { border: 1px solid red; }
-#tcalGrid td.tcalSelected { background-color: #FFB3BE; }
 
-.cartbut input{background-color:#0066CC; 
-	color:#FFFFFF; 
-	font-family:Arial; 
-	font-size:12px; 
-	text-align:center; 
-	font-weight:bold; 
-	cursor:pointer; 
-	border:0px; 
-	padding:4px 10px 4px 10px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;}
-	
-.cartbutcheck a{background-color:#990000; 
-	color:#FFFFFF; 
-	font-family:Arial; 
-	font-size:12px; 
-	text-align:center; 
-	font-weight:bold; 
-	cursor:pointer; 
-	border:0px;
-	text-decoration:none;
-	padding:4px 18px 4px 18px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;}
-	
+    #tcalGrid th {
+        border: 1px solid silver;
+        border-collapse: collapse;
+        padding: 3px 0;
+        text-align: center;
+        font-family: Tahoma, Geneva, sans-serif;
+        font-size: 10px;
+        background-color: gray;
+        color: white;
+    }
+
+    #tcalGrid td {
+        border: 0;
+        border-collapse: collapse;
+        padding: 2px 0;
+        text-align: center;
+        font-family: Tahoma, Geneva, sans-serif;
+        width: 14%;
+        font-size: 11px;
+        cursor: pointer;
+    }
+
+        #tcalGrid td.tcalOtherMonth {
+            color: silver;
+        }
+
+        #tcalGrid td.tcalWeekend {
+            background-color: #ACD6F5;
+        }
+
+        #tcalGrid td.tcalToday {
+            border: 1px solid red;
+        }
+
+        #tcalGrid td.tcalSelected {
+            background-color: #FFB3BE;
+        }
+
+.cartbut input {
+    background-color: #0066CC;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0px;
+    padding: 4px 10px 4px 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.cartbutcheck a {
+    background-color: #990000;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0px;
+    text-decoration: none;
+    padding: 4px 18px 4px 18px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
 #sddm {
-                        z-index: 3000;
-                    }
+    z-index: 3000;
+}
 
-                        #sddm li {
-                            font: bold 11px arial;
-                        }
+    #sddm li {
+        font: bold 11px arial;
+    }
 
-                        #sddm div {
-                            position: absolute;
-                            visibility: hidden;
-                            margin: 30px 0 0 0;
-                            padding: 0;
-                            background: #EAEBD8;
-                            width: 200px;
-                            border: 1px solid #5970B2;
-                            -webkit-border-radius: 10px;
-                            -moz-border-radius: 10px;
-                            border-radius: 10px;
-                            -webkit-box-shadow: #B3B3B3 0px 3px 5px;
-                            -moz-box-shadow: #B3B3B3 0px 3px 5px;
-                            box-shadow: #B3B3B3 0px 3px 5px;
-                            z-index: 2000;
-                        }
+    #sddm div {
+        position: absolute;
+        visibility: hidden;
+        margin: 30px 0 0 0;
+        padding: 0;
+        background: #EAEBD8;
+        width: 200px;
+        border: 1px solid #5970B2;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: #B3B3B3 0px 3px 5px;
+        -moz-box-shadow: #B3B3B3 0px 3px 5px;
+        box-shadow: #B3B3B3 0px 3px 5px;
+        z-index: 2000;
+    }
 
-                            #sddm div a {
-                                position: relative;
-                                display: block;
-                                margin: 0;
-                                padding: 5px 10px;
-                                width: auto;
-                                white-space: nowrap;
-                                text-align: left;
-                                text-decoration: none;
-                                color: #2875DE;
-                                text-transform: none;
-                                font: 11px arial;
-                                width: 200px;
-                                z-index: 2000;
-                            }
+        #sddm div a {
+            position: relative;
+            display: block;
+            margin: 0;
+            padding: 5px 10px;
+            width: auto;
+            white-space: nowrap;
+            text-align: left;
+            text-decoration: none;
+            color: #2875DE;
+            text-transform: none;
+            font: 11px arial;
+            width: 200px;
+            z-index: 2000;
+        }
 
-                                #sddm div a:hover {
-                                    color: #333;
-                                    width: 200px;
-                                    z-index: 2000;
-                                }
+            #sddm div a:hover {
+                color: #333;
+                width: 200px;
+                z-index: 2000;
+            }
 
-.xdsoft_datetimepicker .xdsoft_time_box > div > div.xdsoft_disabled{
+.xdsoft_datetimepicker .xdsoft_time_box > div > div.xdsoft_disabled {
     display: none;
 }
 
-#ajax-loader{
-    display:none;
+#ajax-loader {
+    display: none;
 }
+
+.paymentInfo {
+    background-color: #f2f2f2;
+    float: right;
+    margin-left: 10px;
+    padding: 20px 36px;
+    width: 243px;
+}
+
+    .paymentInfo #orderForm .order-field-wrapper {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .paymentInfo #orderForm .order-label {
+        color: #666;
+        display: block;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 16px;
+        margin-bottom: 2px;
+        margin-top: 10px;
+        text-decoration: none;
+        width: 253px;
+    }
+
+    .paymentInfo #orderForm .order-input-text {
+        background: none repeat scroll 0 0 #fff;
+        border: 1px solid #bbb;
+        color: #000;
+        display: block;
+        font-family: Arial,Tahoma,sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        height: 27px;
+        line-height: 27px;
+        margin: 0;
+        outline: 0 none;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 231px;
+    }
+
+    .paymentInfo #orderForm .order-description {
+        color: #999;
+        display: block;
+        font-size: 11px;
+        font-style: italic;
+        margin: 0;
+        width: 253px;
+    }

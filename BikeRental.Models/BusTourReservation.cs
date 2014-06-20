@@ -20,5 +20,6 @@ namespace BikeRental.Models
         public int? BusTourId { get; set; }
         public virtual Cart Cart { get; set; }
         public virtual BusTour BusTour { get; set; }
+        public virtual Order Order { get; set; }
     }
 }

@@ -7,9 +7,9 @@ using System.Web;
 
 namespace BikerRental.Web.Models
 {
-    public class CheckoutValues
+    public class CheckoutModel
     {
-        public CheckoutValues(string amount, string description, string label)
+        public CheckoutModel(string amount, string description, string label)
         {
             this.amount = amount;
             this.description = description;
@@ -22,12 +22,19 @@ namespace BikerRental.Web.Models
         string description;
         string label;
         string testMode = "true";
-        public string LoginID { get; }
-        public string TransactionKey { get; }
-        public string Amount { get; set; }
-        public string Description { get; set; }
-        public string Label { get; set; }
-        public string TestMode { get; set; }
+        string url = "https://test.authorize.net/gateway/transact.dll";
+        public string LoginID
+        {
+            get
+            {
+                return loginID;
+            }
+        }
+        public string TransactionKey { get { return TransactionKey; } }
+        public string Amount { get { return amount; } }
+        public string Description { get { return description; }}
+        public string Label { get { return label; } }
+        public string TestMode { get { return testMode; } }
         public string Sequence
         {
             get {
@@ -54,6 +61,14 @@ namespace BikerRental.Web.Models
             get
             {
                 return DateTime.Now.ToString("YmdHis");
+            }
+        }
+
+        public string Url
+        {
+            get
+            {
+                return url;
             }
         }
     }

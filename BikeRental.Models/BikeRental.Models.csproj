@@ -62,6 +62,7 @@
     <Compile Include="BusTourReservation.cs" />
     <Compile Include="BikeTourReservation.cs" />
     <Compile Include="BusTour.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="Durations.cs" />
     <Compile Include="Faq.cs" />

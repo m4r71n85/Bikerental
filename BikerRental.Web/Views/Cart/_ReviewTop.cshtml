@@ -4,7 +4,7 @@
 @using System.Data.Entity;
 @using BikeRental.Data;
 
-    <table cellspacing="0" cellpadding="6" border="0" style="width:100%; border:1px solid #CCCCCC">
+    <table cellspacing="0" cellpadding="6" border="0" style="width:100%; border:1px solid #CCCCCC; margin-left:5px;">
 
         <tbody>
             <tr style="background-color:#0086d7; color:#FFFFFF">
@@ -20,19 +20,19 @@
                 decimal total = 0;
                 foreach (ReservedBicycle bike in (ViewBag.reservedBikes as List<ReservedBicycle>))
                 {
-                    @Html.Partial("_CartBikes", bike);
+                    @Html.Partial("_CartBikesReview", bike);
                     total += bike.Quantity * bike.Price;
                 }
 
                 foreach (ReservedBikeTour bikeTour in (ViewBag.reservedBikeTours as List<ReservedBikeTour>))
                 {
-                    @Html.Partial("_CartBikeTours", bikeTour);
+                    @Html.Partial("_CartBikeToursReview", bikeTour);
                     total += bikeTour.Price;
                 }
 
                 foreach (ReservedBusTour busTour in (ViewBag.reservedBusTours as List<ReservedBusTour>))
                 {
-                    @Html.Partial("_CartBusTours", busTour);
+                    @Html.Partial("_CartBusToursReview", busTour);
                     total += busTour.Price;
                 }
             }
@@ -48,7 +48,7 @@
     </table>
 
     <p align="right" class="cartbut">
-        <input type="submit" value="Update your Cart" name=""> &nbsp;
-        <input type="button" style="background-color:#990000" onclick="removeitem('all','all item')" value="Remove All" name="rmitem">&nbsp;
-        <input type="button" style="background-color:#006600" value="Continue" class="reviewCart">
+        <a href="#">
+            <input type="button" style="background-color:#006600" onclick="proceed2checkout()" value="Checkout" name="chkout">
+        </a>
     </p>

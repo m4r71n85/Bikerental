@@ -204,7 +204,8 @@
     <Compile Include="Controllers\BikeToursController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\QuickReservationController.cs" />
-    <Compile Include="Models\CheckoutValues.cs" />
+    <Compile Include="Helpers\CryptHelper.cs" />
+    <Compile Include="Models\CheckoutModel.cs" />
     <Compile Include="ViewModels\TourRentals.cs" />
     <Content Include="Areas\Administration\Views\Bicycle\EditorTemplates\BicyclePrices.cshtml" />
     <None Include="Areas\Administration\Views\Bicycle\EditorTemplates\Bicycle.cshtml" />
@@ -286,9 +287,18 @@
     <Content Include="Views\QuickReservation\_BikeTours.cshtml" />
     <Content Include="Views\QuickReservation\_BusTours.cshtml" />
     <Content Include="Views\Cart\_CartBikes.cshtml" />
-    <Content Include="Views\Cart\_CartBikeTours.cshtml" />
+    <Content Include="Views\Cart\_CartBikesTours.cshtml" />
     <Content Include="Views\Cart\_CartBusTours.cshtml" />
     <Content Include="Views\Checkout\Index.cshtml" />
+    <Content Include="Views\Checkout\FinishCheckOut.cshtml" />
+    <Content Include="Views\Cart\Review.cshtml" />
+    <Content Include="Views\Cart\_ReviewTop.cshtml" />
+    <Content Include="Views\Cart\_CartBikesReview.cshtml" />
+    <Content Include="Views\Cart\_CartBikesToursReview.cshtml" />
+    <Content Include="Views\Cart\_CartBusToursReview.cshtml" />
+    <Content Include="Views\Checkout\Success.cshtml" />
+    <Content Include="Views\Cart\_ReviewMessage.cshtml" />
+    <Content Include="Views\Cart\_PaymentInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bikerental.css" />

@@ -59,28 +59,14 @@ namespace BikerRental.Web.Controllers
             CartHelper.RemoveBusTourReservation(id);
             return Redirect("Index");
         }
-        //public ActionResult AddToCart(int id)
-        //{
-        //    Bicycle bike = db.Bicycles.Where(x => x.Id == id).FirstOrDefault();
-        //    return View(bike);
-        //}
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult AddToCart([Bind(Include = "Date,Duration,Quantity,Name,Email,Phone,BicycleId")] ReservedBicycle reservedbicycle)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        decimal? price = db.BicyclePrices.Where(x => x.BicycleId == reservedbicycle.Id && x.Duration == reservedbicycle.Duration).Select(x => x.OnlinePrice).FirstOrDefault();
-        //        reservedbicycle.Price = price??0;
-        //        CartHelper.UserCart.ReservedBicycles.Add(reservedbicycle);
-        //        CartHelper.SaveChanges();
-                
-        //        return RedirectToAction("Index");
-        //    }
+        public ActionResult Review()
+        {
 
-        //    ViewBag.BicycleId = new SelectList(db.Bicycles, "Id", "Name", reservedbicycle.BicycleId);
-        //    return View(reservedbicycle);
-        //}
+            ViewBag.reservedBikes = db.ReservedBicycles.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.Bicycle).ToList();
+            ViewBag.reservedBikeTours = db.ReservedBikeTours.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.BikeTour).ToList();
+            ViewBag.reservedBusTours = db.ReservedBusTours.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.BusTour).ToList();
+            return View();
+        }
 	}
 }

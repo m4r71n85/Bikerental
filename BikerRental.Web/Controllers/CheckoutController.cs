@@ -1,6 +1,9 @@
-﻿using System;
+﻿using BikerRental.Web.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,90 +11,27 @@ namespace BikerRental.Web.Controllers
 {
     public class CheckoutController : Controller
     {
-        //
-        // GET: /Checkout/
         public ActionResult Index()
         {
-            return View();
+            CheckoutModel checkoutModel = new CheckoutModel("10", "Description...", "Label....");
+            
+            return View(checkoutModel);
         }
 
-        //
-        // GET: /Checkout/Details/5
-        public ActionResult Details(int id)
+        public ActionResult FinishCheckOut()
         {
-            return View();
-        }
-
-        //
-        // GET: /Checkout/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        //
-        // POST: /Checkout/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            StringBuilder text = new StringBuilder();
+            foreach (string key in Request.Form.Keys)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                string a = Request.Form[key];
+                text.AppendLine("[" + key + "]: " + "[" + Request.Form[key] + "]");
             }
-            catch
-            {
-                return View();
-            }
+            return View(text);
         }
 
-        //
-        // GET: /Checkout/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Success()
         {
             return View();
-        }
-
-        //
-        // POST: /Checkout/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        //
-        // GET: /Checkout/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Checkout/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

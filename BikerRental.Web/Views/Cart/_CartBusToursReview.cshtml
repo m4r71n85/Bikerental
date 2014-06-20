@@ -35,11 +35,5 @@
 
     <td style="text-align:right">$@Model.Price</td>
     <td align="right">
-        @using (Html.BeginForm("RemoveBusTourReservation", null, FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-            <input type="hidden" name="Id" value="@Model.Id" />
-            <input type="submit" value="Remove" data-reservation-id="@Model.Id" class="removeBike">
-        }
     </td>
 </tr>
