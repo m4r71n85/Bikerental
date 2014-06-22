@@ -36,6 +36,20 @@ namespace BikeRental.Models
             set { this.busTours = value; }
         }
         public int Status { get; set; }
+        public string CardType { get; set; }
+        public string AccountNumber { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public string State { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string InvoiceNumber { get; set; }
+        public string Desciption { get; set; }
+        public string Amount { get; set; }
+        public string SecureKey { get; set; }
+        public string LocalSecureKey { get; set; }
         public DateTime CreatedAt
         {
             get { return DateTime.Now; }

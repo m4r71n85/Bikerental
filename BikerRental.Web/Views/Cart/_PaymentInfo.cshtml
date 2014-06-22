@@ -10,22 +10,22 @@
     <form id="orderForm" method="post" action="@CheckoutModel.Url ">
         <div class="order-field-wrapper">
             <label class="order-label " for="order_name" style="color: rgb(102, 102, 102);">* First Name:</label>
-            <input type="text" id="order_name" class="order-input-text " name="x_first_name ">
+            <input type="text" id="order_name" class="order-input-text " name="x_first_name" required>
             <div style="display: none" class="order-error" id="order_name-error-empty">Input your First Name!</div>
         </div>
         <div class="order-field-wrapper">
             <label class="order-label " for="order_name" style="color: rgb(102, 102, 102);">* Last Name:</label>
-            <input type="text" id="order_name" class="order-input-text " name="x_last_name">
+            <input type="text" id="order_name" class="order-input-text " name="x_last_name" required>
             <div style="display: none" class="order-error" id="order_name-error-empty">Input your Last Name!</div>
         </div>
         <div class="order-field-wrapper">
             <label class="order-label " for="order_phone">* Phone number:</label>
-            <input type="text" id="order_phone" class="order-input-text " name="x_phone">
+            <input type="text" id="order_phone" class="order-input-text " name="x_phone" required>
             <div style="display: none" class="order-error" id="order_phone-error-empty">Input your Phone number!</div>
         </div>
         <div class="order-field-wrapper">
             <label class="order-label " for="order_phone">* Email address:</label>
-            <input type="text" id="order_phone" class="order-input-text " name="x_email">
+            <input type="text" id="order_phone" class="order-input-text " name="x_email" required>
             <div style="display: none" class="order-error" id="order_phone-error-empty">Input your Email address!</div>
         </div>
         <div class="order-field-wrapper">

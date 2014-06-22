@@ -12,10 +12,10 @@ namespace BikerRental.Web.Models
 
         private static string loginID = "2rBH6x5n";
         private static string transactionKey = "2Y34GkkCskQ387dP";
-        private static string amount;
         private static string description = "Description...";
         private static string label = "Label..";
         private static string testMode = "true";
+        private static string cancelLinkUrl = "http://95.42.16.75/Cart";
         private static string url = "https://test.authorize.net/gateway/transact.dll";
         public static string LoginID
         {
@@ -47,7 +47,7 @@ namespace BikerRental.Web.Models
         {
             get
             {
-                return CryptHelper.HMAC_MD5(transactionKey, loginID + "^" + Sequence + "^" + Timestamp + "^" + amount + "^");
+                return CryptHelper.HMAC_MD5(transactionKey, loginID + "^" + Sequence + "^" + Timestamp + "^" + Amount + "^");
             }
         }
         public static string Invoice
@@ -80,6 +80,12 @@ namespace BikerRental.Web.Models
                 return CartHelper.UserCart.SessionId;
             }
             private set { }
+        }
+
+        public static object CancelUrl {
+            get {
+                return cancelLinkUrl;
+            } 
         }
     }
 }

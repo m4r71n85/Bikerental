@@ -25,24 +25,52 @@ namespace BikerRental.Web.Controllers
         public ActionResult FinishCheckOut()
         {
             StringBuilder text = LogFinishCheckout();
-
-            //if (Request.Form["x_response_code"] == "1")
-            //{
-                //CartHelper.SessionId = Request.Form["x_id"];
-            
-            //this context and CartHelper context are two different! make it with one
+            int transactionStatus = int.Parse(Request.Form["x_response_code"]);
+            if (transactionStatus == 1)
+            {
+                List<ReservedBicycle> reservedBikes = CartHelper.UserCart.ReservedBicycles.ToList();
+                List<ReservedBikeTour> reservedBikeTours = CartHelper.UserCart.ReservedBikeTours.ToList();
+                List<ReservedBusTour> reservedBusTours = CartHelper.UserCart.ReservedBusTours.ToList();
+                CartHelper.SessionId = Request.Form["x_id"];
+                
+                //this context and CartHelper context are two different! make it with one
                 Order order = new Order();
-                order.ReservedBicycles = CartHelper.UserCart.ReservedBicycles;
-                order.ReservedBikeTours = CartHelper.UserCart.ReservedBikeTours;
-                order.ReservedBusTours = CartHelper.UserCart.ReservedBusTours;
+                order.ReservedBicycles = reservedBikes;
+                order.ReservedBikeTours = reservedBikeTours;
+                order.ReservedBusTours = reservedBusTours;
                 order.SessionId = CartHelper.SessionId;
-                order.Status = 1;
+                order.AccountNumber = Request.Form["x_account_number"];
+                order.Amount = Request.Form["x_amount"];
+                order.CardType = Request.Form["x_card_type"];
+                order.City = Request.Form["x_city"];
+                order.Country = Request.Form["x_country"];
+                order.Desciption = Request.Form["x_description"];
+                order.Email = Request.Form["x_email"];
+                order.FirstName = Request.Form["x_first_name"];
+                order.LastName = Request.Form["x_last_name"];
+                order.Phone = Request.Form["x_phone"];
+                order.SecureKey = Request.Form["x_secure_key"];
+                order.LocalSecureKey = CheckoutModel.CustomVerification;
+                order.State = Request.Form["x_ship_to_state"];
+                order.Status = transactionStatus;
                 CartHelper.Db.Orders.Add(order);
-                CartHelper.Db.SaveChanges();
-                return RedirectToAction("Success");
-            //}
 
-            return View(text);
+                foreach (ReservedBicycle reservedBike in reservedBikes)
+                {
+                    reservedBike.Cart = null;
+                }
+                foreach (ReservedBikeTour reservedBikeTour in reservedBikeTours)
+                {
+                    reservedBikeTour.Cart = null;
+                } 
+                foreach (ReservedBusTour reservedBus in reservedBusTours)
+                {
+                    reservedBus.Cart = null;
+                }
+                CartHelper.Db.SaveChanges();
+            }
+
+            return View(transactionStatus);
         }
 
         private StringBuilder LogFinishCheckout()

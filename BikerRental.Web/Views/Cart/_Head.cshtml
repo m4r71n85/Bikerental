@@ -45,9 +45,10 @@
             </tr>
         </tbody>
     </table>
-
+    @if (CartHelper.GetTotal() > 0) { 
     <p align="right" class="cartbut">
         <input type="submit" value="Update your Cart" name=""> &nbsp;
         <input type="button" style="background-color:#990000" onclick="removeitem('all','all item')" value="Remove All" name="rmitem">&nbsp;
         <input type="button" style="background-color:#006600" value="Continue" class="reviewCart">
     </p>
+    }

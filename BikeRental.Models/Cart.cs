@@ -35,7 +35,6 @@ namespace BikeRental.Models
             get { return this.busTours; }
             set { this.busTours = value; }
         }
-        public bool Purchased { get; set; }
         public DateTime CreatedAt
         {
             get { return DateTime.Now; }

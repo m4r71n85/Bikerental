@@ -16,10 +16,15 @@ namespace BikerRental.Web.Controllers
     {
         private DataContext db = new DataContext();
 
-        //
-        // GET: /Bikerental/
+
         public ActionResult Index()
         {
+
+            Uri referrer = Request.UrlReferrer;
+            if (referrer != null)
+            {
+                ViewBag.Referrer = referrer.OriginalString.ToLower();
+            }
             return View();
         }
 

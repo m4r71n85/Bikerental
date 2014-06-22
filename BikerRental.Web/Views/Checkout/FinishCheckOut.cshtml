@@ -1,14 +1,15 @@
-﻿<script>
-    //window.location.href = "http://95.42.16.75/Cart";
-</script>
-@using System.Text;
-@model StringBuilder
+﻿@using System.Text;
+@model int
 
 @{
     ViewBag.Title = "Index";
     Layout = "";
 }
-
-<h2>Index</h2>
+@if (Model == 1)
+{
+    <script>
+        window.location.href = "http://95.42.16.75/Checkout/Success";
+    </script>
+}
 
 @Model
