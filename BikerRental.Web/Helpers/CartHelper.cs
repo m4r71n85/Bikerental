@@ -12,25 +12,37 @@ namespace BikerRental.Web.Helpers
     public static class CartHelper
     {
         private static DataContext db = null;
-        private static DataContext Db {
+        private static string sessionId;
+        public static DataContext Db {
             get{
                 if (db == null)
                 {
                     db  = new DataContext();
                 }
                 return db;
-            }
-            
+            }   
         }
+
+
+        public static string SessionId
+        {
+            get { return sessionId; }
+            set { sessionId = value; }
+        }
+
         public static Cart UserCart
         {
             get
             {
-                string session = HttpContext.Current.Session.SessionID;
-                Cart cart = Db.Cart.Where(x => x.SessionId == session).FirstOrDefault();
+                if (sessionId == null)
+                {
+                    sessionId = HttpContext.Current.Session.SessionID;
+                }
+
+                Cart cart = Db.Cart.Where(x => x.SessionId == sessionId).FirstOrDefault();
                 if (cart == null)
                 {
-                    cart = new Cart() { SessionId = session };
+                    cart = new Cart() { SessionId = sessionId };
                     Db.Cart.Add(cart);
                     Db.SaveChanges();
                 }

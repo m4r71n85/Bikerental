@@ -26,14 +26,15 @@
 
                 foreach (ReservedBikeTour bikeTour in (ViewBag.reservedBikeTours as List<ReservedBikeTour>))
                 {
-                    @Html.Partial("_CartBikeToursReview", bikeTour);
+                    @Html.Partial("_CartBikesToursReview", bikeTour);
                     total += bikeTour.Price;
                 }
 
                 foreach (ReservedBusTour busTour in (ViewBag.reservedBusTours as List<ReservedBusTour>))
                 {
                     @Html.Partial("_CartBusToursReview", busTour);
-                    total += busTour.Price;
+                    total += busTour.Price * busTour.Adults;
+                    total += busTour.Price * busTour.Kids;
                 }
             }
 
@@ -46,9 +47,3 @@
             </tr>
         </tbody>
     </table>
-
-    <p align="right" class="cartbut">
-        <a href="#">
-            <input type="button" style="background-color:#006600" onclick="proceed2checkout()" value="Checkout" name="chkout">
-        </a>
-    </p>

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Helpers;
 using BikerRental.Web.Helpers;
 using System.Data.Entity;
+using BikerRental.Web.Models;
  
 namespace BikerRental.Web.Controllers
 {
@@ -66,6 +67,10 @@ namespace BikerRental.Web.Controllers
             ViewBag.reservedBikes = db.ReservedBicycles.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.Bicycle).ToList();
             ViewBag.reservedBikeTours = db.ReservedBikeTours.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.BikeTour).ToList();
             ViewBag.reservedBusTours = db.ReservedBusTours.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.BusTour).ToList();
+            
+            CheckoutModel checkoutModel = new CheckoutModel("Description...", "Label....");
+            ViewBag.checkoutModel = checkoutModel;
+
             return View();
         }
 	}

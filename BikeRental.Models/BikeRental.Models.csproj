@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Log.cs" />
     <Compile Include="Bicycle.cs" />
     <Compile Include="BicyclePrices.cs" />
     <Compile Include="BusTourReservation.cs" />

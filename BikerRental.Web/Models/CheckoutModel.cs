@@ -9,15 +9,14 @@ namespace BikerRental.Web.Models
 {
     public class CheckoutModel
     {
-        public CheckoutModel(string amount, string description, string label)
+        public CheckoutModel(string description, string label)
         {
-            this.amount = amount;
             this.description = description;
             this.label = label;
         }
 
         string loginID = "2rBH6x5n";
-        string transactionKey = "776J47Be8kKA9Ccr";
+        string transactionKey = "2Y34GkkCskQ387dP";
         string amount;
         string description;
         string label;
@@ -31,7 +30,7 @@ namespace BikerRental.Web.Models
             }
         }
         public string TransactionKey { get { return TransactionKey; } }
-        public string Amount { get { return amount; } }
+        public string Amount { get { return amount; } set { amount = value; } }
         public string Description { get { return description; }}
         public string Label { get { return label; } }
         public string TestMode { get { return testMode; } }
@@ -70,6 +69,22 @@ namespace BikerRental.Web.Models
             {
                 return url;
             }
+        }
+        public string Md5Verification { get { return "0A15465E73EA5BE380BF33EEAD00AAD7"; } private set { } }
+        public string CustomVerification {
+            get {
+
+                return CryptHelper.HMAC_MD5(transactionKey, this.Md5Verification + this.Amount + DateTime.Now.ToString("M/d/yyyy") + "salt this hash");
+            }
+            private set { }
+        }
+        public string SecureId
+        {
+            get
+            {
+                return CartHelper.UserCart.SessionId;
+            }
+            private set { }
         }
     }
 }

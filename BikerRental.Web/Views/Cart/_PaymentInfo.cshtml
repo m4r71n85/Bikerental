@@ -1,77 +1,88 @@
-﻿<div class="paymentInfo">
+﻿@using BikeRental.Models
+@using BikerRental.Web.Models
+
+@{CheckoutModel checkoutModel = ViewBag.checkoutModel; }
+<div class="paymentInfo">
 
     <h3>Payment Information</h3>
 
     <div class="clear"></div>
-
-    <form id="orderForm" method="post" action="/shopping-cart/step3">
-
+    <form id="orderForm" method="post" action="@checkoutModel.Url ">
         <div class="order-field-wrapper">
             <label class="order-label " for="order_name" style="color: rgb(102, 102, 102);">* First Name:</label>
-            <input type="text" id="order_name" class="order-input-text "  name="order[name]" style="border-color: rgb(202, 202, 202);">
+            <input type="text" id="order_name" class="order-input-text " name="x_first_name ">
             <div style="display: none" class="order-error" id="order_name-error-empty">Input your First Name!</div>
         </div>
         <div class="order-field-wrapper">
             <label class="order-label " for="order_name" style="color: rgb(102, 102, 102);">* Last Name:</label>
-            <input type="text" id="order_name" class="order-input-text "  name="order[name]" style="border-color: rgb(202, 202, 202);">
+            <input type="text" id="order_name" class="order-input-text " name="x_last_name">
             <div style="display: none" class="order-error" id="order_name-error-empty">Input your Last Name!</div>
         </div>
         <div class="order-field-wrapper">
             <label class="order-label " for="order_phone">* Phone number:</label>
-            <input type="text" id="order_phone" class="order-input-text " name="order[phone]">
+            <input type="text" id="order_phone" class="order-input-text " name="x_phone">
             <div style="display: none" class="order-error" id="order_phone-error-empty">Input your Phone number!</div>
         </div>
         <div class="order-field-wrapper">
             <label class="order-label " for="order_phone">* Email address:</label>
-            <input type="text" id="order_phone" class="order-input-text " name="order[phone]">
+            <input type="text" id="order_phone" class="order-input-text " name="x_email">
             <div style="display: none" class="order-error" id="order_phone-error-empty">Input your Email address!</div>
         </div>
         <div class="order-field-wrapper">
             <label class="order-label " for="order_phone">City:</label>
-            <input type="text" id="order_phone" class="order-input-text " name="order[phone]">
+            <input type="text" id="order_phone" class="order-input-text " name="x_city">
         </div>
         <div class="order-field-wrapper">
             <label class="order-label " for="order_phone">State/Province:</label>
-            <input type="text" id="order_phone" class="order-input-text " name="order[phone]">
+            <input type="text" id="order_phone" class="order-input-text " name="x_state">
         </div>
-
 
         <div class="clear"></div>
 
-        <div class="toStep2 toStep3Box">
-            <span class="toStep2Text toStep2TextSmall">
-                Сума:
+        <div class="sum-total">
+            <div style="text-align:center">
+                <img src="~/Assets/Images/checkout/payment-cards.png" />
+            </div>
+            <div style="margin: 10px 0; border-bottom: 1px dashed #c7c7c7; "></div>
+            <span class="total-amount-label">
+                Total amount:
             </span>
             <span style="color: black !important;" class="toStep2discountPrice">
-                24.99 лв.
-            </span>
-            <span class="toStep2Text toStep2TextSmall">Безплатна доставка</span>
+                @{
+                    decimal total = 0;
+                    int counter = 1;
+                    foreach (ReservedBicycle bike in (ViewBag.reservedBikes as List<ReservedBicycle>))
+                    {
+                        total += bike.Quantity * bike.Price;
+                        <input type="text" name="x_line_item" value="@(counter++)<|>@bike.Bicycle.Name<|><|>@bike.Quantity<|>@bike.Price<|>Y" />
+                    }
 
-            <div class="clear"></div>
-            <span style="display:none;" id="vm_container">
-                <span class="toStep2Text">Cума виртуален портфейл:</span>
-                <span id="vm_discount"><span id="vm_value">-0.00</span> лв.</span>
-            </span>
-            <div class="clear"></div>
-            <div class="line-dashed"></div>
-            <span class="toStep2Text toStep2TextSmall">Крайна цена:</span>
-            <span class="toStep2Price no-margin-top">
-                <span id="end_price">
-                    24<sup class="priceSup">99</sup>
-                </span>
-                <span class="priceCur">лв.</span>
-            </span>
-            <div class="clear"></div>
-        </div><!-- toStep2 -->
-        <div class="step3BoxBuy">
-            <input type="hidden" id="order_supplier_id" value="1" name="order[supplier_id]"><input type="hidden" id="order__csrf_token" value="936f0586a4cca3f6b8ffbaf02a76fd41" name="order[_csrf_token]">                                        <a lang="bg" title="" onclick="submitOrder();" href="javascript:;" class="toStep2BuyLast" hreflang="bg" hidefocus="true" style="outline: medium none;">
-                <span class="linkCart">
-                    <span class="left"></span>
-                    <span class="middle">Купи</span>
-                    <span class="right"></span>
-                </span>
-            </a>
-        </div><!-- step3BoxBuy -->
+                    foreach (ReservedBikeTour bikeTour in (ViewBag.reservedBikeTours as List<ReservedBikeTour>))
+                    {
+                        total += bikeTour.Price;
+                        <input type="text" name="x_line_item" value="@(counter++)<|>@bikeTour.BikeTour.Name<|><|>1<|>@bikeTour.Price<|>Y" />
+                    }
 
+                    foreach (ReservedBusTour busTour in (ViewBag.reservedBusTours as List<ReservedBusTour>))
+                    {
+                        total += busTour.Price * busTour.Adults;
+                        total += busTour.Price * busTour.Kids;
+                        
+                        <input type="text" name="x_line_item" value="@(counter++)<|>@busTour.BusTour.Name (Adults)<|><|>@busTour.Adults<|>@busTour.Price<|>Y" />
+                        <input type="text" name="x_line_item" value="@(counter++)<|>@busTour.BusTour.Name (Kids)<|><|>@busTour.Kids<|>@busTour.Price<|>Y" />
+                    }
+                }
+                $@total
+
+            </span>
+        </div>
+        
+        @{ checkoutModel.Amount = total.ToString(); }
+        @Html.Partial("_AuthorizeData")
+        <div class="checkout-proceed" style="margin-top:0;border-top:0;">
+            <p align="right" class="cartbut" style="margin:10px">
+                <input type="submit" style="background-color:#006600" value="Checkout">
+            </p>
+        </div>
     </form>
 </div>

@@ -26,14 +26,15 @@
 
                 foreach (ReservedBikeTour bikeTour in (ViewBag.reservedBikeTours as List<ReservedBikeTour>))
                 {
-                    @Html.Partial("_CartBikeTours", bikeTour);
+                    @Html.Partial("_CartBikesTours", bikeTour);
                     total += bikeTour.Price;
                 }
 
                 foreach (ReservedBusTour busTour in (ViewBag.reservedBusTours as List<ReservedBusTour>))
                 {
                     @Html.Partial("_CartBusTours", busTour);
-                    total += busTour.Price;
+                    total += busTour.Price * busTour.Adults;
+                    total += busTour.Price * busTour.Kids;
                 }
             }
 

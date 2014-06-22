@@ -33,7 +33,8 @@
         @*<input type="text" style="text-align:center" size="5" maxlength="3" value="@Model.Quantity" name="1[adultqty]">*@
     </td>
 
-    <td style="text-align:right">$@Model.Price</td>
+    <td style="text-align:right">$@(Model.Price * (Model.Kids + Model.Adults))</td>
+
     <td align="right">
     </td>
 </tr>
