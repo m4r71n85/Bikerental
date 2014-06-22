@@ -17,10 +17,8 @@ namespace BikerRental.Web.Controllers
         private DataContext db = new DataContext();
 
         public ActionResult Index()
-        {
-            CheckoutModel checkoutModel = new CheckoutModel("Description...", "Label....");
-            
-            return View(checkoutModel);
+        {   
+            return View();
         }
         
         //[HttpPost]

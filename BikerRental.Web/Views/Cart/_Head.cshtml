@@ -11,30 +11,28 @@
 
                 <th width="31%" style="padding-left:10px; text-align:left;">Item </th>
                 <th width="11%">Quantity</th>
-                <!-- <th width="11%">TotalQTY</th> -->
                 <th width="13%" style="text-align:right">Unit Price</th>
                 <th width="12%" style="text-align:right">Sub-Total</th>
                 <th width="11%" align="right">Operation</th>
             </tr>
             @{
-                decimal total = 0;
-                foreach (ReservedBicycle bike in (ViewBag.reservedBikes as List<ReservedBicycle>))
+                List<ReservedBicycle> reservedBikes = CartHelper.GetReservedBikes();
+                List<ReservedBikeTour> reservedBikeTours = CartHelper.GetReservedBikeTours();
+                List<ReservedBusTour> reservedBusTours = CartHelper.GetReservetBusTours();
+                
+                foreach (ReservedBicycle bike in reservedBikes)
                 {
                     @Html.Partial("_CartBikes", bike);
-                    total += bike.Quantity * bike.Price;
                 }
 
-                foreach (ReservedBikeTour bikeTour in (ViewBag.reservedBikeTours as List<ReservedBikeTour>))
+                foreach (ReservedBikeTour bikeTour in CartHelper.UserCart.ReservedBikeTours)
                 {
                     @Html.Partial("_CartBikesTours", bikeTour);
-                    total += bikeTour.Price;
                 }
 
-                foreach (ReservedBusTour busTour in (ViewBag.reservedBusTours as List<ReservedBusTour>))
+                foreach (ReservedBusTour busTour in CartHelper.UserCart.ReservedBusTours)
                 {
                     @Html.Partial("_CartBusTours", busTour);
-                    total += busTour.Price * busTour.Adults;
-                    total += busTour.Price * busTour.Kids;
                 }
             }
 
@@ -42,7 +40,7 @@
             <tr style="background-color:#CCCCCC">
                 <td colspan="2"></td>
                 <td align="right"><strong>Total</strong></td>
-                <td align="right">$@total</td>
+                <td align="right">$@CartHelper.GetTotal()</td>
                 <td></td>
             </tr>
         </tbody>

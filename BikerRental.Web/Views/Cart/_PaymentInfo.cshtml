@@ -1,13 +1,13 @@
 ﻿@using BikeRental.Models
 @using BikerRental.Web.Models
+@using BikerRental.Web.Helpers;
 
-@{CheckoutModel checkoutModel = ViewBag.checkoutModel; }
 <div class="paymentInfo">
 
     <h3>Payment Information</h3>
 
     <div class="clear"></div>
-    <form id="orderForm" method="post" action="@checkoutModel.Url ">
+    <form id="orderForm" method="post" action="@CheckoutModel.Url ">
         <div class="order-field-wrapper">
             <label class="order-label " for="order_name" style="color: rgb(102, 102, 102);">* First Name:</label>
             <input type="text" id="order_name" class="order-input-text " name="x_first_name ">
@@ -49,35 +49,33 @@
             </span>
             <span style="color: black !important;" class="toStep2discountPrice">
                 @{
-                    decimal total = 0;
+                    
+                    List<ReservedBicycle> reservedBikes = CartHelper.GetReservedBikes();
+                    List<ReservedBikeTour> reservedBikeTours = CartHelper.GetReservedBikeTours();
+                    List<ReservedBusTour> reservedBusTours = CartHelper.GetReservetBusTours();
+                
                     int counter = 1;
-                    foreach (ReservedBicycle bike in (ViewBag.reservedBikes as List<ReservedBicycle>))
+                    foreach (ReservedBicycle bike in reservedBikes)
                     {
-                        total += bike.Quantity * bike.Price;
-                        <input type="text" name="x_line_item" value="@(counter++)<|>@bike.Bicycle.Name<|><|>@bike.Quantity<|>@bike.Price<|>Y" />
+                        <input type="hidden" name="x_line_item" value="@(counter++)<|>@bike.Bicycle.Name<|><|>@bike.Quantity<|>@bike.Price<|>Y" />
                     }
 
-                    foreach (ReservedBikeTour bikeTour in (ViewBag.reservedBikeTours as List<ReservedBikeTour>))
+                    foreach (ReservedBikeTour bikeTour in reservedBikeTours)
                     {
-                        total += bikeTour.Price;
-                        <input type="text" name="x_line_item" value="@(counter++)<|>@bikeTour.BikeTour.Name<|><|>1<|>@bikeTour.Price<|>Y" />
+                        <input type="hidden" name="x_line_item" value="@(counter++)<|>@bikeTour.BikeTour.Name<|><|>1<|>@bikeTour.Price<|>Y" />
                     }
 
-                    foreach (ReservedBusTour busTour in (ViewBag.reservedBusTours as List<ReservedBusTour>))
+                    foreach (ReservedBusTour busTour in reservedBusTours)
                     {
-                        total += busTour.Price * busTour.Adults;
-                        total += busTour.Price * busTour.Kids;
-                        
-                        <input type="text" name="x_line_item" value="@(counter++)<|>@busTour.BusTour.Name (Adults)<|><|>@busTour.Adults<|>@busTour.Price<|>Y" />
-                        <input type="text" name="x_line_item" value="@(counter++)<|>@busTour.BusTour.Name (Kids)<|><|>@busTour.Kids<|>@busTour.Price<|>Y" />
+                        <input type="hidden" name="x_line_item" value="@(counter++)<|>@busTour.BusTour.Name (Adults)<|><|>@busTour.Adults<|>@busTour.Price<|>Y" />
+                        <input type="hidden" name="x_line_item" value="@(counter++)<|>@busTour.BusTour.Name (Kids)<|><|>@busTour.Kids<|>@busTour.Price<|>Y" />
                     }
                 }
-                $@total
+                $@CartHelper.GetTotal()
 
             </span>
         </div>
         
-        @{ checkoutModel.Amount = total.ToString(); }
         @Html.Partial("_AuthorizeData")
         <div class="checkout-proceed" style="margin-top:0;border-top:0;">
             <p align="right" class="cartbut" style="margin:10px">

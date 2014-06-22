@@ -72,6 +72,27 @@ namespace BikerRental.Web.Helpers
             return qty;
         }
 
+        public static decimal GetTotal()
+        {
+            decimal total = 0m;
+            foreach (ReservedBicycle bike in UserCart.ReservedBicycles.ToList())
+            {
+                total += bike.Quantity * bike.Price;
+            }
+
+            foreach (ReservedBikeTour bikeTour in UserCart.ReservedBikeTours.ToList())
+            {
+                total += bikeTour.Price;
+            }
+
+            foreach (ReservedBusTour busTour in UserCart.ReservedBusTours.ToList())
+            {
+                total += busTour.Price * busTour.Adults;
+                total += busTour.Price * busTour.Kids;
+            }
+            return total;
+        }
+
         internal static void RemoveBikeReservation(int id)
         {
             ReservedBicycle reservedBike = Db.ReservedBicycles.Find(id);
@@ -91,6 +112,19 @@ namespace BikerRental.Web.Helpers
             ReservedBusTour reservedBusTour = Db.ReservedBusTours.Find(id);
             Db.ReservedBusTours.Remove(reservedBusTour);
             Db.SaveChanges();
+        }
+
+        public static List<ReservedBicycle> GetReservedBikes()
+        {
+            return Db.ReservedBicycles.Where(x => x.Cart.SessionId == sessionId).Include(x => x.Bicycle).ToList();
+        }
+        public static List<ReservedBikeTour> GetReservedBikeTours()
+        {
+            return Db.ReservedBikeTours.Where(x => x.Cart.SessionId == sessionId).Include(x => x.BikeTour).ToList();
+        }
+        public static List<ReservedBusTour> GetReservetBusTours()
+        {
+            return Db.ReservedBusTours.Where(x => x.Cart.SessionId == sessionId).Include(x => x.BusTour).ToList();
         }
     }
 }

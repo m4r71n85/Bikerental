@@ -1,16 +1,15 @@
 ﻿@using BikerRental.Web.Models
-@{CheckoutModel checkoutModel = ViewBag.checkoutModel; }
 
-<input type='hidden' name='x_amount' value='@checkoutModel.Amount' />
-<input type='hidden' name='x_login' value='@checkoutModel.LoginID' />
-<input type='hidden' name='x_description' value='@checkoutModel.Description' />
-<input type='hidden' name='x_invoice_num' value='@checkoutModel.Invoice' />
-<input type='hidden' name='x_fp_sequence' value='@checkoutModel.Sequence' />
-<input type='hidden' name='x_fp_timestamp' value='@checkoutModel.Timestamp' />
-<input type='hidden' name='x_fp_hash' value='@checkoutModel.FingerPrint' />
-<input type='hidden' name='x_test_request' value='@checkoutModel.FingerPrint' />
+<input type='hidden' name='x_amount' value='@CheckoutModel.Amount' />
+<input type='hidden' name='x_login' value='@CheckoutModel.LoginID' />
+<input type='hidden' name='x_description' value='@CheckoutModel.Description' />
+<input type='hidden' name='x_invoice_num' value='@CheckoutModel.Invoice' />
+<input type='hidden' name='x_fp_sequence' value='@CheckoutModel.Sequence' />
+<input type='hidden' name='x_fp_timestamp' value='@CheckoutModel.Timestamp' />
+<input type='hidden' name='x_fp_hash' value='@CheckoutModel.FingerPrint' />
+<input type='hidden' name='x_test_request' value='@CheckoutModel.FingerPrint' />
 <input type='hidden' name="x_relay_response" value="TRUE">
 <input type='hidden' name='x_show_form' value='PAYMENT_FORM' />
 <input type='hidden' name="x_method" value="CC">
-<input type='hidden' name="x_secure_key" value="@checkoutModel.CustomVerification" />
-<input type='hidden' name="x_id" value ="@checkoutModel.SecureId" />
+<input type='hidden' name="x_secure_key" value="@CheckoutModel.CustomVerification" />
+<input type='hidden' name="x_id" value ="@CheckoutModel.SecureId" />

@@ -17,24 +17,19 @@
                 <th width="11%" align="right">Operation</th>
             </tr>
             @{
-                decimal total = 0;
-                foreach (ReservedBicycle bike in (ViewBag.reservedBikes as List<ReservedBicycle>))
+                foreach (ReservedBicycle bike in CartHelper.UserCart.ReservedBicycles)
                 {
                     @Html.Partial("_CartBikesReview", bike);
-                    total += bike.Quantity * bike.Price;
                 }
 
-                foreach (ReservedBikeTour bikeTour in (ViewBag.reservedBikeTours as List<ReservedBikeTour>))
+                foreach (ReservedBikeTour bikeTour in CartHelper.UserCart.ReservedBikeTours)
                 {
                     @Html.Partial("_CartBikesToursReview", bikeTour);
-                    total += bikeTour.Price;
                 }
 
-                foreach (ReservedBusTour busTour in (ViewBag.reservedBusTours as List<ReservedBusTour>))
+                foreach (ReservedBusTour busTour in CartHelper.UserCart.ReservedBusTours)
                 {
                     @Html.Partial("_CartBusToursReview", busTour);
-                    total += busTour.Price * busTour.Adults;
-                    total += busTour.Price * busTour.Kids;
                 }
             }
 
@@ -42,7 +37,7 @@
             <tr style="background-color:#CCCCCC">
                 <td colspan="2"></td>
                 <td align="right"><strong>Total</strong></td>
-                <td align="right">$@total</td>
+                <td align="right">$@CartHelper.GetTotal()</td>
                 <td></td>
             </tr>
         </tbody>

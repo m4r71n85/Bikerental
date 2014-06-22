@@ -20,10 +20,6 @@ namespace BikerRental.Web.Controllers
         // GET: /Bikerental/
         public ActionResult Index()
         {
-
-            ViewBag.reservedBikes = db.ReservedBicycles.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.Bicycle).ToList();
-            ViewBag.reservedBikeTours = db.ReservedBikeTours.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.BikeTour).ToList();
-            ViewBag.reservedBusTours = db.ReservedBusTours.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.BusTour).ToList();
             return View();
         }
 
@@ -63,14 +59,6 @@ namespace BikerRental.Web.Controllers
 
         public ActionResult Review()
         {
-
-            ViewBag.reservedBikes = db.ReservedBicycles.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.Bicycle).ToList();
-            ViewBag.reservedBikeTours = db.ReservedBikeTours.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.BikeTour).ToList();
-            ViewBag.reservedBusTours = db.ReservedBusTours.Where(x => x.Cart.SessionId == Session.SessionID).Include(x => x.BusTour).ToList();
-            
-            CheckoutModel checkoutModel = new CheckoutModel("Description...", "Label....");
-            ViewBag.checkoutModel = checkoutModel;
-
             return View();
         }
 	}
